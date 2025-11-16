@@ -90,6 +90,25 @@ Then create a PR on GitHub with:
 - Screenshots/videos (if UI changes)
 - Link to related issues
 
+## Protected Branches
+
+Direct commits to `main`, and `dev` are blocked by pre-commit hooks.
+
+**To work on features:**
+
+```bash
+git checkout develop
+git checkout -b feat/your-feature
+# Work and commit normally
+git push origin feature/your-feature
+# Create PR on GitHub: feat/your-feature → dev
+```
+
+**For team leads merging between protected branches:**
+
+- Use Pull Requests on GitHub (not local git commands)
+- PRs bypass the local pre-commit hook protection
+
 ## Code Standards
 
 ### TypeScript
