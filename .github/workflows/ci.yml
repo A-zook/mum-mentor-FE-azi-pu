@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - dev
+      - devops/**
   pull_request:
     branches:
       - main
