@@ -17,6 +17,20 @@ Nora is more than just an app - it's the emotional support system mothers wish t
 - **Daily Planning & Mood Check-ins** - Track emotional wellbeing and organize daily tasks
 - **Journal & Gallery** - Personal memory storage with emotional reflection prompts
 
+## Design
+
+**Figma:** [View Design System](https://www.figma.com/design/lgdMp1k5CDyJSk9eQMOXQI/Mum-Mentor-with-AI-Project?m=auto&t=CTcyID4toLBVeJzp-6)
+
+Reference our Figma files for UI components, colors, spacing, and user flows. All components are designed with Tailwind CSS in mind.
+
+_Don't have access? Contact your team lead._
+
+## Project Resources
+
+**Master Sheet:** [View All Project Links & Resources](https://docs.google.com/spreadsheets/d/1CfIEL_F0ljxJ1rZE9upAeQGJBH713Lqr16eumRSvMOE/edit?usp=sharing)
+
+_All project documentation, design files, and resources are tracked in the master sheet. Add new resources there as they're created._
+
 ## Getting Started
 
 ### Prerequisites
