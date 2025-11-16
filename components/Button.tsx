@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import ArrowIcon from "@/public/assets/icons/arrow-right.svg";
+import Image from "next/image";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "outline" | "ghost" | "rounded" | "solo";
@@ -75,7 +75,15 @@ const Button = ({
       disabled={disabled}
       {...props}
     >
-      {withArrow && <ArrowIcon className={clsx("w-6 h-6", arrowColorClass)} />}
+      {withArrow && (
+        <Image
+          src="/assets/icons/arrow-right.svg"
+          alt="arrow"
+          width={24}
+          height={24}
+          className={arrowColorClass}
+        />
+      )}
       <span>{children}</span>
     </button>
   );

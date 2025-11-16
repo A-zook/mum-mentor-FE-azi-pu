@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 const Footer = () => {
   const images = [
-    { src: "/icons/twitter.png", alt: "Twitter Icon" },
-    { src: "/icons/indeed.[ng", alt: "Indeed Icon" },
-    { src: "/icons/facebook.png", alt: "Facebook Icon" },
+    { src: "/assets/icons/twitter.png", alt: "Twitter Icon" },
+    { src: "/assets/icons/indeed.png", alt: "Indeed Icon" },
+    { src: "/assets/icons/facebook.png", alt: "Facebook Icon" },
   ];
 
   const navItems = [
@@ -17,7 +17,7 @@ const Footer = () => {
     <section className="w-full bg-bg-footer py-4 flex flex-col gap-64 items-start">
       <div className="flex flex-col gap-24">
         <Image
-          src="/icons/nora-icon.svg"
+          src="/assets/icons/nora-icon.svg"
           alt="Nora icon"
           height={44}
           width={104}
