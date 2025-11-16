@@ -1,26 +1,67 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-bg-secondary: #fff3f5;
+  --color-primary: #dd2d4a;
+  --color-primary-dark: #b2243b;
+  --color-primary-light: #f26a82;
+  --color-primary-extralight: #f9c1cc;
+  --color-secondary: #ffc3d9;
+  --color-secondary-dark: #e8aabb;
+  --color-secondary-light: #ffe0eb;
+  --color-secondary-extralight: #fff3f7;
+  --color-bg-main: #fafafa;
+  --color-bg-subtle: #fdeef3;
+  --color-bg-soft: #fff7f9;
+  --color-bg-muted: #f7dce4;
+  --color-bg-strong: #f4b9c7;
+  --color-primaryText-black: #1a1a1a;
+  --color-soft-black: #1a1a1a;
+  --color-grey-text1: #3a3a3a;
+  --color-grey-text2: #c4c4c4;
+  --color-white-text: #ffffff;
+  --color-outline: #d5d5d5;
+  --color-outline-variant: #e5e5e5;
+  --color-disabled-border: #f0f0f0;
+  --color-error: #d72638;
+  --color-error-dark: #a91d2d;
+  --color-error-light: #f7ccd1;
+  --color-success: #2ecc71;
+  --color-success-dark: #239a52;
+  --color-success-light: #d3f5e3;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* border radius */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-md: 8px;
+
+  /* font style */
+
+  --font-hanken: "Hanken Grotesk", sans-serif;
+
+  /* text sizes */
+  --text-button: 16px;
+  --text-body-regular: 18px;
+  --text-body-large: 1.5rem;
+  --text-4xl: 2rem;
+  --text-heading2: 36px;
+  --text-heading2: 40px;
+  --text-heading1: 56px;
+  /* gap or spacing */
+
+  --spacing-10: 10px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-64: 64px;
+
+  /* screen breakpoints */
+  --screen-sm: 640px; /* Small devices, e.g., phones */
+  --screen-md: 768px; /* Medium devices, e.g., tablets */
+  --screen-lg: 1024px; /* Large devices, e.g., laptops */
+  --screen-xl: 1280px; /* Extra large, e.g., desktops */
+  --screen-2xl: 1440px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-hanken);
 }
