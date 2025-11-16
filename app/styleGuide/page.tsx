@@ -7,7 +7,9 @@ const page = () => {
     <div>
       <section>
         <p>This is a test page</p>
-        <Button size="small" withArrow>Click me</Button>
+        <Button size="small" withArrow>
+          Click me
+        </Button>
       </section>
       <footer>
         <Footer />
