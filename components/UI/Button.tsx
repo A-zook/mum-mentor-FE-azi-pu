@@ -40,7 +40,7 @@ const Button = ({
 
     "border-[1.5px] text-primary bg-transparent border-primary hover:border-primary-dark active:border-primary-dark  rounded-md":
       variant === "outline" && !disabled,
-    "border-[1.5px] text-white bg-transparent border-primary-light text-primary-light  rounded-md cursor-not-allowed":
+    "border-[1.5px] text-white bg-transparent border-primary-light  rounded-md cursor-not-allowed":
       variant === "outline" && disabled,
 
     "bg-transparent text-primary hover:text-primary-dark active:text-primary-dark":
@@ -55,7 +55,7 @@ const Button = ({
       variant === "rounded" && disabled,
 
     // solo
-    "bg-primary h-[56px] w-[56px] text-white hover:bg-primary-dark active:bg-primary-dark rounded-[50%]":
+    "bg-primary h-14 w-14 text-white hover:bg-primary-dark active:bg-primary-dark rounded-[50%]":
       variant === "rounded" && !disabled,
   });
 

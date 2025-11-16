@@ -1,12 +1,12 @@
 import React from "react";
-import Footer from "@/components/Footer";
-import Button from "@/components/Button";
+import Footer from "@/components/layout/Footer";
+import Button from "@/components/UI/Button";
 
 const page = () => {
   return (
     <div>
       <section>
-        <p>This is a test page</p>
+        <p className="border-4">This is a test page</p>
         <Button size="small" withArrow>
           Click me
         </Button>
