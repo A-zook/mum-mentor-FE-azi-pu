@@ -11,6 +11,7 @@ export default function AppsButton() {
           src={PlayStoreBtn}
           alt="play store button"
           quality={100}
+          className="w-[134.87px]"
           priority
         />
       </button>

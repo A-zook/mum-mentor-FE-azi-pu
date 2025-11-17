@@ -1,15 +1,15 @@
-import AppsButton from "@/components/hiw/AppsButton";
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import Ready from "@public/assets/images/ready.png";
 
+import AppsButton from "@/components/hiw/AppsButton";
 import Image from "next/image";
+import ScrollAnimationWrapper from "../UI/ScrollAnimation";
 
 export default function HiwReady() {
   return (
     <div className="px-6 md:py-[60px]">
       <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-between gap-8 rounded-[8px] px-5 py-8 md:flex-row md:border md:border-[#E2E2E2] md:px-16">
         <div className="flex flex-col items-center md:w-[50%] md:items-start lg:max-w-[590px]">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-10">
             <h4 className="text-primaryText-black text-center text-[32px] leading-tight font-semibold md:text-left">
               Ready to Download NORA?
             </h4>

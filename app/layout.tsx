@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/NavBar";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Navbar />
         <main className="">{children}</main>
         <Footer />
+        <Toaster richColors />
       </body>
     </html>
   );

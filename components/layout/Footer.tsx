@@ -1,8 +1,7 @@
 import logo from "@/public/assets/icons/nora-icon.svg";
-import AppStoreBtn from "@public/assets/icons/app-store.svg";
-import PlayStoreBtn from "@public/assets/icons/play-store.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { AppStoreButton, GooglePlayButton } from "../UI/AppStoreButtons";
 
 const Footer = () => {
   const companyLinks = [
@@ -63,25 +62,9 @@ const Footer = () => {
               Delivering trusted AI support to help pregnant women and moms
               navigate motherhood with confidence.
             </p>
-
-            <div className="mt-10 flex items-center gap-6">
-              <button aria-label="app store button">
-                <Image
-                  src={AppStoreBtn}
-                  alt="app store button"
-                  quality={100}
-                  priority
-                />
-              </button>
-
-              <button aria-label="play store button">
-                <Image
-                  src={PlayStoreBtn}
-                  alt="play store button"
-                  quality={100}
-                  priority
-                />
-              </button>
+            <div className="flex gap-4 p-1">
+              <GooglePlayButton />
+              <AppStoreButton />
             </div>
 
             <p className="mt-10 text-sm text-white">
@@ -132,21 +115,15 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="relative h-10 w-10">
-                <svg
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="20" cy="20" r="20" fill="#E63946" />
-                  <path
-                    d="M20 12C16.6863 12 14 14.6863 14 18C14 21.3137 16.6863 24 20 24C23.3137 24 26 21.3137 26 18C26 14.6863 23.3137 12 20 12Z"
-                    fill="white"
-                  />
-                  <ellipse cx="20" cy="30" rx="8" ry="4" fill="#FF8C42" />
-                </svg>
+              <div className="relative">
+                <Image
+                  src={logo}
+                  alt="Nora Logo"
+                  width={104}
+                  height={44}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-2xl font-bold text-[#E63946]">NORA</span>
             </Link>
             <p className="text-base leading-relaxed text-gray-300">
               Delivering trusted AI support to help pregnant women and moms
@@ -155,24 +132,9 @@ const Footer = () => {
           </div>
 
           {/* App Store Buttons */}
-          <div className="mt-6 flex items-center gap-6">
-            <button aria-label="app store button">
-              <Image
-                src={AppStoreBtn}
-                alt="app store button"
-                quality={100}
-                priority
-              />
-            </button>
-
-            <button aria-label="play store button">
-              <Image
-                src={PlayStoreBtn}
-                alt="play store button"
-                quality={100}
-                priority
-              />
-            </button>
+          <div className="flex flex-row gap-6">
+            <GooglePlayButton />
+            <AppStoreButton />
           </div>
           {/* Company Links */}
           <div>

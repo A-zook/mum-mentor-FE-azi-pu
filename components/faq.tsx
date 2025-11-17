@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 
 const faqData: FAQItem[] = [
   {
@@ -42,7 +41,7 @@ const FAQAccordion = () => {
           <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
             Frequently Asked Questions
           </h2>
-          <p className="mx-auto max-w-[700px] text-base text-gray-600 md:text-lg lg:text-xl">
+          <p className="mx-auto max-w-[641px] text-base text-gray-600 md:text-lg lg:text-2xl">
             A safe space to learn more about how the platform works and how it
             protects you.
           </p>
@@ -105,7 +104,7 @@ const FAQAccordion = () => {
         </div>
 
         {/* Contact Support */}
-        <div className="mt-12 text-center md:mt-16">
+        {/* <div className="mt-12 text-center md:mt-16">
           <p className="text-base text-gray-600 md:text-lg">
             Haven&apos;t gotten your answer?{" "}
             <Link
@@ -115,7 +114,7 @@ const FAQAccordion = () => {
               Contact our support now
             </Link>
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

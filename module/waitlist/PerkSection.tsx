@@ -1,4 +1,5 @@
 import PerkCard from "@/components/UI/PerkCard";
+import { NextPage } from "next";
 
 const perks = [
   {
@@ -18,7 +19,7 @@ const perks = [
   },
 ];
 
-export default function PerksSection() {
+export const PerksSection: NextPage = () => {
   return (
     <section className="flex w-full justify-center py-16">
       <div className="flex w-[408px] flex-col items-center gap-8 lg:w-[1240px]">
@@ -42,4 +43,4 @@ export default function PerksSection() {
       </div>
     </section>
   );
-}
+};

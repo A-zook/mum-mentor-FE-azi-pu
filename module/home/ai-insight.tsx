@@ -8,7 +8,7 @@ export const AIInsight: NextPage = () => {
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-11">
           {/* Text Content */}
           <div className="flex max-w-full flex-col justify-center gap-4 lg:max-w-[699px]">
-            <h2 className="text-center text-3xl leading-tight font-bold md:text-4xl lg:text-left lg:text-5xl">
+            <h2 className="lg:text-heading2 text-center text-3xl leading-tight font-bold md:text-4xl lg:text-left">
               AI support that transforms motherhood
             </h2>
             <p className="max-w-[586px] text-center text-base leading-relaxed md:text-lg lg:text-left lg:text-2xl">
