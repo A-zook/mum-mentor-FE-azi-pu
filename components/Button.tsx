@@ -39,7 +39,7 @@ const Button = ({
 
     "border-[1.5px] text-primary bg-transparent border-primary hover:border-primary-dark active:border-primary-dark  rounded-sm":
       variant === "outline" && !disabled,
-    "border-[1.5px] text-white bg-transparent border-primary-light  rounded-md cursor-not-allowed":
+    "border-[1.5px] text-white bg-transparent border-primary-light text-primary-light  rounded-md cursor-not-allowed rounded-md":
       variant === "outline" && disabled,
 
     "bg-transparent text-primary hover:text-primary-dark active:text-primary-dark ":
@@ -54,21 +54,23 @@ const Button = ({
       variant === "rounded" && disabled,
 
     // solo
-    "bg-primary h-14 w-14 p-[27.17] text-white hover:bg-primary-dark active:bg-primary-dark rounded-[50%]":
+    "bg-primary h-[56px] w-[56px] p-[27.17] text-white hover:bg-primary-dark active:bg-primary-dark rounded-[50%]":
       variant === "rounded" && !disabled,
 
     // square
-    "bg-primary h-14 w-14 p-4 text-white hover:bg-primary-dark active:bg-primary-dark rounded-lg":
+    "bg-primary h-[56px] w-[56px] p-4 w-fit text-white hover:bg-primary-dark active:bg-primary-dark rounded-lg":
       variant === "square" && !disabled,
   });
 
   const sizeClasses = clsx({
-    "w-[88px] h-9 text-base px-4 py-2 ": size === "small",
-    "w-[139px] h-9 text-base px-4 py-2 ": size === "small" && withArrow,
-    "w-[88px] h-12 text-base  py-2 px-4": size === "medium",
-    "h-12 py-2 px-4 w-fit text-base": size === "medium" && withArrow,
-    "w-[90px] h-14 text-base": size === "large",
-    "h-14 text-base py-4 px-6 w-fit": size === "large" && withArrow,
+    "w-[88px] h-[36px] text-base px-4 py-2 ": size === "small",
+    "w-[139px] h-[36px] text-base px-4 py-2 ": size === "small" && withArrow,
+    "w-[88px] h-[48px] text-base  py-2 px-4": size === "medium",
+    "w-[139px] h-[48px] py-2 px-4 w-fit text-base":
+      size === "medium" && withArrow,
+    "w-[90px] h-[56px] text-base": size === "large",
+    "w-[139px] h-[56px] text-base py-4 px-6 w-fit":
+      size === "large" && withArrow,
   });
   return (
     <button
