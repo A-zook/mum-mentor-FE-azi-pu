@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import Button from "../UI/Button";
 
 const Navbar = () => {
   const { isOpen, isFixed, toggleMenu } = useNav();
@@ -88,9 +89,7 @@ const Navbar = () => {
 
             {/* CTA Button - Desktop */}
             <Link href="/waitlist#join-waitlist">
-              <button className="hidden rounded-lg bg-[#E63946] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-[#d62839] lg:block">
-                Join waitlist
-              </button>
+              <Button>Join waitlist</Button>
             </Link>
 
             {/* Mobile Menu Button */}

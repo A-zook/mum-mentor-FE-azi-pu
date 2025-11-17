@@ -9,3 +9,12 @@ interface DesktopNavItem {
   hasDropdown?: boolean;
   hasNotification?: boolean;
 }
+
+interface StepBlockProps {
+  step: {
+    id: number;
+    title: string;
+    description: string;
+    image: StaticImageData;
+  };
+}

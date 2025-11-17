@@ -1,11 +1,11 @@
-import SectionHeader from "@/components/hiw/SectionHeader";
-
-import AppsButton from "@/components/hiw/AppsButton";
-import HeroImage from "@/public/assets/images/hiw-hero-image.png";
+import { NextPage } from "next";
 import Image from "next/image";
-import ScrollAnimationWrapper from "../UI/ScrollAnimation";
+import HeroImage from "@/public/assets/images/hiw-hero-image.png";
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import { SectionHeader } from ".";
+import { AppStoreButton } from "@/components/UI/AppStoreButtons";
 
-export default function HiwHero() {
+export const HiwHero: NextPage = () => {
   return (
     <header className="mx-auto flex max-w-[550px] flex-col items-center justify-between gap-8 px-6 py-[60px] md:max-w-[1240px] md:flex-row md:items-start">
       <div className="flex flex-col items-center gap-4 md:mt-2 md:w-[50%] md:items-start">
@@ -20,7 +20,7 @@ export default function HiwHero() {
           and helps you thrive every day.
         </p>
 
-        <AppsButton />
+        <AppStoreButton />
       </div>
 
       {/* hero image */}
@@ -38,4 +38,4 @@ export default function HiwHero() {
       </ScrollAnimationWrapper>
     </header>
   );
-}
+};

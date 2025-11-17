@@ -1,21 +1,10 @@
-import HiwHero from "@/components/hiw/HiwHero";
-import HiwReady from "@/components/hiw/HiwReady";
-import HiwSteps from "@/components/hiw/HiwSteps";
-import HiwWhy from "@/components/hiw/HiwWhy";
-
-import { Metadata } from "next";
+import HIW from "@/components/pages/hiw";
+import { Metadata, NextPage } from "next";
 
 export const metadata: Metadata = {
   title: "How It Works",
 };
 
-export default function Page() {
-  return (
-    <div>
-      <HiwHero />
-      <HiwSteps />
-      <HiwWhy />
-      <HiwReady />
-    </div>
-  );
-}
+const HIWPage: NextPage = () => <HIW />;
+
+export default HIWPage;

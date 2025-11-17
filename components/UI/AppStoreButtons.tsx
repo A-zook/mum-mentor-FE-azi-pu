@@ -10,7 +10,7 @@ interface AppStoreButtonProps {
 
 // Google Play Button Component
 export const GooglePlayButton = ({
-  href = "https://play.google.com/store",
+  href = "#",
   className = "",
 }: AppStoreButtonProps) => {
   return (
@@ -43,7 +43,7 @@ export const GooglePlayButton = ({
 
 // App Store Button Component
 export const AppStoreButton = ({
-  href = "https://apps.apple.com",
+  href = "#",
   className = "",
 }: AppStoreButtonProps) => {
   return (

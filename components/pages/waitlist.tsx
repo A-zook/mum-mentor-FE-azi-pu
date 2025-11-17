@@ -1,13 +1,14 @@
-import { HeroSection, ImageGallery } from "@/module/waitlist";
+import { HeroSection, ImageGallery, PerksSection } from "@/module/waitlist";
 import { NextPage } from "next";
-import PerkSection from "../layout/PerkSection";
+import FAQAccordion from "../faq";
 
 const Waitlist: NextPage = () => {
   return (
     <div>
       <HeroSection />
       <ImageGallery />
-      <PerkSection />
+      <PerksSection />
+      <FAQAccordion />
     </div>
   );
 };

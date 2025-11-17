@@ -1,9 +1,9 @@
-import SectionHeader from "@/components/hiw/SectionHeader";
-import StepBlock from "@/components/hiw/StepBlock";
 import PhoneImage from "@public/assets/images/phone.png";
 import Phone2Image from "@public/assets/images/phone2.png";
 import Phone3Image from "@public/assets/images/phone3.png";
 import Phone4Image from "@public/assets/images/phone4.png";
+import { NextPage } from "next";
+import { SectionHeader, StepBlock } from ".";
 
 export const STEPS = [
   {
@@ -39,7 +39,7 @@ export const STEPS = [
   },
 ];
 
-export default function HiwSteps() {
+export const HiwSteps: NextPage = () => {
   return (
     <div className="mt-[60px] space-y-[60px] px-6">
       <div className="flex flex-col items-center gap-[13px]">
@@ -57,4 +57,4 @@ export default function HiwSteps() {
       </div>
     </div>
   );
-}
+};

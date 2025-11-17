@@ -1,11 +1,11 @@
-import SectionHeader from "@/components/hiw/SectionHeader";
+import { NextPage } from "next";
+import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import SleepingBaby from "@public/assets/images/sleepingBaby.png";
 import SleepingBabyDesktop from "@public/assets/images/sleepingBabyDesktop.png";
+import { SectionHeader } from ".";
 
-import Image from "next/image";
-
-export default function HiwWhy() {
+export const HiwWhy: NextPage = () => {
   return (
     <div className="bg-bg-secondary mt-[60px] pl-6">
       <div className="mx-auto flex max-w-[550px] flex-col gap-6 md:max-w-[1240px] md:flex-row">
@@ -42,4 +42,4 @@ export default function HiwWhy() {
       </div>
     </div>
   );
-}
+};
