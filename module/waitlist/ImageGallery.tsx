@@ -28,14 +28,14 @@ export default function ImageGallery() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="shrink-0 w-[350px] h-[350px] sm:w-[355px] sm:h-[505px] rounded-lg overflow-hidden shadow-lg"
+            className="h-[350px] w-[350px] shrink-0 overflow-hidden rounded-lg shadow-lg sm:h-[505px] sm:w-[355px]"
           >
             <Image
               src={src}
               alt={`Gallery image ${index + 1}`}
               width={355}
               height={505}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </motion.div>
         ))}

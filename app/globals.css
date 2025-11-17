@@ -2,12 +2,15 @@
 @import "tailwindcss";
 
 @theme {
+  /* colors */
+  --color-background: #ffffff;
   --color-bg-secondary: #fff3f5;
   --color-primary: #dd2d4a;
   --color-primary-dark: #b2243b;
   --color-primary-light: #f26a82;
   --color-primary-extralight: #f9c1cc;
   --color-secondary: #ffc3d9;
+  --color-secondary-text: #2e2e2e;
   --color-secondary-dark: #e8aabb;
   --color-secondary-light: #ffe0eb;
   --color-secondary-extralight: #fff3f7;
@@ -18,6 +21,7 @@
   --color-bg-strong: #f4b9c7;
   --color-primaryText-black: #1a1a1a;
   --color-soft-black: #1a1a1a;
+  --color-gray-text3: #616161;
   --color-grey-text1: #3a3a3a;
   --color-grey-text2: #c4c4c4;
   --color-white-text: #ffffff;
@@ -49,11 +53,6 @@
   --text-heading1: 56px;
   /* gap or spacing */
 
-  --spacing-10: 10px;
-  --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-64: 64px;
-
   /* screen breakpoints */
   --screen-sm: 640px; /* Small devices, e.g., phones */
   --screen-md: 768px; /* Medium devices, e.g., tablets */
@@ -64,4 +63,16 @@
 
 body {
   font-family: var(--font-hanken);
+}
+
+@layer components {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .image-drop-shadow {
+    box-shadow: 7.48px 9.72px 0px 0px var(--color-primary);
+  }
 }
