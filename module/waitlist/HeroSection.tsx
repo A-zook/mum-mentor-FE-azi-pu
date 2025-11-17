@@ -24,16 +24,19 @@ export const HeroSection: NextPage = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://kaizen.emerj.net/api/v1/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          full_name: fullName.trim(),
-          email: email.trim(),
-        }),
-      });
+      const response = await fetch(
+        "https://kaizen.emerj.net/api/v1/contact/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: fullName.trim(),
+            email: email.trim(),
+          }),
+        }
+      );
 
       const data = await response.json();
 
