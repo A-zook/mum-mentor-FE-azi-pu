@@ -84,7 +84,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const title = context.payload.pull_request.title;
-            const conventionalCommitPattern = /^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)(\(.+\))?: .+/;
+            const conventionalCommitPattern = /^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)(\(.+\))?: .+/i;
 
             if (!conventionalCommitPattern.test(title)) {
               core.setFailed('PR title does not follow conventional commit format. Please use: type(scope): description\nExamples: feat: add login page, fix(auth): resolve token expiration');
