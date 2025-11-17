@@ -1,8 +1,8 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
 
-import AppsButton from "@/components/hiw/AppsButton";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import Image from "next/image";
+import AppStoreButtons from "../UI/AppStoreButtons";
 
 export default function HiwHero() {
   return (
@@ -19,7 +19,7 @@ export default function HiwHero() {
           and helps you thrive every day.
         </p>
 
-        <AppsButton />
+        <AppStoreButtons />
       </div>
 
       {/* hero image */}

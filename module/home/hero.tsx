@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import heroImg from "@/public/assets/images/home_hero_img.jpg";
-import appStore from "@/public/assets/images/mobile-app-store.png";
-import playStore from "@/public/assets/images/mobile-play-store.png";
+import {
+  AppStoreButton,
+  GooglePlayButton,
+} from "@/components/UI/AppStoreButtons";
 
 export const Hero: NextPage = () => {
   return (
@@ -34,16 +36,8 @@ export const Hero: NextPage = () => {
           </div>
 
           <div className="flex justify-center gap-4 lg:justify-start">
-            <Image
-              src={appStore}
-              alt="App Store"
-              className="h-12 cursor-pointer"
-            />
-            <Image
-              src={playStore}
-              alt="Play Store"
-              className="h-12 cursor-pointer"
-            />
+            <GooglePlayButton />
+            <AppStoreButton />
           </div>
         </div>
       </aside>

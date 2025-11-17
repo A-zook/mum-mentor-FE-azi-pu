@@ -1,9 +1,10 @@
 "use client";
 
 import Button from "@/components/UI/Button";
+import { NextPage } from "next";
 import { useState } from "react";
 
-export default function HeroSection() {
+export const HeroSection: NextPage = () => {
   const [email, setEmail] = useState("");
 
   return (
@@ -33,4 +34,4 @@ export default function HeroSection() {
       </div>
     </div>
   );
-}
+};

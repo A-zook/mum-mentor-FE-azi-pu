@@ -1,6 +1,6 @@
 "use client";
-
 import { motion } from "framer-motion";
+import { NextPage } from "next";
 import Image from "next/image";
 
 const galleryImages = [
@@ -10,7 +10,7 @@ const galleryImages = [
   "/assets/images/mother-child4.png",
 ];
 
-export default function ImageGallery() {
+export const ImageGallery: NextPage = () => {
   return (
     <section className="flex w-full justify-center overflow-hidden py-16">
       <div
@@ -47,4 +47,4 @@ export default function ImageGallery() {
       `}</style>
     </section>
   );
-}
+};
