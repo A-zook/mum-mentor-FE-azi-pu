@@ -1,17 +1,9 @@
-interface StepBlockProps {
-  step: {
-    id: number;
-    title: string;
-    description: string;
-    image: StaticImageData;
-  };
-}
-
 import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import StepsDot from "@public/assets/icons/dot.svg";
-import Image, { StaticImageData } from "next/image";
+import { NextPage } from "next";
+import Image from "next/image";
 
-export default function StepBlock({ step }: StepBlockProps) {
+export const StepBlock: NextPage<StepBlockProps> = ({ step }) => {
   return (
     <section
       className={`mx-auto flex max-w-[550px] flex-col gap-8 md:max-w-[1240px] md:items-center md:justify-between ${step?.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center`}
@@ -50,4 +42,4 @@ export default function StepBlock({ step }: StepBlockProps) {
       </div>
     </section>
   );
-}
+};

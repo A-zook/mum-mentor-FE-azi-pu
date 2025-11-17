@@ -1,2 +1,4 @@
-export * from "@/module/home/hero";
-export * from "@/module/home/ai-insight";
+export * from "./hero";
+export * from "./ai-insight";
+export * from "./how-it-works";
+export * from "./testimonial";

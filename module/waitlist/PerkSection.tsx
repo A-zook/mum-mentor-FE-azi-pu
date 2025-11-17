@@ -24,7 +24,7 @@ export const PerksSection: NextPage = () => {
     <section className="flex w-full justify-center py-16">
       <div className="flex w-[408px] flex-col items-center gap-8 lg:w-[1240px]">
         <div className="flex w-full flex-col items-center gap-2 lg:w-[804px] lg:gap-4">
-          <h2 className="text-center text-4xl font-bold lg:text-4xl">
+          <h2 className="text-center text-4xl font-bold lg:text-[40px]">
             Perks For Joining Early, Mama!
           </h2>
           <p className="text-body regular text-center lg:w-[552px] lg:text-2xl">
