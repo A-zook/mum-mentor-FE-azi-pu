@@ -5,15 +5,15 @@ import Image from "next/image";
 
 export default function HiwReady() {
   return (
-    <div className="md:py-[60px] px-6">
-      <div className="md:border md:border-[#E2E2E2] max-w-[1240px] mx-auto flex items-center justify-between flex-col md:flex-row gap-32 py-8 px-5 md:px-16 rounded-[8px]">
-        <div className="flex items-center flex-col lg:max-w-[590px] md:items-start md:w-[50%] ">
-          <div className="gap-4 flex-col flex">
-            <h4 className="text-[32px] font-semibold text-center leading-tight text-primaryText-black md:text-left">
+    <div className="px-6 md:py-[60px]">
+      <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-between gap-32 rounded-[8px] px-5 py-8 md:flex-row md:border md:border-[#E2E2E2] md:px-16">
+        <div className="flex flex-col items-center md:w-[50%] md:items-start lg:max-w-[590px]">
+          <div className="flex flex-col gap-4">
+            <h4 className="text-primaryText-black text-center text-[32px] leading-tight font-semibold md:text-left">
               Ready to Download NORA?
             </h4>
 
-            <p className="text-lg text-center text-primaryText-black md:text-left lg:max-w-[590px]">
+            <p className="text-primaryText-black text-center text-lg md:text-left lg:max-w-[590px]">
               Join women who want calm, caring guidance through pregnancy and
               motherhood. Download the app and start your journey today!
             </p>

@@ -6,7 +6,7 @@ export default function SectionHeader({ headerText }: { headerText: string }) {
     <div className="flex items-center gap-10">
       <Image src={StarIcon} alt="A star icon" quality={100} priority />
 
-      <p className="text-primary uppercase md:text-2xl font-semibold">
+      <p className="text-primary font-semibold uppercase md:text-2xl">
         {headerText}
       </p>
     </div>

@@ -6,15 +6,15 @@ import Image from "next/image";
 
 export default function HiwHero() {
   return (
-    <header className="py-[60px] flex flex-col gap-8 items-center md:items-start max-w-[550px] mx-auto md:flex-row  justify-between md:max-w-[1240px] px-6">
-      <div className="gap-4 flex items-center md:items-start flex-col  md:w-[50%] md:mt-2">
+    <header className="mx-auto flex max-w-[550px] flex-col items-center justify-between gap-8 px-6 py-[60px] md:max-w-[1240px] md:flex-row md:items-start">
+      <div className="flex flex-col items-center gap-4 md:mt-2 md:w-[50%] md:items-start">
         <SectionHeader headerText="How It Works" />
 
-        <h1 className="font-semibold text-4xl leading-snug text-center text-primaryText-black md:text-heading1 md:leading-tight md:text-start">
+        <h1 className="text-primaryText-black md:text-heading1 text-center text-4xl leading-snug font-semibold md:text-start md:leading-tight">
           Motherhood Made Simpler, One Smart Step at a Time
         </h1>
 
-        <p className="text-xl text-center text-gray-text3 md:text-2xl md:text-start">
+        <p className="text-gray-text3 text-center text-xl md:text-start md:text-2xl">
           See how Mom Mentor AI understands your world, supports your routine,
           and helps you thrive every day.
         </p>
@@ -24,7 +24,7 @@ export default function HiwHero() {
 
       {/* hero image */}
 
-      <div className="border-primary border-[2.99px] rounded-[6px] overflow-hidden image-drop-shadow  relative w-[394.19px] h-[372.37px] md:w-[527px] md:h-[497.83px]">
+      <div className="border-primary image-drop-shadow relative h-[372.37px] w-[394.19px] overflow-hidden rounded-[6px] border-[2.99px] md:h-[497.83px] md:w-[527px]">
         <Image
           src={HeroImage}
           alt="An image of a mother carrying baby"

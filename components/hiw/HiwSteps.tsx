@@ -41,15 +41,15 @@ export const STEPS = [
 
 export default function HiwSteps() {
   return (
-    <div className="mt-[60px]  space-y-[60px] px-6">
-      <div className="flex flex-col gap-[13px] items-center ">
+    <div className="mt-[60px] space-y-[60px] px-6">
+      <div className="flex flex-col items-center gap-[13px]">
         <SectionHeader headerText="how to get started" />
-        <p className="text-2xl text-center capitalize font-semibold text-primaryText-black md:text-heading2 max-w-[780px] mx-auto">
+        <p className="text-primaryText-black md:text-heading2 mx-auto max-w-[780px] text-center text-2xl font-semibold capitalize">
           get started with your AI companion in easy steps
         </p>
       </div>
 
-      <div className=" space-y-[60px]">
+      <div className="space-y-[60px]">
         {/* steps */}
         {STEPS.map((step) => (
           <StepBlock key={step.id} step={step} />

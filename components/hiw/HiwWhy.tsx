@@ -6,16 +6,16 @@ import Image from "next/image";
 
 export default function HiwWhy() {
   return (
-    <div className="bg-bg-secondary  mt-[60px] pl-6">
-      <div className="flex flex-col gap-6  max-w-[550px] mx-auto  md:max-w-[1240px] md:flex-row ">
-        <div className="space-y-[13px] py-8 w-[560px] lg:w-[569.26px] flex flex-col justify-center ">
+    <div className="bg-bg-secondary mt-[60px] pl-6">
+      <div className="mx-auto flex max-w-[550px] flex-col gap-6 md:max-w-[1240px] md:flex-row">
+        <div className="flex w-[560px] flex-col justify-center space-y-[13px] py-8 lg:w-[569.26px]">
           <SectionHeader headerText="why this works" />
 
-          <h4 className="text-4xl  capitalize font-semibold text-primaryText-black md:text-heading2 leading-tight">
+          <h4 className="text-primaryText-black md:text-heading2 text-4xl leading-tight font-semibold capitalize">
             Because motherhood changes every day — your tools should too.
           </h4>
 
-          <p className="text-xl lg:text-2xl font-medium text-gray-text3 text-start ">
+          <p className="text-gray-text3 text-start text-xl font-medium lg:text-2xl">
             Mom Mentor AI grows with you, understands your needs, and simplifies
             the chaos so you can focus on what truly matters.
           </p>

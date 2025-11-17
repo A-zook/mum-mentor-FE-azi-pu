@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AppsButton() {
   return (
-    <div className="flex items-center gap-6 mt-24">
+    <div className="mt-24 flex items-center gap-6">
       <button aria-label="play store button">
         <Image
           src={PlayStoreBtn}
