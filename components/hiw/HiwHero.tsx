@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
 
 import AppsButton from "@/components/hiw/AppsButton";
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ export default function HiwHero() {
 
       {/* hero image */}
 
-      <div className="border-primary image-drop-shadow relative h-[372.37px] w-[394.19px] overflow-hidden rounded-[6px] border-[2.99px] md:h-[497.83px] md:w-[527px]">
+      <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-[394.19px] overflow-hidden rounded-[6px] border-[2.99px] md:h-[497.83px] md:w-[527px]">
         <Image
           src={HeroImage}
           alt="An image of a mother carrying baby"
@@ -34,7 +35,7 @@ export default function HiwHero() {
           fill
           className="object-cover"
         />
-      </div>
+      </ScrollAnimationWrapper>
     </header>
   );
 }
