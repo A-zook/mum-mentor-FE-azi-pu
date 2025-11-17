@@ -1,9 +1,9 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
 
-import AppsButton from "@/components/hiw/AppsButton";
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import Image from "next/image";
+import AppStoreButtons from "../UI/AppStoreButtons";
+import ScrollAnimationWrapper from "../UI/ScrollAnimation";
 
 export default function HiwHero() {
   return (
@@ -20,7 +20,7 @@ export default function HiwHero() {
           and helps you thrive every day.
         </p>
 
-        <AppsButton />
+        <AppStoreButtons />
       </div>
 
       {/* hero image */}

@@ -5,14 +5,28 @@ import logo from "@/public/assets/icons/nora-icon.svg";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const { isOpen, isFixed, toggleMenu } = useNav();
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isOpen]);
+
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "Perks", href: "/perks" },
-    { name: "FAQs", href: "/faqs" },
+    { name: "Waitlist", href: "/waitlist" },
+    { name: "How it works", href: "/how-it-works" },
+    // { name: "FAQs", href: "/faqs" },
   ];
 
   const desktopNavItems: DesktopNavItem[] = [
