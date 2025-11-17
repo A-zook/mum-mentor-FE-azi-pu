@@ -87,9 +87,11 @@ const Navbar = () => {
             </div>
 
             {/* CTA Button - Desktop */}
-            <button className="hidden rounded-lg bg-[#E63946] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-[#d62839] lg:block">
-              Download App
-            </button>
+            <Link href="/waitlist#join-waitlist">
+              <button className="hidden rounded-lg bg-[#E63946] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-[#d62839] lg:block">
+                Join waitlist
+              </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button

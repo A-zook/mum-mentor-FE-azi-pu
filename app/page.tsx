@@ -1,6 +1,6 @@
-import Home from "@/components/pages/home";
+import Waitlist from "@/components/pages/waitlist";
 import { NextPage } from "next";
 
-const HomePage: NextPage = () => <Home />;
+const HomePage: NextPage = () => <Waitlist />;
 
 export default HomePage;
