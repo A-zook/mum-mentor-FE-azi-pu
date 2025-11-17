@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
 
@@ -16,9 +17,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body>
-        <header>header</header>
+        {/* <NavBar /> */}
         <main className="">{children}</main>
-        <footer>footer</footer>
+        <Footer />
       </body>
     </html>
   );

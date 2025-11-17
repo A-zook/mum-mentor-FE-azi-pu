@@ -1,4 +1,4 @@
-import StarIcon from "@/public/assets/icons/star.svg";
+import StarIcon from "@public/assets/icons/star.svg";
 import Image from "next/image";
 
 export default function SectionHeader({ headerText }: { headerText: string }) {

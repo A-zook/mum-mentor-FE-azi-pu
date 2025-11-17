@@ -1,5 +1,5 @@
 import AppsButton from "@/components/hiw/AppsButton";
-import Ready from "@/public/assets/images/ready.png";
+import Ready from "@public/assets/images/ready.png";
 
 import Image from "next/image";
 

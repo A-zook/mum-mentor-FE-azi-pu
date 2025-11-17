@@ -1,5 +1,5 @@
-import AppStoreBtn from "@/public/assets/icons/app-store.svg";
-import PlayStoreBtn from "@/public/assets/icons/play-store.svg";
+import AppStoreBtn from "@public/assets/icons/app-store.svg";
+import PlayStoreBtn from "@public/assets/icons/play-store.svg";
 
 import Image from "next/image";
 

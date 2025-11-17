@@ -1,9 +1,9 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
 import StepBlock from "@/components/hiw/StepBlock";
-import PhoneImage from "@/public/assets/images/phone.png";
-import Phone2Image from "@/public/assets/images/phone2.png";
-import Phone3Image from "@/public/assets/images/phone3.png";
-import Phone4Image from "@/public/assets/images/phone4.png";
+import PhoneImage from "@public/assets/images/phone.png";
+import Phone2Image from "@public/assets/images/phone2.png";
+import Phone3Image from "@public/assets/images/phone3.png";
+import Phone4Image from "@public/assets/images/phone4.png";
 
 export const STEPS = [
   {

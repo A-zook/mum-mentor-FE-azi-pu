@@ -7,7 +7,7 @@ interface StepBlockProps {
   };
 }
 
-import StepsDot from "@/public/assets/icons/dot.svg";
+import StepsDot from "@public/assets/icons/dot.svg";
 import Image, { StaticImageData } from "next/image";
 
 export default function StepBlock({ step }: StepBlockProps) {

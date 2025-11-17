@@ -1,6 +1,6 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
-import SleepingBaby from "@/public/assets/images/sleepingBaby.png";
-import SleepingBabyDesktop from "@/public/assets/images/sleepingBabyDesktop.png";
+import SleepingBaby from "@public/assets/images/sleepingBaby.png";
+import SleepingBabyDesktop from "@public/assets/images/sleepingBabyDesktop.png";
 
 import Image from "next/image";
 
