@@ -1,15 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useNav } from "@/hooks/useNav";
+import logo from "@/public/assets/icons/nora-icon.svg";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/assets/icons/nora-icon.svg";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const { isOpen, isFixed, toggleMenu } = useNav();
 
   const menuItems = [
     { name: "Home", href: "/" },
@@ -25,7 +23,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 right-0 left-0 z-50 border-b border-gray-100 bg-white shadow-sm">
+      <nav
+        className={`top-0 right-0 left-0 z-50 bg-white ${isFixed ? "fixed shadow-sm" : "static"} transition-all duration-300`}
+      >
         <div className="mx-auto max-w-[1440px] px-6 lg:px-20">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}

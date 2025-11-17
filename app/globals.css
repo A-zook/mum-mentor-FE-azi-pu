@@ -65,6 +65,12 @@ body {
   font-family: var(--font-hanken);
 }
 
+@layer components {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
 @layer utilities {
   .image-drop-shadow {
     box-shadow: 7.48px 9.72px 0px 0px var(--color-primary);
