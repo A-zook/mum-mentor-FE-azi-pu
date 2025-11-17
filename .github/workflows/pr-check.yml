@@ -1,0 +1,93 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  pr-metadata:
+    name: PR Metadata & Validation
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check PR size
+        id: pr_size
+        run: |
+          FILES_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | wc -l)
+          LINES_CHANGED=$(git diff --shortstat origin/${{ github.base_ref }}...HEAD | grep -oE '[0-9]+ insertion|[0-9]+ deletion' | grep -oE '[0-9]+' | awk '{sum+=$1} END {print sum}')
+
+          echo "files_changed=$FILES_CHANGED" >> $GITHUB_OUTPUT
+          echo "lines_changed=$LINES_CHANGED" >> $GITHUB_OUTPUT
+
+          echo "📊 PR Size:"
+          echo "- Files changed: $FILES_CHANGED"
+          echo "- Lines changed: $LINES_CHANGED"
+
+      - name: Add size label
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const filesChanged = ${{ steps.pr_size.outputs.files_changed }};
+            const linesChanged = ${{ steps.pr_size.outputs.lines_changed }};
+
+            let sizeLabel = 'size/XS';
+            if (linesChanged > 1000) {
+              sizeLabel = 'size/XXL';
+            } else if (linesChanged > 500) {
+              sizeLabel = 'size/XL';
+            } else if (linesChanged > 200) {
+              sizeLabel = 'size/L';
+            } else if (linesChanged > 100) {
+              sizeLabel = 'size/M';
+            } else if (linesChanged > 30) {
+              sizeLabel = 'size/S';
+            }
+
+            // Remove old size labels
+            const { data: labels } = await github.rest.issues.listLabelsOnIssue({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            for (const label of labels) {
+              if (label.name.startsWith('size/')) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: label.name,
+                });
+              }
+            }
+
+            // Add new size label
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: [sizeLabel],
+            });
+
+      - name: Check PR title format
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = context.payload.pull_request.title;
+            const conventionalCommitPattern = /^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)(\(.+\))?: .+/;
+
+            if (!conventionalCommitPattern.test(title)) {
+              core.setFailed('PR title does not follow conventional commit format. Please use: type(scope): description\nExamples: feat: add login page, fix(auth): resolve token expiration');
+            } else {
+              console.log('✅ PR title follows conventional commit format');
+            }
