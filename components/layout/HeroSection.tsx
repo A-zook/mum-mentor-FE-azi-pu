@@ -25,34 +25,30 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="bg-white w-full flex flex-col justify-center items-center px-4 mt-16">
-      <div className="w-[1440px] h-[43px]" />
-      <div
-        className="flex flex-col items-center gap-4 
-                      w-[408px] h-[280px] 
-                      md:w-[713px] md:h-[340px] md:gap-6 text-center"
-      >
+    <div className="mt-16 flex w-full flex-col items-center justify-center bg-white px-4">
+      <div className="h-[43px] w-[1440px]" />
+      <div className="flex h-[280px] w-[408px] flex-col items-center gap-4 text-center md:h-[340px] md:w-[713px] md:gap-6">
         <div className="flex flex-col gap-2 md:gap-6">
-          <h1 className="text-3xl md:text-heading1 leading-snug md:leading-64px font-bold">
+          <h1 className="md:text-heading1 md:leading-64px text-3xl leading-snug font-bold">
             Motherhood is hard. <br />
             <span className="text-pink-600">Nora</span> makes it softer
           </h1>
-          <p className="text-[20px] md:text-body-large text-[#1A1A1A] max-w-full md:max-w-[600px] mx-auto">
+          <p className="md:text-body-large mx-auto max-w-full text-[20px] text-[#1A1A1A] md:max-w-[600px]">
             Get personalized guidance, emotional support, and answers anytime,
             anywhere
           </p>
         </div>
-        <div className="flex flex-col gap-2 w-full md:flex-row md:items-center md:justify-center md:gap-4">
+        <div className="flex w-full flex-col gap-2 md:flex-row md:items-center md:justify-center md:gap-4">
           <input
             type="email"
             placeholder="Enter Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border-[#D5D5D5] border rounded-lg px-4 py-2 w-full h-12 md:w-[408px]"
+            className="h-12 w-full rounded-lg border border-[#D5D5D5] px-4 py-2 md:w-[408px]"
           />
           <button
             onClick={handleJoinWaitlist}
-            className="bg-[#DD2D4A] text-white px-6 py-2 rounded-lg w-full h-12 md:w-[170px]"
+            className="h-12 w-full rounded-lg bg-[#DD2D4A] px-6 py-2 text-white md:w-[170px]"
           >
             Join The Waitlist
           </button>

@@ -7,8 +7,8 @@ type PerkCardProps = {
 
 export default function PerkCard({ title, description }: PerkCardProps) {
   return (
-    <div className="flex flex-col items-start gap-1.5 p-6 rounded-xl border border-gray-200 bg-white shadow-sm w-[408px] h-[209px] lg:w-[396px] lg:h-[249px]">
-      <div className="flex flex-col w-[352px] h-[153px] gap-2">
+    <div className="flex h-[209px] w-[408px] flex-col items-start gap-1.5 rounded-xl border border-gray-200 bg-white p-6 shadow-sm lg:h-[249px] lg:w-[396px]">
+      <div className="flex h-[153px] w-[352px] flex-col gap-2">
         {/* Icon */}
 
         <Image
@@ -19,12 +19,12 @@ export default function PerkCard({ title, description }: PerkCardProps) {
         />
 
         {/* Title */}
-        <h3 className="text-xl w-[211px] h-[31px] font-semibold lg:text-body-large text-[#1A1A1A]">
+        <h3 className="lg:text-body-large h-[31px] w-[211px] text-xl font-semibold text-[#1A1A1A]">
           {title}
         </h3>
 
         {/* Description */}
-        <p className=" w-[348px] h-[52px] text-body-regular lg:text-[20px] leading-relaxed text-[#1A1A1A]">
+        <p className="text-body-regular h-[52px] w-[348px] leading-relaxed text-[#1A1A1A] lg:text-[20px]">
           {description}
         </p>
       </div>

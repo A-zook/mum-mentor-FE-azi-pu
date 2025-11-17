@@ -12,7 +12,7 @@ const galleryImages = [
 
 export default function ImageGallery() {
   return (
-    <section className="w-full flex justify-center py-16 overflow-hidden">
+    <section className="flex w-full justify-center overflow-hidden py-16">
       <div
         className="flex gap-2 overflow-x-auto px-4"
         style={{
