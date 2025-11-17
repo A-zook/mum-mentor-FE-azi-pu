@@ -12,8 +12,15 @@ const galleryImages = [
 
 export default function ImageGallery() {
   return (
-    <section className="flex w-full justify-center py-16">
-      <div className="scrollbar/hide flex gap-4 overflow-x-auto px-4">
+    <section className="flex w-full justify-center overflow-hidden py-16">
+      <div
+        className="flex gap-2 overflow-x-auto px-4"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
         {galleryImages.map((src, index) => (
           <motion.div
             key={index}
@@ -33,6 +40,11 @@ export default function ImageGallery() {
           </motion.div>
         ))}
       </div>
+      <style jsx>{`
+        div::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }
