@@ -25,7 +25,8 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="w-full flex justify-center items-center px-4 mt-16">
+    <div className="bg-white w-full flex flex-col justify-center items-center px-4 mt-16">
+      <div className="w-[1440px] h-[43px]" />
       <div
         className="flex flex-col items-center gap-4 
                       w-[408px] h-[280px] 
