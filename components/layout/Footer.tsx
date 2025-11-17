@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
 import logo from "@/public/assets/icons/nora-icon.svg";
-import playstore from "@/public/assets/images/mobile-play-store.png";
-import appstore from "@/public/assets/images/mobile-app-store.png";
+import AppStoreBtn from "@public/assets/icons/app-store.svg";
+import PlayStoreBtn from "@public/assets/icons/play-store.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   const companyLinks = [
@@ -63,37 +63,28 @@ const Footer = () => {
               Delivering trusted AI support to help pregnant women and moms
               navigate motherhood with confidence.
             </p>
-            <div className="flex gap-4 p-1">
-              <a
-                href="https://play.google.com/store"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1 transition-transform hover:scale-105"
-              >
+
+            <div className="mt-10 flex items-center gap-6">
+              <button aria-label="app store button">
                 <Image
-                  src={playstore}
-                  alt="Google Play Store"
-                  width={164}
-                  height={44}
-                  className="h-11 w-[167px] object-cover"
+                  src={AppStoreBtn}
+                  alt="app store button"
+                  quality={100}
+                  priority
                 />
-              </a>
-              <a
-                href="https://apps.apple.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1 transition-transform hover:scale-105"
-              >
+              </button>
+
+              <button aria-label="play store button">
                 <Image
-                  src={appstore}
-                  alt="Apple App Store"
-                  width={164}
-                  height={44}
-                  className="h-11 w-[164px] object-cover"
+                  src={PlayStoreBtn}
+                  alt="play store button"
+                  quality={100}
+                  priority
                 />
-              </a>
+              </button>
             </div>
-            <p className="text-sm text-white">
+
+            <p className="mt-10 text-sm text-white">
               © 2025 Nora All rights reserved
             </p>
           </div>
@@ -164,60 +155,25 @@ const Footer = () => {
           </div>
 
           {/* App Store Buttons */}
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 transition-transform hover:scale-105"
-            >
-              <div className="flex h-14 items-center justify-center gap-2 rounded-lg border border-gray-600 bg-black px-4 hover:bg-gray-900">
-                <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z"
-                    fill="#32BBFF"
-                  />
-                  <path
-                    d="M13.792 12l10.125 10.125a.994.994 0 00-.17.144l-7.326-4.27L13.792 12z"
-                    fill="#32BBFF"
-                  />
-                  <path
-                    d="M3 2.734V21.266l10.182-9.266L3 2.734z"
-                    fill="#2C9FD9"
-                  />
-                  <path
-                    d="M16.421 6l7.326 4.27c.307.179.5.512.5.875s-.193.696-.5.875l-7.326 4.27 2.63-2.629L16.42 6z"
-                    fill="#29CC5E"
-                  />
-                </svg>
-                <div className="text-left">
-                  <div className="text-[10px] text-gray-400 uppercase">
-                    Get it on
-                  </div>
-                  <div className="text-base font-semibold">Google Play</div>
-                </div>
-              </div>
-            </a>
-            <a
-              href="https://apps.apple.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 transition-transform hover:scale-105"
-            >
-              <div className="flex h-14 items-center justify-center gap-2 rounded-lg border border-gray-600 bg-black px-4 hover:bg-gray-900">
-                <svg className="h-7 w-7" viewBox="0 0 24 24" fill="white">
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                </svg>
-                <div className="text-left">
-                  <div className="text-[10px] text-gray-400 uppercase">
-                    Download on the
-                  </div>
-                  <div className="text-base font-semibold">App Store</div>
-                </div>
-              </div>
-            </a>
-          </div>
+          <div className="mt-6 flex items-center gap-6">
+            <button aria-label="app store button">
+              <Image
+                src={AppStoreBtn}
+                alt="app store button"
+                quality={100}
+                priority
+              />
+            </button>
 
+            <button aria-label="play store button">
+              <Image
+                src={PlayStoreBtn}
+                alt="play store button"
+                quality={100}
+                priority
+              />
+            </button>
+          </div>
           {/* Company Links */}
           <div>
             <h3 className="mb-4 text-xl font-bold">Company</h3>
