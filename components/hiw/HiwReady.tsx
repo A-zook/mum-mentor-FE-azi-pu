@@ -1,4 +1,5 @@
 import AppsButton from "@/components/hiw/AppsButton";
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import Ready from "@public/assets/images/ready.png";
 
 import Image from "next/image";
@@ -22,14 +23,14 @@ export default function HiwReady() {
           <AppsButton />
         </div>
 
-        <div>
+        <ScrollAnimationWrapper>
           <Image
             src={Ready}
             alt="An image of 2 phones with nora app"
             quality={100}
             placeholder="blur"
           />
-        </div>
+        </ScrollAnimationWrapper>
       </div>
     </div>
   );
