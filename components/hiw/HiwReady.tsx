@@ -1,7 +1,7 @@
 import Ready from "@public/assets/images/ready.png";
 
+import AppsButton from "@/components/hiw/AppsButton";
 import Image from "next/image";
-import AppStoreButtons from "../UI/AppStoreButtons";
 import ScrollAnimationWrapper from "../UI/ScrollAnimation";
 
 export default function HiwReady() {
@@ -20,7 +20,7 @@ export default function HiwReady() {
             </p>
           </div>
 
-          <AppStoreButtons />
+          <AppsButton />
         </div>
 
         <ScrollAnimationWrapper>

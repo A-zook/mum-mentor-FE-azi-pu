@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import logo from "@/public/assets/icons/nora-icon.svg";
+import Image from "next/image";
+import Link from "next/link";
 import { AppStoreButton, GooglePlayButton } from "../UI/AppStoreButtons";
 
 const Footer = () => {
@@ -66,7 +66,8 @@ const Footer = () => {
               <GooglePlayButton />
               <AppStoreButton />
             </div>
-            <p className="text-sm text-white">
+
+            <p className="mt-10 text-sm text-white">
               © 2025 Nora All rights reserved
             </p>
           </div>
@@ -135,7 +136,6 @@ const Footer = () => {
             <GooglePlayButton />
             <AppStoreButton />
           </div>
-
           {/* Company Links */}
           <div>
             <h3 className="mb-4 text-xl font-bold">Company</h3>

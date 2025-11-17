@@ -1,8 +1,8 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
 
+import AppsButton from "@/components/hiw/AppsButton";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import Image from "next/image";
-import AppStoreButtons from "../UI/AppStoreButtons";
 import ScrollAnimationWrapper from "../UI/ScrollAnimation";
 
 export default function HiwHero() {
@@ -20,12 +20,12 @@ export default function HiwHero() {
           and helps you thrive every day.
         </p>
 
-        <AppStoreButtons />
+        <AppsButton />
       </div>
 
       {/* hero image */}
 
-      <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-[394.19px] overflow-hidden rounded-[6px] border-[2.99px] md:h-[497.83px] md:w-[527px]">
+      <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-full overflow-hidden rounded-[6px] border-[2.99px] md:h-[497.83px] md:w-[527px]">
         <Image
           src={HeroImage}
           alt="An image of a mother carrying baby"

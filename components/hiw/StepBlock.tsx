@@ -35,7 +35,7 @@ export default function StepBlock({ step }: StepBlockProps) {
 
       {/* image */}
       <div
-        className={`bg-bg-secondary flex h-[317px] w-full items-end justify-center md:w-[50%] lg:h-[479.58px] lg:w-[608px]`}
+        className={`bg-bg-secondary flex h-[317px] w-full items-end justify-center overflow-hidden md:w-[50%] lg:h-[479.58px] lg:w-[608px]`}
       >
         <ScrollAnimationWrapper style="relative">
           <Image
