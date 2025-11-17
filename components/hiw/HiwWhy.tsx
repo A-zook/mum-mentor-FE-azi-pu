@@ -9,7 +9,7 @@ export default function HiwWhy() {
   return (
     <div className="bg-bg-secondary mt-[60px] pl-6">
       <div className="mx-auto flex max-w-[550px] flex-col gap-6 md:max-w-[1240px] md:flex-row">
-        <ScrollAnimationWrapper style="flex w-[560px] flex-col justify-center space-y-[13px] py-8 lg:w-[569.26px]">
+        <ScrollAnimationWrapper style="flex  flex-col justify-center space-y-[13px] py-8 lg:w-[569.26px]">
           <SectionHeader headerText="why this works" />
 
           <h4 className="text-primaryText-black md:text-heading2 text-4xl leading-tight font-semibold capitalize">
