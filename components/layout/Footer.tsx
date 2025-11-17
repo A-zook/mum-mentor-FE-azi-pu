@@ -14,7 +14,7 @@ const Footer = () => {
     { title: "TErms of service" },
   ];
   return (
-    <section className="w-full bg-bg-footer py-4 flex flex-col gap-64 items-start">
+    <section className="bg-bg-footer flex w-full flex-col items-start gap-64 py-4">
       <div className="flex flex-col gap-24">
         <Image
           src="/assets/icons/nora-icon.svg"
@@ -31,7 +31,7 @@ const Footer = () => {
         </small>
       </div>
       <article className="flex flex-col gap-16">
-        <p className="font-semibold text-2xl">Company</p>
+        <p className="text-2xl font-semibold">Company</p>
         {navItems.map((item) => (
           <Link href="" className="text-sm" key={item.title}>
             {item.title}
@@ -39,7 +39,7 @@ const Footer = () => {
         ))}
       </article>
       <nav className="flex gap-24">
-        <p className="font-semibold text-2xl">Connect</p>
+        <p className="text-2xl font-semibold">Connect</p>
         {images.map((item) => (
           <Image
             src={item.src}

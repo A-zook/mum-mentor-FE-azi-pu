@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "@/components/layout/Footer";
 import Button from "@/components/UI/Button";
+import Footer from "@/components/layout/Footer";
 
 const page = () => {
   return (
