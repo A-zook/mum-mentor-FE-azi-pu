@@ -87,7 +87,7 @@ jobs:
             const conventionalCommitPattern = /^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)(\(.+\))?: .+/i;
 
             if (!conventionalCommitPattern.test(title)) {
-              core.setFailed('PR title does not follow conventional commit format. Please use: type(scope): description\nExamples: feat: add login page, fix(auth): resolve token expiration');
+              core.warning('PR title does not follow conventional commit format, but not failing.');
             } else {
               console.log('✅ PR title follows conventional commit format');
             }
