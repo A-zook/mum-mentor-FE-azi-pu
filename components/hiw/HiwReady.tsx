@@ -2,6 +2,7 @@ import Ready from "@public/assets/images/ready.png";
 
 import Image from "next/image";
 import AppStoreButtons from "../UI/AppStoreButtons";
+import ScrollAnimationWrapper from "../UI/ScrollAnimation";
 
 export default function HiwReady() {
   return (
@@ -22,14 +23,14 @@ export default function HiwReady() {
           <AppStoreButtons />
         </div>
 
-        <div>
+        <ScrollAnimationWrapper>
           <Image
             src={Ready}
             alt="An image of 2 phones with nora app"
             quality={100}
             placeholder="blur"
           />
-        </div>
+        </ScrollAnimationWrapper>
       </div>
     </div>
   );

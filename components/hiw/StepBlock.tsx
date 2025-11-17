@@ -7,6 +7,7 @@ interface StepBlockProps {
   };
 }
 
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import StepsDot from "@public/assets/icons/dot.svg";
 import Image, { StaticImageData } from "next/image";
 
@@ -36,7 +37,7 @@ export default function StepBlock({ step }: StepBlockProps) {
       <div
         className={`bg-bg-secondary flex h-[317px] w-full items-end justify-center md:w-[50%] lg:h-[479.58px] lg:w-[608px]`}
       >
-        <div className="relative">
+        <ScrollAnimationWrapper style="relative">
           <Image
             src={step?.image}
             alt="A phone image"
@@ -45,7 +46,7 @@ export default function StepBlock({ step }: StepBlockProps) {
             priority
             className="w-[166.16px] lg:w-[272.11px]"
           />
-        </div>
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );

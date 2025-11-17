@@ -1,4 +1,5 @@
 import SectionHeader from "@/components/hiw/SectionHeader";
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import SleepingBaby from "@public/assets/images/sleepingBaby.png";
 import SleepingBabyDesktop from "@public/assets/images/sleepingBabyDesktop.png";
 
@@ -8,7 +9,7 @@ export default function HiwWhy() {
   return (
     <div className="bg-bg-secondary mt-[60px] pl-6">
       <div className="mx-auto flex max-w-[550px] flex-col gap-6 md:max-w-[1240px] md:flex-row">
-        <div className="flex w-[560px] flex-col justify-center space-y-[13px] py-8 lg:w-[569.26px]">
+        <ScrollAnimationWrapper style="flex w-[560px] flex-col justify-center space-y-[13px] py-8 lg:w-[569.26px]">
           <SectionHeader headerText="why this works" />
 
           <h4 className="text-primaryText-black md:text-heading2 text-4xl leading-tight font-semibold capitalize">
@@ -19,7 +20,7 @@ export default function HiwWhy() {
             Mom Mentor AI grows with you, understands your needs, and simplifies
             the chaos so you can focus on what truly matters.
           </p>
-        </div>
+        </ScrollAnimationWrapper>
 
         <div className="flex justify-center">
           <Image
