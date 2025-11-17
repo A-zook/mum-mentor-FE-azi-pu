@@ -106,7 +106,7 @@ export const HeroSection: NextPage = () => {
                   className="h-12 w-full rounded-lg border border-[#D5D5D5] px-4 py-2 md:w-[408px]"
                   autoFocus
                 />
-                <Button onClick={handleNext} disabled={!fullName.trim()}>
+                <Button onClick={handleNext} disabled={!fullName.trim()} className="flex-1">
                   Next
                 </Button>
               </motion.div>
