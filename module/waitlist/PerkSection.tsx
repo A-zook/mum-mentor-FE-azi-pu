@@ -20,7 +20,7 @@ const perks = [
 
 export default function PerksSection() {
   return (
-    <section className="flex w-full justify-center py-16">
+    <section className="flex w-full justify-center px-4 py-16 md:px-8 md:py-24">
       <div className="flex w-[408px] flex-col items-center gap-8 md:w-[1240px]">
         <div className="flex w-full flex-col items-center gap-2 md:w-[804px] md:gap-4">
           <h2 className="text-center text-4xl font-bold md:text-4xl">

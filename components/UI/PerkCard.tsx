@@ -7,7 +7,7 @@ type PerkCardProps = {
 
 export default function PerkCard({ title, description }: PerkCardProps) {
   return (
-    <div className="flex h-[249px] w-[396px] flex-col items-start gap-3 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+    <div className="flex h-[249px] w-full max-w-[396px] flex-col items-start gap-3 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
       {/* Icon */}
 
       <Image

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Footer from "@/components/Footer";
-import Button from "@/components/Button";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/layout/NavBar";
 import Image from "next/image";
+import Button from "@/components/UI/Button";
+import Footer from "@/components/layout/Footer";
 
 const Page = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -29,12 +29,12 @@ const Page = () => {
           />
         </button>
       </header>
-      {isNavOpen && <NavBar onClose={() => setIsNavOpen(false)} />}
+      {isNavOpen && <NavBar />}
       <section className="pt-12">
         <p>This is a test page</p>
         <Button
-          size="large"
-          variant="square"
+          size="lg"
+          variant="primary"
           className="mx-auto mb-5 flex items-center"
         >
           me

@@ -1,5 +1,6 @@
 import Waitlist from "@/module/waitlist";
+import { NextPage } from "next";
 
-export default function WaitlistPage() {
-  return <Waitlist />;
-}
+const WaitlistPage: NextPage = () => <Waitlist />;
+
+export default WaitlistPage;

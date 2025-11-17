@@ -1,115 +1,336 @@
-import React from "react";
-import clsx from "clsx";
+"use client";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "outline" | "ghost" | "rounded" | "solo" | "square";
-  size?: "small" | "medium" | "large";
-  withArrow?: boolean;
-  arrowColor?: string;
+import { ButtonHTMLAttributes, forwardRef } from "react";
+import { motion, MotionProps } from "framer-motion";
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: "left" | "right";
+  loading?: boolean;
 }
-const Button = ({
-  children,
-  variant = "primary",
-  size = "medium",
-  disabled = false,
-  withArrow = false,
-  className,
-  ...props
-}: ButtonProps) => {
-  const arrowColorClass = clsx({
-    // Primary
-    "text-white ": variant === "primary" && !disabled,
-    "text-white/50": variant === "primary" && disabled,
-    // Outline
-    "text-primary hover:text-primaryDark active:text-primaryDark":
-      variant === "outline" && !disabled,
-    "text-primary-light": variant === "outline" && disabled,
-    // Ghost
-    "text-primary": variant === "ghost" && !disabled,
-    "text-primary-extraLight": variant === "ghost" && disabled,
-  });
 
-  const variantClasses = clsx({
-    "bg-primary text-white hover:bg-primary-dark active:bg-primary-dark rounded-sm":
-      variant === "primary" && !disabled,
-    "bg-primary-extralight text-white rounded-md cursor-not-allowed rounded0sm":
-      variant === "primary" && disabled,
+const Button = forwardRef<HTMLButtonElement, ButtonProps & MotionProps>(
+  (
+    {
+      children,
+      variant = "primary",
+      size = "md",
+      fullWidth = false,
+      icon,
+      iconPosition = "right",
+      loading = false,
+      className = "",
+      disabled,
+      ...props
+    },
+    ref
+  ) => {
+    const baseStyles =
+      "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
-    // outline
+    const variants = {
+      primary:
+        "bg-[#E63946] text-white hover:bg-[#d62839] active:bg-[#c41e2b] shadow-sm",
+      secondary:
+        "bg-[#8B1538] text-white hover:bg-[#6d1029] active:bg-[#5a0d22] shadow-sm",
+      outline:
+        "bg-white border-2 border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white active:bg-[#d62839]",
+      ghost:
+        "bg-transparent text-[#E63946] hover:bg-[#E63946]/10 active:bg-[#E63946]/20",
+    };
 
-    "border-[1.5px] text-primary bg-transparent border-primary hover:border-primary-dark active:border-primary-dark  rounded-sm":
-      variant === "outline" && !disabled,
-    "border-[1.5px] text-white bg-transparent border-primary-light  rounded-md cursor-not-allowed":
-      variant === "outline" && disabled,
+    const sizes = {
+      sm: "px-4 py-2 text-sm",
+      md: "px-6 py-3 text-base",
+      lg: "px-8 py-4 text-lg",
+    };
 
-    "bg-transparent text-primary hover:text-primary-dark active:text-primary-dark ":
-      variant === "ghost" && !disabled,
-    "bg-transparent text-primary-extraLight cursor-not-allowed":
-      variant === "ghost" && disabled,
+    const widthStyles = fullWidth ? "w-full" : "";
 
-    //rounded
-    "bg-primary h-[65.22px] w-[65.22px] text-white hover:bg-primary-dark active:bg-primary-dark rounded-[50%]":
-      variant === "rounded" && !disabled,
-    "bg-primary-extralight h-[65.22px] w-[65.22px] text-white rounded-[50%] cursor-not-allowed":
-      variant === "rounded" && disabled,
+    return (
+      <motion.button
+        ref={ref}
+        whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
+        whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
+        className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${widthStyles} ${className}`}
+        disabled={disabled || loading}
+        {...props}
+      >
+        {loading ? (
+          <>
+            <svg
+              className="h-5 w-5 animate-spin"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              />
+            </svg>
+            Loading...
+          </>
+        ) : (
+          <>
+            {icon && iconPosition === "left" && icon}
+            {children}
+            {icon && iconPosition === "right" && icon}
+          </>
+        )}
+      </motion.button>
+    );
+  }
+);
 
-    // solo
-    "bg-primary h-14 w-14 p-[27.17] text-white hover:bg-primary-dark active:bg-primary-dark rounded-[50%]":
-      variant === "rounded" && !disabled,
+Button.displayName = "Button";
 
-    // square
-    "bg-primary h-14 w-14 p-4 text-white hover:bg-primary-dark active:bg-primary-dark rounded-lg":
-      variant === "square" && !disabled,
-  });
+// Icon Button Component
+export interface IconButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+  icon: React.ReactNode;
+  ariaLabel: string;
+}
 
-  const sizeClasses = clsx({
-    "w-[88px] h-9 text-base px-4 py-2 ": size === "small",
-    "w-[139px] h-9 text-base px-4 py-2 ": size === "small" && withArrow,
-    "w-[88px] h-12 text-base  py-2 px-4": size === "medium",
-    "h-12 py-2 px-4 w-fit text-base": size === "medium" && withArrow,
-    "w-[90px] h-14 text-base": size === "large",
-    "h-14 text-base py-4 px-6 w-fit": size === "large" && withArrow,
-  });
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  (
+    {
+      variant = "primary",
+      size = "md",
+      icon,
+      ariaLabel,
+      className = "",
+      disabled,
+      ...props
+    },
+    ref
+  ) => {
+    const baseStyles =
+      "inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+
+    const variants = {
+      primary:
+        "bg-[#E63946] text-white hover:bg-[#d62839] active:bg-[#c41e2b] shadow-md",
+      secondary:
+        "bg-[#8B1538] text-white hover:bg-[#6d1029] active:bg-[#5a0d22] shadow-md",
+      outline:
+        "bg-white border-2 border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white active:bg-[#d62839]",
+      ghost:
+        "bg-transparent text-[#E63946] hover:bg-[#E63946]/10 active:bg-[#E63946]/20",
+    };
+
+    const sizes = {
+      sm: "h-8 w-8 text-sm",
+      md: "h-12 w-12 text-base",
+      lg: "h-16 w-16 text-lg",
+    };
+
+    return (
+      // @ts-expect-error framer-motion types mismatch with button props
+      <motion.button
+        ref={ref}
+        whileHover={{ scale: disabled ? 1 : 1.05 }}
+        whileTap={{ scale: disabled ? 1 : 0.95 }}
+        aria-label={ariaLabel}
+        className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+        disabled={disabled}
+        {...props}
+      >
+        {icon}
+      </motion.button>
+    );
+  }
+);
+
+IconButton.displayName = "IconButton";
+
+// Example usage component
+export const ButtonShowcase = () => {
   return (
-    <button
-      className={clsx(
-        sizeClasses,
-        variantClasses,
-        "flex items-center justify-center gap-4",
-        className
-      )}
-      disabled={disabled}
-      {...props}
-    >
-      {withArrow && (
-        // <Image
-        //   src="/assets/icons/arrow-right.svg"
-        //   alt="arrow"
-        //   width={24}
-        //   height={24}
-        //   className={arrowColorClass}
-        // />
+    <div className="space-y-8 p-8">
+      <div>
+        <h3 className="mb-4 text-xl font-bold">Primary Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="primary" size="sm">
+            Small Button
+          </Button>
+          <Button variant="primary" size="md">
+            Medium Button
+          </Button>
+          <Button variant="primary" size="lg">
+            Large Button
+          </Button>
+          <Button
+            variant="primary"
+            icon={
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            }
+          >
+            With Icon
+          </Button>
+          <Button variant="primary" loading>
+            Loading
+          </Button>
+          <Button variant="primary" disabled>
+            Disabled
+          </Button>
+        </div>
+      </div>
 
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className={clsx("h-6 w-6", arrowColorClass)}
-          fill="currentColor"
-        >
-          <path
-            d="M14.4301 18.82C14.2401 18.82 14.0501 18.75 13.9001 18.6C13.6101 18.31 13.6101 17.83 13.9001 17.54L19.4401 12L13.9001 6.46C13.6101 6.17 13.6101 5.69 13.9001 5.4C14.1901 5.11 14.6701 5.11 14.9601 5.4L21.0301 11.47C21.3201 11.76 21.3201 12.24 21.0301 12.53L14.9601 18.6C14.8101 18.75 14.6201 18.82 14.4301 18.82Z"
-            fill="currentColor"
+      <div>
+        <h3 className="mb-4 text-xl font-bold">Outline Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="outline" size="sm">
+            Small Button
+          </Button>
+          <Button variant="outline" size="md">
+            Medium Button
+          </Button>
+          <Button variant="outline" size="lg">
+            Large Button
+          </Button>
+          <Button
+            variant="outline"
+            icon={
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            }
+          >
+            With Icon
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="mb-4 text-xl font-bold">Icon Buttons</h3>
+        <div className="flex flex-wrap items-center gap-4">
+          <IconButton
+            variant="primary"
+            size="sm"
+            ariaLabel="Add"
+            icon={
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            }
           />
-          <path
-            d="M20.33 12.75H3.5C3.09 12.75 2.75 12.41 2.75 12C2.75 11.59 3.09 11.25 3.5 11.25H20.33C20.74 11.25 21.08 11.59 21.08 12C21.08 12.41 20.74 12.75 20.33 12.75Z"
-            fill="currentColor"
+          <IconButton
+            variant="primary"
+            size="md"
+            ariaLabel="Microphone"
+            icon={
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                />
+              </svg>
+            }
           />
-        </svg>
-      )}
-      <span>{children}</span>
-    </button>
+          <IconButton
+            variant="secondary"
+            size="md"
+            ariaLabel="Microphone"
+            icon={
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                />
+              </svg>
+            }
+          />
+          <IconButton
+            variant="outline"
+            size="md"
+            ariaLabel="Microphone"
+            icon={
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                />
+              </svg>
+            }
+          />
+        </div>
+      </div>
+
+      <div>
+        <h3 className="mb-4 text-xl font-bold">Full Width</h3>
+        <Button variant="primary" fullWidth>
+          Full Width Button
+        </Button>
+      </div>
+    </div>
   );
 };
 

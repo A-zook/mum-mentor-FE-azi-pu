@@ -10,6 +10,7 @@
   --color-primary-light: #f26a82;
   --color-primary-extralight: #f9c1cc;
   --color-secondary: #ffc3d9;
+  --color-secondary-text: #2e2e2e;
   --color-secondary-dark: #e8aabb;
   --color-secondary-light: #ffe0eb;
   --color-secondary-extralight: #fff3f7;
@@ -61,4 +62,8 @@
 
 body {
   font-family: var(--font-hanken);
+}
+
+button {
+  cursor: pointer;
 }
