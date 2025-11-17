@@ -1,15 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Footer from "@/components/Footer";
-import Button from "@/components/Button";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/layout/NavBar";
 import Image from "next/image";
+import Button from "@/components/UI/Button";
+import Footer from "@/components/layout/Footer";
 
 const Page = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <div className="bg-white-text min-h-screen">
-      <header className="flex justify-between items-center fixed top-0 right-0 left-0 px-5 py-[10px]">
+      <header className="fixed top-0 right-0 left-0 flex items-center justify-between px-5 py-2.5">
         <Image
           src="/assets/icons/nora-icon.svg"
           alt="Nora icon"
@@ -29,13 +29,13 @@ const Page = () => {
           />
         </button>
       </header>
-      {isNavOpen && <NavBar onClose={() => setIsNavOpen(false)} />}
-      <section className="pt-12 ">
+      {isNavOpen && <NavBar />}
+      <section className="pt-12">
         <p>This is a test page</p>
         <Button
-          size="large"
-          variant="square"
-          className="flex items-center mx-auto mb-5"
+          size="lg"
+          variant="primary"
+          className="mx-auto mb-5 flex items-center"
         >
           me
         </Button>

@@ -20,17 +20,17 @@ const perks = [
 
 export default function PerksSection() {
   return (
-    <section className="w-full flex justify-center py-16">
-      <div className="flex flex-col items-center gap-8 w-[408px] md:w-[1240px]">
-        <div className="flex flex-col items-center gap-2 md:gap-4 w-full md:w-[804px]">
-          <h2 className="text-4xl md:text-4xl font-bold text-center">
+    <section className="flex w-full justify-center px-4 py-16 md:px-8 md:py-24">
+      <div className="flex w-[408px] flex-col items-center gap-8 md:w-[1240px]">
+        <div className="flex w-full flex-col items-center gap-2 md:w-[804px] md:gap-4">
+          <h2 className="text-center text-4xl font-bold md:text-4xl">
             Perks For Joining Early, Mama!
           </h2>
-          <p className="text-body regular md:text-2xl text-center md:w-[552px]">
+          <p className="text-body regular text-center md:w-[552px] md:text-2xl">
             Little goodies while you wait for Nora&apos;s big arrival
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 w-full md:w-full">
+        <div className="grid w-full grid-cols-1 gap-4 md:w-full md:grid-cols-3 md:gap-8">
           {perks.map((perk, index) => (
             <PerkCard
               key={index}
