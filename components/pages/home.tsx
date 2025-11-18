@@ -1,8 +1,8 @@
 import {
   AIInsight,
   Hero,
-  HowItWorks,
   TestimonialsSection,
+  WhatWeOffer,
 } from "@/module/home";
 import { NextPage } from "next";
 import FAQAccordion from "../faq";
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <div>
       <Hero />
       <AIInsight />
-      <HowItWorks />
+      <WhatWeOffer />
       <TestimonialsSection />
       <FAQAccordion />
       <HiwReady />
