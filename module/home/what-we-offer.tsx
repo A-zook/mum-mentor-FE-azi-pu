@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import { NextPage } from "next";
 
 const features = [
@@ -99,21 +98,17 @@ export const WhatWeOffer: NextPage = () => {
           </h3>
           <p className="text-secondary-text text-center text-lg leading-relaxed md:text-xl lg:text-2xl">
             Everything you need to feel supported, informed, and confident
-            throughout your motherhood journey
+            throughout your motherhood journey.
           </p>
         </div>
 
         <div className="grid w-full max-w-7xl grid-cols-1 gap-8 md:grid-cols-2">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-5 py-5 lg:px-[60px] lg:py-[60px]"
+            <ScrollAnimationWrapper
+              key={index}
+              style="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-4 py-5 lg:px-[60px] lg:py-[60px]"
             >
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4 lg:gap-6">
                 <div className="flex h-11 w-12 items-center justify-center rounded-xl bg-[#DD2D4A] lg:h-16 lg:w-[68px]">
                   {feature.icon}
                 </div>
@@ -124,7 +119,7 @@ export const WhatWeOffer: NextPage = () => {
                   {feature.description}
                 </p>
               </div>
-            </motion.div>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>
