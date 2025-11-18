@@ -9,7 +9,7 @@ import { AppStoreButton, GooglePlayButton } from "../UI/AppStoreButtons";
 const companyLinks = [
   { name: "Features", href: "#" },
   { name: "Privacy Policy", href: "#" },
-  { name: "Terms of service", href: "#" },
+  { name: "Terms of service", href: "/legal/terms" },
 ];
 
 const socialLinks = [
