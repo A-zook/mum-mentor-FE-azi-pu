@@ -12,9 +12,9 @@ const galleryImages = [
 
 export const ImageGallery: NextPage = () => {
   return (
-    <section className="flex w-full justify-center overflow-hidden py-16">
+    <section className="flex w-full justify-center overflow-hidden py-6">
       <div
-        className="flex gap-2 overflow-x-auto px-4"
+        className="flex gap-2 overflow-x-auto overflow-y-hidden px-4"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
@@ -26,9 +26,9 @@ export const ImageGallery: NextPage = () => {
             key={index}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="h-[350px] w-[350px] shrink-0 overflow-hidden rounded-lg shadow-lg sm:h-[505px] sm:w-[355px]"
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            className="h-[350px] w-[350px] shrink-0 overflow-hidden rounded-lg shadow-lg md:h-[422px] md:w-[297px] md:rounded-[6.68px] lg:h-[505px] lg:w-[355px]"
           >
             <Image
               src={src}

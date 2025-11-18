@@ -1,7 +1,8 @@
 "use client";
 
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const faqData: FAQItem[] = [
   {
@@ -50,9 +51,9 @@ const FAQAccordion = () => {
         {/* FAQ Items */}
         <div className="space-y-4">
           {faqData.map((faq, index) => (
-            <div
+            <ScrollAnimationWrapper
               key={index}
-              className="overflow-hidden rounded-2xl bg-white transition-all hover:bg-gray-100"
+              style="overflow-hidden rounded-2xl bg-white transition-all hover:bg-gray-100"
             >
               <button
                 onClick={() => toggleAccordion(index)}
@@ -99,7 +100,7 @@ const FAQAccordion = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </ScrollAnimationWrapper>
           ))}
         </div>
 
