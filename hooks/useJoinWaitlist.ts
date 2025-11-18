@@ -2,15 +2,6 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
 
-interface WaitlistPayload {
-  full_name: string;
-  email: string;
-}
-
-interface WaitlistResponse {
-  message: string;
-}
-
 const joinWaitlist = async (payload: WaitlistPayload) => {
   const { data } = await axios.post<WaitlistResponse>(
     "https://kaizen.emerj.net/api/v1/waitlist",

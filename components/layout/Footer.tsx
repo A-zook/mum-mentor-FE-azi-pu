@@ -173,7 +173,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="pt-4 text-sm text-white">
-            © 2025 Nora All rights reserved
+            © {new Date().getFullYear()} Nora All rights reserved
           </p>
         </div>
       </div>

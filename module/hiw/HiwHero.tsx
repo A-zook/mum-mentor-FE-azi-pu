@@ -3,7 +3,7 @@ import Image from "next/image";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import { SectionHeader } from ".";
-import { AppStoreButton } from "@/components/UI/AppStoreButtons";
+import AppStoreButtons from "@/components/UI/AppStoreButtons";
 
 export const HiwHero: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ export const HiwHero: NextPage = () => {
           and helps you thrive every day.
         </p>
 
-        <AppStoreButton />
+        <AppStoreButtons />
       </div>
 
       {/* hero image */}
