@@ -21,12 +21,12 @@ const TermsPage: React.FC = () => {
                 1. Welcome to Mum Mentor AI! :{" "}
               </span>
               <span className="font-[HankenGrotesk] text-xl">
-                We&apos;re so glad you&apos;re here! Mum Mentor AI is designed to be your
-                supportive digital companion throughout your motherhood journey,
-                offering guidance, connection, and reassurance. These Terms of
-                Service (Terms) outline the rules for using our app and website.
-                By accessing or using Mum Mentor AI, you agree to these Terms.
-                Please read them carefully.
+                We&apos;re so glad you&apos;re here! Mum Mentor AI is designed
+                to be your supportive digital companion throughout your
+                motherhood journey, offering guidance, connection, and
+                reassurance. These Terms of Service (Terms) outline the rules
+                for using our app and website. By accessing or using Mum Mentor
+                AI, you agree to these Terms. Please read them carefully.
               </span>
             </p>
           </div>
@@ -58,10 +58,10 @@ const TermsPage: React.FC = () => {
                   psychological, or legal advice.
                 </span>{" "}
                 Always consult with qualified healthcare professionals for
-                specific concerns regarding your health, your baby&apos;s health, or
-                any personal situation. Our AI offers companionship and
-                information, but cannot diagnose, treat, or offer professional
-                interventions.
+                specific concerns regarding your health, your baby&apos;s
+                health, or any personal situation. Our AI offers companionship
+                and information, but cannot diagnose, treat, or offer
+                professional interventions.
               </span>
             </p>
           </div>
@@ -88,11 +88,12 @@ const TermsPage: React.FC = () => {
               </span>
               <span className="font-[HankenGrotesk] text-xl">
                 Access to certain features of Mum Mentor AI is provided through
-                paid subscriptions (e.g., &apos;My Nurturing Hub,&apos; &apos;Always By Your
-                Side&apos;). Your subscription will automatically renew unless
-                cancelled. You can manage or cancel your subscription at any
-                time through your account settings. Refunds are subject to our
-                refund policy, available on our website.
+                paid subscriptions (e.g., &apos;My Nurturing Hub,&apos;
+                &apos;Always By Your Side&apos;). Your subscription will
+                automatically renew unless cancelled. You can manage or cancel
+                your subscription at any time through your account settings.
+                Refunds are subject to our refund policy, available on our
+                website.
               </span>
             </p>
           </div>
@@ -104,9 +105,9 @@ const TermsPage: React.FC = () => {
               </span>
               <span className="font-[HankenGrotesk] text-xl">
                 Motherhood evolves, and so might our app! We may update these
-                Terms from time to time. We&apos;ll notify you of any significant
-                changes, and your continued use of Mum Mentor AI means you
-                accept the updated Terms.
+                Terms from time to time. We&apos;ll notify you of any
+                significant changes, and your continued use of Mum Mentor AI
+                means you accept the updated Terms.
               </span>
             </p>
           </div>
@@ -150,9 +151,9 @@ const TermsPage: React.FC = () => {
                 </span>{" "}
                 <span className="font-[HankenGrotesk] text-xl">
                   When you create an account, subscribe, or interact with our
-                  AI, you provide us with details like your name, email, baby&apos;s
-                  age, and your conversational inputs. We use this to
-                  personalize your experience, provide relevant guidance, and
+                  AI, you provide us with details like your name, email,
+                  baby&apos;s age, and your conversational inputs. We use this
+                  to personalize your experience, provide relevant guidance, and
                   offer tailored support.
                 </span>
               </li>
@@ -161,9 +162,9 @@ const TermsPage: React.FC = () => {
                   Photos & Memories:
                 </span>{" "}
                 <span className="font-[HankenGrotesk] text-xl">
-                  If you choose to upload photos for the &apos;Memory Lane&apos; feature,
-                  they are securely stored and used only to create your personal
-                  memory timelines within the app.
+                  If you choose to upload photos for the &apos;Memory Lane&apos;
+                  feature, they are securely stored and used only to create your
+                  personal memory timelines within the app.
                 </span>
               </li>
               <li>
@@ -200,7 +201,8 @@ const TermsPage: React.FC = () => {
                 Proactively send stage-specific advice and reminders.
               </li>
               <li className="font-[HankenGrotesk] text-xl">
-                Curate your &apos;Memory Lane&apos; and provide &apos;flashback&apos; reminders.
+                Curate your &apos;Memory Lane&apos; and provide
+                &apos;flashback&apos; reminders.
               </li>
               <li className="font-[HankenGrotesk] text-xl">
                 Improve our AI&apos;s understanding and responsiveness.
@@ -220,8 +222,8 @@ const TermsPage: React.FC = () => {
             <div className="flex items-center gap-4">
               <p>
                 <span className="font-[HankenGrotesk] text-xl font-semibold md:text-2xl">
-                  4. Sharing Your Information (Never Without Your Trust) &quot;we
-                  will never sell your personal data to third parties:
+                  4. Sharing Your Information (Never Without Your Trust)
+                  &quot;we will never sell your personal data to third parties:
                 </span>{" "}
                 <span className="font-[HankenGrotesk] text-xl">
                   We may share anonymized, aggregated data for research or
