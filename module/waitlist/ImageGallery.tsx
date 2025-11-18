@@ -14,7 +14,7 @@ export const ImageGallery: NextPage = () => {
   return (
     <section className="flex w-full justify-center overflow-hidden py-16">
       <div
-        className="flex gap-2 overflow-x-auto px-4"
+        className="flex gap-2 overflow-x-auto overflow-y-hidden px-4"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",

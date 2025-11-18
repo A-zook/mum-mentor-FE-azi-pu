@@ -27,3 +27,8 @@ interface WaitlistPayload {
 interface WaitlistResponse {
   message: string;
 }
+
+type PerkCardProps = {
+  title: string;
+  description: string;
+};
