@@ -18,3 +18,12 @@ interface StepBlockProps {
     image: StaticImageData;
   };
 }
+
+interface WaitlistPayload {
+  full_name: string;
+  email: string;
+}
+
+interface WaitlistResponse {
+  message: string;
+}
