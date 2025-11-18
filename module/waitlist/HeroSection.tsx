@@ -46,16 +46,16 @@ export const HeroSection: NextPage = () => {
 
   return (
     <div
-      className="mt-16 flex w-full items-center justify-center px-4"
+      className="mt-3 lg:mt-16 flex w-full items-center justify-center px-4"
       id="join-waitlist"
     >
       <div className="flex h-[280px] w-[408px] flex-col items-center gap-4 text-center md:h-[340px] md:w-[713px] md:gap-6">
         <div className="flex flex-col gap-2 md:gap-6">
-          <h1 className="text-3xl leading-snug font-bold md:text-5xl md:leading-tight">
+          <h1 className="text-[32px] leading-snug font-bold md:text-heading1 md:leading-tight">
             Motherhood is hard. <br />
             <span className="text-pink-600">Nora</span> makes it softer
           </h1>
-          <p className="mx-auto max-w-full text-xl text-[#1A1A1A] md:max-w-[600px]">
+          <p className="mx-auto max-w-full text-xl md:text-body-large  text-[#2E2E2E] md:max-w-[600px]">
             Get personalized guidance, emotional support, and answers anytime,
             anywhere
           </p>
