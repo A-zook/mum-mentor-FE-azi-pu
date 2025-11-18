@@ -1,3 +1,4 @@
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import { NextPage } from "next";
 
 const features = [
@@ -93,15 +94,15 @@ export const HowItWorks: NextPage = () => {
           </h3>
           <p className="text-secondary-text text-center text-lg leading-relaxed md:text-xl lg:text-2xl">
             Everything you need to feel supported, informed, and confident
-            throughout your motherhood journey
+            throughout your motherhood journey.
           </p>
         </div>
 
         <div className="grid w-full max-w-7xl grid-cols-1 gap-8 md:grid-cols-2">
           {features.map((feature, index) => (
-            <div
+            <ScrollAnimationWrapper
               key={index}
-              className="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-[60px] py-[60px]"
+              style="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-[60px] py-[60px]"
             >
               <div className="flex flex-col gap-6">
                 <div className="flex h-16 w-[68px] items-center justify-center rounded-xl bg-[#DD2D4A]">
@@ -114,7 +115,7 @@ export const HowItWorks: NextPage = () => {
                   {feature.description}
                 </p>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>
