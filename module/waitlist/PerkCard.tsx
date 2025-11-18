@@ -1,13 +1,9 @@
+import { NextPage } from "next";
 import Image from "next/image";
 
-type PerkCardProps = {
-  title: string;
-  description: string;
-};
-
-export default function PerkCard({ title, description }: PerkCardProps) {
+export const PerkCard: NextPage<PerkCardProps> = ({ title, description }) => {
   return (
-    <div className="flex h-[209px] w-[408px] flex-col items-start gap-1.5 rounded-xl border border-gray-200 bg-white p-6 shadow-sm lg:h-[249px] lg:w-[396px]">
+    <div className="flex h-[209px] max-w-[408px] flex-col items-start gap-1.5 rounded-xl border border-gray-200 bg-white p-6 shadow-sm lg:h-[249px] lg:w-[396px]">
       <div className="flex h-[153px] w-[352px] flex-col gap-2">
         {/* Icon */}
 
@@ -30,4 +26,4 @@ export default function PerkCard({ title, description }: PerkCardProps) {
       </div>
     </div>
   );
-}
+};
