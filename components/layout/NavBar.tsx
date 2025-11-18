@@ -1,5 +1,6 @@
 "use client";
-
+import { NextPage } from "next";
+import { usePathname } from "next/navigation";
 import { useNav } from "@/hooks/useNav";
 import logo from "@/public/assets/icons/nora-icon.svg";
 import { AnimatePresence, motion } from "framer-motion";
@@ -8,7 +9,19 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Button from "../UI/Button";
 
-const Navbar = () => {
+const menuItems = [
+  { name: "Waitlist", href: "/waitlist" },
+  { name: "How it works", href: "/how-it-works" },
+];
+
+const desktopNavItems: DesktopNavItem[] = [
+  { name: "Waitlist", href: "/waitlist" },
+  { name: "How it works", href: "/how-it-works" },
+  // { name: "What's New", href: "/whats-new", hasNotification: true },
+];
+
+const Navbar: NextPage = () => {
+  const pathname = usePathname();
   const { isOpen, isFixed, toggleMenu } = useNav();
 
   // Prevent body scroll when mobile menu is open
@@ -23,18 +36,6 @@ const Navbar = () => {
       document.body.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
-
-  const menuItems = [
-    { name: "Waitlist", href: "/waitlist" },
-    { name: "How it works", href: "/how-it-works" },
-    // { name: "FAQs", href: "/faqs" },
-  ];
-
-  const desktopNavItems: DesktopNavItem[] = [
-    { name: "Waitlist", href: "/waitlist" },
-    { name: "How it works", href: "/how-it-works" },
-    // { name: "What's New", href: "/whats-new", hasNotification: true },
-  ];
 
   return (
     <>
@@ -88,8 +89,15 @@ const Navbar = () => {
             </div>
 
             {/* CTA Button - Desktop */}
-            <Link href="/waitlist#join-waitlist">
-              <Button>Join waitlist</Button>
+            <Link
+              href={
+                pathname === "/waitlist" ? "/waitlist#join-waitlist" : "#footer"
+              }
+              className="hidden lg:block"
+            >
+              <Button>
+                {pathname === "/waitlist" ? "Join Waitlist" : "Download App"}
+              </Button>
             </Link>
 
             {/* Mobile Menu Button */}
@@ -160,6 +168,20 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 ))}
+
+                <Link
+                  href={
+                    pathname === "/waitlist"
+                      ? "/waitlist#join-waitlist"
+                      : "#footer"
+                  }
+                >
+                  <Button>
+                    {pathname === "/waitlist"
+                      ? "Join Waitlist"
+                      : "Download App"}
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

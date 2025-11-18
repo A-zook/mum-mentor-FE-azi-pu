@@ -1,10 +1,10 @@
-import { NextPage } from "next";
-import Image from "next/image";
-import heroImg from "@/public/assets/images/home_hero_img.jpg";
 import {
   AppStoreButton,
   GooglePlayButton,
 } from "@/components/UI/AppStoreButtons";
+import heroImg from "@/public/assets/images/home_hero_img.jpg";
+import { NextPage } from "next";
+import Image from "next/image";
 
 export const Hero: NextPage = () => {
   return (
