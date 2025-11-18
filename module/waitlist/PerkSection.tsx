@@ -27,7 +27,7 @@ export const PerksSection: NextPage = () => {
           <h2 className="lg:text-heading2 text-center text-4xl font-bold">
             Perks For Joining Early, Mama!
           </h2>
-          <p className="text-body regular text-center lg:w-[552px] lg:text-2xl">
+          <p className="text-body-regular text-center lg:max-w-[552px] lg:text-2xl">
             Little goodies while you wait for Nora&apos;s big arrive
           </p>
         </div>
