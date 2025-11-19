@@ -1,4 +1,4 @@
-import { STEPS } from "@/data/how-it-works";
+import { STEPS } from "@/data/how-it-works-data";
 import { NextPage } from "next";
 import { SectionHeader, StepBlock } from ".";
 
