@@ -1,6 +1,4 @@
-import "@/app/globals.css";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/NavBar";
+import "./globals.css";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import { Toaster } from "sonner";
@@ -27,9 +25,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <body className={`${hankenGrotesk.variable} antialiased`}>
         <Providers>
-          <Navbar />
           <main className="">{children}</main>
-          <Footer />
           <Toaster richColors />
         </Providers>
       </body>

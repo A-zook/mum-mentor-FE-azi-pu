@@ -2,9 +2,11 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 const joinWaitlist = async (payload: WaitlistPayload) => {
   const { data } = await axios.post<WaitlistResponse>(
-    "https://kaizen.emerj.net/api/v1/waitlist",
+    `${API_BASE_URL}/waitlist/join`,
     payload
   );
   return data;
