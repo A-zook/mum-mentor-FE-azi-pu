@@ -18,13 +18,14 @@
   --color-bg-soft: #fff7f9;
   --color-bg-muted: #f7dce4;
   --color-bg-strong: #f4b9c7;
-  --color-primaryText-black: #1a1a1a;
-  --color-soft-black: #1a1a1a;
+  --color-primary-text: #1a1a1a;
+  --color-soft-black: #2e2e2e;
   --color-gray-text3: #616161;
   --color-grey-text1: #3a3a3a;
   --color-grey-text2: #c4c4c4;
   --color-white-text: #ffffff;
   --color-outline: #d5d5d5;
+  --color-outline-secondary: #e2e2e2;
   --color-outline-variant: #e5e5e5;
   --color-disabled-border: #f0f0f0;
   --color-error: #d72638;
@@ -34,10 +35,6 @@
   --color-success-dark: #239a52;
   --color-success-light: #d3f5e3;
 
-  /* border radius */
-
-  --radius-md: 8px;
-
   /* font style */
 
   --font-hanken: "Hanken Grotesk", sans-serif;
@@ -46,6 +43,7 @@
   --text-button: 16px;
   --text-body-regular: 18px;
   --text-body-large: 1.5rem;
+  --text-20: 20px;
   --text-4xl: 2rem;
   --text-heading2: 36px;
   --text-heading2: 40px;
@@ -58,6 +56,9 @@
   --screen-lg: 1024px; /* Large devices, e.g., laptops */
   --screen-xl: 1280px; /* Extra large, e.g., desktops */
   --screen-2xl: 1440px;
+
+  --spacing-60: 60px;
+  --spacing-50: 50px;
 }
 
 body {

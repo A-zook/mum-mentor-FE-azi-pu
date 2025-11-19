@@ -33,7 +33,7 @@ export default function HeroSection() {
             Motherhood is hard. <br />
             <span className="text-pink-600">Nora</span> makes it softer
           </h1>
-          <p className="md:text-body-large mx-auto max-w-full text-[20px] text-[#1A1A1A] md:max-w-[600px]">
+          <p className="md:text-body-large text-20 mx-auto max-w-full text-[#1A1A1A] md:max-w-[600px]">
             Get personalized guidance, emotional support, and answers anytime,
             anywhere
           </p>
@@ -44,11 +44,11 @@ export default function HeroSection() {
             placeholder="Enter Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-12 w-full rounded-lg border border-[#D5D5D5] px-4 py-2 md:w-[408px]"
+            className="border-outline h-12 w-full rounded-lg border px-4 py-2 md:w-[408px]"
           />
           <button
             onClick={handleJoinWaitlist}
-            className="h-12 w-full rounded-lg bg-[#DD2D4A] px-6 py-2 text-white md:w-[170px]"
+            className="bg-primary h-12 w-full rounded-lg px-6 py-2 text-white md:w-[170px]"
           >
             Join The Waitlist
           </button>

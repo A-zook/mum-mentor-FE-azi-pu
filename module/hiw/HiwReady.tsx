@@ -1,6 +1,6 @@
 import AppStoreButtons from "@/components/UI/AppStoreButtons";
 import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
-import Ready from "@public/assets/images/ready.png";
+import chubbyBaby from "@public/assets/images/chubby-baby.png";
 import { NextPage } from "next";
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ export const HiwReady: NextPage = () => {
 
         <ScrollAnimationWrapper>
           <Image
-            src={Ready}
+            src={chubbyBaby}
             alt="An image of 2 phones with nora app"
             quality={100}
             placeholder="blur"
