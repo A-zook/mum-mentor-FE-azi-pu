@@ -1,22 +1,22 @@
 import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
-import StepsDot from "@public/assets/icons/dot.svg";
+import StepsDotSvg from "@public/assets/icons/dot.svg";
 import { NextPage } from "next";
 import Image from "next/image";
 
 export const StepBlock: NextPage<StepBlockProps> = ({ step }) => {
   return (
     <section
-      className={`mx-auto flex max-w-[550px] flex-col gap-8 md:max-w-[1240px] md:items-center md:justify-between ${step?.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center`}
+      className={`mx-auto flex max-w-550 flex-col gap-8 md:max-w-1240 md:items-center md:justify-between ${step?.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center`}
     >
-      <div className="flex flex-col gap-4 md:w-[50%] md:max-w-[430.47px]">
+      <div className="flex flex-col gap-4 md:w-1/2 md:max-w-[430.47px]">
         <div className="flex items-center gap-4">
-          <Image src={StepsDot} alt="steps dot" priority />
-          <h4 className="text-primaryText-black text-4xl font-semibold">
+          <Image src={StepsDotSvg} alt="steps dot" priority />
+          <h4 className="text-primary-text text-4xl font-semibold">
             Step {step?.id}
           </h4>
         </div>
 
-        <h3 className="text-[36px] leading-tight font-semibold capitalize">
+        <h3 className="text-heading3 leading-tight font-semibold capitalize">
           {step.title}
         </h3>
 
@@ -27,7 +27,7 @@ export const StepBlock: NextPage<StepBlockProps> = ({ step }) => {
 
       {/* image */}
       <div
-        className={`bg-bg-secondary flex h-[317px] w-full items-end justify-center overflow-hidden md:w-[50%] lg:h-[479.58px] lg:w-[608px]`}
+        className={`bg-bg-secondary flex h-[317px] w-full items-end justify-center overflow-hidden md:w-1/2 lg:h-[479.58px] lg:w-[608px]`}
       >
         <ScrollAnimationWrapper style="relative">
           <Image
