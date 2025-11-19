@@ -4,7 +4,7 @@ import Button from "@/components/UI/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import { NextPage } from "next";
 import { useState } from "react";
-import { useJoinWaitlist } from "@/hooks/useJoinWaitlist";
+import { useJoinWaitlist } from "@/hooks/use-join-waitlist";
 
 export const HeroSection: NextPage = () => {
   const [step, setStep] = useState(1);
