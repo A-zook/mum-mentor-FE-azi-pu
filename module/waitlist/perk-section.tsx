@@ -1,23 +1,6 @@
 import { NextPage } from "next";
 import { PerkCard } from ".";
-
-const perks = [
-  {
-    title: "First-in-Line Access",
-    description:
-      "Meet Nora before everyone else and experience the support early.",
-  },
-  {
-    title: "Special Mum Perks",
-    description:
-      "Unlock mini-guides, calming routines, and bonus resources just for early users.",
-  },
-  {
-    title: "Insider Updates",
-    description:
-      "Stay ahead with development updates, new tools, and behind-the-scenes improvements.",
-  },
-];
+import { perkData } from "../../data/perk-data";
 
 export const PerksSection: NextPage = () => {
   return (
@@ -32,7 +15,7 @@ export const PerksSection: NextPage = () => {
           </p>
         </div>
         <div className="grid w-full grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {perks.map((perk, index) => (
+          {perkData.map((perk, index) => (
             <PerkCard
               key={index}
               title={perk.title}
