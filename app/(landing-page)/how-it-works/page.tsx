@@ -1,10 +1,10 @@
-import HIW from "@/components/pages/hiw";
+import HowItWorks from "@/components/pages/how-it-works";
 import { Metadata, NextPage } from "next";
 
 export const metadata: Metadata = {
   title: "How It Works",
 };
 
-const HIWPage: NextPage = () => <HIW />;
+const HowItWorksPage: NextPage = () => <HowItWorks />;
 
-export default HIWPage;
+export default HowItWorksPage;

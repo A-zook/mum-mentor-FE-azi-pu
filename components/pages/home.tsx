@@ -4,9 +4,9 @@ import {
   TestimonialsSection,
   WhatWeOffer,
 } from "@/module/home";
+import { ReadyToDownload } from "@/module/how-it-works";
 import { NextPage } from "next";
 import FAQAccordion from "../faq";
-import { HiwReady } from "@/module/hiw";
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <WhatWeOffer />
       <TestimonialsSection />
       <FAQAccordion />
-      <HiwReady />
+      <ReadyToDownload />
     </div>
   );
 };

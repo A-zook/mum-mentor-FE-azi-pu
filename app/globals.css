@@ -4,6 +4,7 @@
   /* colors */
   --color-background: #ffffff;
   --color-bg-secondary: #fff3f5;
+  --color-bg-secondary-1: #e2e2e2;
   --color-primary: #dd2d4a;
   --color-primary-dark: #b2243b;
   --color-primary-light: #f26a82;
@@ -47,7 +48,9 @@
   --text-4xl: 2rem;
   --text-heading2: 36px;
   --text-heading2: 40px;
+  --text-heading3: 36px;
   --text-heading1: 56px;
+
   /* gap or spacing */
 
   /* screen breakpoints */
@@ -56,6 +59,10 @@
   --screen-lg: 1024px; /* Large devices, e.g., laptops */
   --screen-xl: 1280px; /* Extra large, e.g., desktops */
   --screen-2xl: 1440px;
+
+  --spacing-590: 590px;
+  --spacing-1240: 1240px;
+  --spacing-550: 550px;
 
   --spacing-60: 60px;
   --spacing-50: 50px;
