@@ -98,6 +98,22 @@ jobs:
           path: .next/
           retention-days: 7
 
+      - name: Create deploy tarball
+        run: |
+          mkdir -p deploy-package
+          cp -r .next deploy-package/ || true
+          cp -r public deploy-package/ || true
+          cp package.json deploy-package/ || true
+          cp pnpm-lock.yaml deploy-package/ || true
+          tar -czf deploy-package.tar.gz -C deploy-package .
+
+      - name: Upload deploy package
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-package
+          path: deploy-package.tar.gz
+          retention-days: 7
+
   deploy-staging:
     name: Deploy to Staging (Auto)
     runs-on: self-hosted
@@ -108,13 +124,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Download deploy package
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy-package
+          path: .
+
+      - name: Extract deploy package
+        run: |
+          tar -xzf deploy-package.tar.gz -C . || true
+
       - name: Create deployment package
         run: |
           mkdir -p deploy-package
-          cp -r .next deploy-package/
+          cp -r .next deploy-package/ || true
           cp -r public deploy-package/ || true
-          cp package.json deploy-package/
-          cp pnpm-lock.yaml deploy-package/
+          cp package.json deploy-package/ || true
+          cp pnpm-lock.yaml deploy-package/ || true
           cp -r scripts deploy-package/ || true
           cp next.config.ts deploy-package/ || true
           tar -czf deploy.tar.gz -C deploy-package .
