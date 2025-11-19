@@ -2,7 +2,7 @@ import StarIcon from "@public/assets/icons/star.svg";
 import { NextPage } from "next";
 import Image from "next/image";
 
-export const SectionHeader: NextPage<{
+export const SectionHeaderText: NextPage<{
   headerText: string;
 }> = ({ headerText }) => {
   return (

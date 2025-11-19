@@ -1,18 +1,18 @@
+import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import { SectionHeaderText } from "@/module/how-it-works/section-header-text";
+import SleepingBabyImage from "@public/assets/images/sleepingBaby.png";
+import SleepingBabyDesktopImage from "@public/assets/images/sleepingBabyDesktop.png";
 import { NextPage } from "next";
 import Image from "next/image";
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
-import SleepingBaby from "@public/assets/images/sleepingBaby.png";
-import SleepingBabyDesktop from "@public/assets/images/sleepingBabyDesktop.png";
-import { SectionHeader } from ".";
 
-export const HiwWhy: NextPage = () => {
+export const WhyThisWorks: NextPage = () => {
   return (
-    <div className="bg-bg-secondary mt-[60px] pl-6">
-      <div className="mx-auto flex max-w-[550px] flex-col gap-6 md:max-w-[1240px] md:flex-row">
-        <ScrollAnimationWrapper style="flex  flex-col justify-center space-y-[13px] py-8 lg:w-[569.26px]">
-          <SectionHeader headerText="why this works" />
+    <div className="bg-bg-secondary mt-60 pl-6">
+      <div className="mx-auto flex max-w-550 flex-col gap-6 md:max-w-1240 md:flex-row">
+        <ScrollAnimationWrapper style="flex  flex-col justify-center space-y-3.5 py-8 lg:w-[569.26px]">
+          <SectionHeaderText headerText="why this works" />
 
-          <h4 className="text-primaryText-black md:text-heading2 text-4xl leading-tight font-semibold capitalize">
+          <h4 className="text-primary-text md:text-heading2 text-4xl leading-tight font-semibold capitalize">
             Because motherhood changes every day — your tools should too.
           </h4>
 
@@ -24,7 +24,7 @@ export const HiwWhy: NextPage = () => {
 
         <div className="flex justify-center">
           <Image
-            src={SleepingBaby}
+            src={SleepingBabyImage}
             alt="A woman holding a baby serious"
             quality={100}
             placeholder="blur"
@@ -32,7 +32,7 @@ export const HiwWhy: NextPage = () => {
           />
 
           <Image
-            src={SleepingBabyDesktop}
+            src={SleepingBabyDesktopImage}
             alt="A woman holding a baby serious"
             quality={100}
             placeholder="blur"
