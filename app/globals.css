@@ -19,7 +19,7 @@
   --color-bg-muted: #f7dce4;
   --color-bg-strong: #f4b9c7;
   --color-primary-text: #1a1a1a;
-  --color-soft-black: #2E2E2E;
+  --color-soft-black: #2e2e2e;
   --color-gray-text3: #616161;
   --color-grey-text1: #3a3a3a;
   --color-grey-text2: #c4c4c4;
@@ -34,8 +34,6 @@
   --color-success: #2ecc71;
   --color-success-dark: #239a52;
   --color-success-light: #d3f5e3;
-  
-
 
   /* font style */
 
@@ -60,7 +58,7 @@
   --screen-2xl: 1440px;
 
   --spacing-60: 60px;
-  --spacing-50: 50px
+  --spacing-50: 50px;
 }
 
 body {

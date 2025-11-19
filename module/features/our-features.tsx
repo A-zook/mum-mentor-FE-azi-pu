@@ -6,7 +6,7 @@ export const OurFeatures: NextPage = () => {
   return (
     <div className="mx-auto my-50 px-6">
       <div className="mx-auto flex w-[368px] flex-col gap-4 py-6 md:w-[750px]">
-        <p className="md:text-heading2 text-soft-black font-hanken text-center text-2xl md:text-3xl font-semibold">
+        <p className="md:text-heading2 text-soft-black font-hanken text-center text-2xl font-semibold md:text-3xl">
           Our Features
         </p>
         <p className="text-button md:text-body-large md:text-secondary-text font-hanken text-center font-medium">
@@ -21,7 +21,7 @@ export const OurFeatures: NextPage = () => {
             style="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-4 py-5 lg:px-60  py-60"
           >
             <div className="flex flex-col gap-4 lg:gap-6">
-              <div className="flex h-11 w-12 items-center justify-center rounded-xl bg-primary lg:h-16 lg:w-[68px]">
+              <div className="bg-primary flex h-11 w-12 items-center justify-center rounded-xl lg:h-16 lg:w-[68px]">
                 {feature.icon}
               </div>
               <h4 className="text-primary-text text-2xl font-bold lg:text-3xl">
