@@ -7,7 +7,7 @@ on:
 jobs:
   pr-metadata:
     name: PR Metadata & Validation
-    runs-on: [self-hosted, hng-13-runner]
+    runs-on: self-hosted
     permissions:
       pull-requests: write
       contents: read
