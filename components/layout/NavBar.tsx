@@ -15,7 +15,6 @@ export const Navbar: NextPage = () => {
   const waitlist = pathname === "/waitlist";
   const { isOpen, isFixed, toggleMenu } = useNav();
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-hidden");

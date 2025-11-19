@@ -14,7 +14,6 @@ export const Footer: NextPage = () => {
   return (
     <footer className="bg-[#0F1419] text-white" id="footer">
       <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-20 lg:py-16">
-        {/* Desktop Layout */}
         <div className="hidden lg:flex lg:justify-between lg:gap-12">
           {/* Left Section - Logo & Description */}
           <div className="space-y-6">
