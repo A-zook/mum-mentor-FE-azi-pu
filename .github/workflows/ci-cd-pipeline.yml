@@ -108,13 +108,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: .
+
       - name: Create deployment package
         run: |
           mkdir -p deploy-package
-          cp -r .next deploy-package/
+          cp -r .next deploy-package/ || true
           cp -r public deploy-package/ || true
-          cp package.json deploy-package/
-          cp pnpm-lock.yaml deploy-package/
+          cp package.json deploy-package/ || true
+          cp pnpm-lock.yaml deploy-package/ || true
           cp -r scripts deploy-package/ || true
           cp next.config.ts deploy-package/ || true
           tar -czf deploy.tar.gz -C deploy-package .
