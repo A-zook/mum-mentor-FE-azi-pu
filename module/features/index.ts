@@ -1,3 +1,4 @@
 export * from "./hero";
 export * from "./our-features";
-export * from "./yan";
+export * from "./not-alone";
+export * from "@/data/features-data"

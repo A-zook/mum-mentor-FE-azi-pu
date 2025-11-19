@@ -1,4 +1,4 @@
-import { FeatureHero, OurFeatures, Yan } from "@/module/features";
+import { FeatureHero, OurFeatures, NotAlone } from "@/module/features";
 import { NextPage } from "next";
 
 const Features: NextPage = () => {
@@ -6,7 +6,7 @@ const Features: NextPage = () => {
     <div>
       <FeatureHero />
       <OurFeatures />
-      <Yan />
+      <NotAlone />
     </div>
   );
 };
