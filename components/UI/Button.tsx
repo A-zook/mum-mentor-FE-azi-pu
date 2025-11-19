@@ -29,17 +29,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & MotionProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+      "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
       primary:
-        "bg-[#E63946] text-white hover:bg-[#d62839] active:bg-[#c41e2b] shadow-sm",
+        "bg-primary text-white hover:bg-[#d62839] active:bg-[#c41e2b] shadow-sm",
       secondary:
         "bg-[#8B1538] text-white hover:bg-[#6d1029] active:bg-[#5a0d22] shadow-sm",
       outline:
-        "bg-white border-2 border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white active:bg-[#d62839]",
+        "bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white active:bg-[#d62839]",
       ghost:
-        "bg-transparent text-[#E63946] hover:bg-[#E63946]/10 active:bg-[#E63946]/20",
+        "bg-transparent text-primary hover:bg-primary/10 active:bg-primary/20",
     };
 
     const sizes = {
@@ -120,17 +120,17 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+      "inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
       primary:
-        "bg-[#E63946] text-white hover:bg-[#d62839] active:bg-[#c41e2b] shadow-md",
+        "bg-primary text-white hover:bg-[#d62839] active:bg-[#c41e2b] shadow-md",
       secondary:
         "bg-[#8B1538] text-white hover:bg-[#6d1029] active:bg-[#5a0d22] shadow-md",
       outline:
-        "bg-white border-2 border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white active:bg-[#d62839]",
+        "bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white active:bg-[#d62839]",
       ghost:
-        "bg-transparent text-[#E63946] hover:bg-[#E63946]/10 active:bg-[#E63946]/20",
+        "bg-transparent text-primary hover:bg-primary/10 active:bg-primary/20",
     };
 
     const sizes = {
