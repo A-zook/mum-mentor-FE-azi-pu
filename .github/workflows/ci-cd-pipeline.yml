@@ -1,0 +1,204 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  pull_request:
+    branches:
+      - main
+      - staging
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Which environment to deploy (staging or production)"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pr-metadata:
+    name: PR Metadata & Validation
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # PR size and automatic labeling removed by request — keeping only title format check below
+
+      - name: Check PR title format
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = context.payload.pull_request.title;
+            const conventionalCommitPattern = /^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)(\(.+\))?: .+/i;
+
+            if (!conventionalCommitPattern.test(title)) {
+              core.warning('PR title does not follow conventional commit format, but not failing.');
+            } else {
+              console.log('✅ PR title follows conventional commit format');
+            }
+
+  test:
+    name: Lint, Type Check & Build
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ESLint
+        run: pnpm lint
+
+      - name: Check code formatting
+        run: pnpm format:check
+
+      - name: Run TypeScript type check
+        run: pnpm type-check
+
+      - name: Build project
+        run: pnpm build
+        env:
+          NODE_ENV: production
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: .next/
+          retention-days: 7
+
+  deploy-staging:
+    name: Deploy to Staging (Auto)
+    runs-on: self-hosted
+    needs: test
+    environment: "staging"
+    if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: .
+
+      - name: Create deployment package
+        run: |
+          mkdir -p deploy-package
+          cp -r .next deploy-package/ || true
+          cp -r public deploy-package/ || true
+          cp package.json deploy-package/ || true
+          cp pnpm-lock.yaml deploy-package/ || true
+          cp -r scripts deploy-package/ || true
+          cp next.config.ts deploy-package/ || true
+          tar -czf deploy.tar.gz -C deploy-package .
+
+      - name: Deploy to staging server (password-based)
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+          APP_DIR: /home/${{ secrets.SERVER_USER }}/mum-mentor-fe-staging
+          APP_PORT: 3000
+        run: |
+          # Install sshpass for password-based authentication (best-effort)
+          sudo apt-get update || true
+          sudo apt-get install -y sshpass || true
+
+          mkdir -p ~/.ssh
+          ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts || true
+
+          sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no deploy.tar.gz ${SERVER_USER}@${SERVER_HOST}:/tmp/deploy.tar.gz
+
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} << 'ENDSSH'
+            set -e
+            mkdir -p ~/mum-mentor-fe-staging
+            tar -xzf /tmp/deploy.tar.gz -C ~/mum-mentor-fe-staging/
+            rm /tmp/deploy.tar.gz
+            cd ~/mum-mentor-fe-staging
+            pnpm install --prod --frozen-lockfile --ignore-scripts || true
+            pm2 stop mum-mentor-fe-staging || true
+            pm2 delete mum-mentor-fe-staging || true
+            mkdir -p ~/mum-mentor-fe-staging/logs || true
+            pm2 stop mum-mentor-fe-staging || true
+            pm2 delete mum-mentor-fe-staging || true
+            cd ~/mum-mentor-fe-staging || true
+            # Start Next.js with PM2 in production mode
+            pm2 start node_modules/next/dist/bin/next --name mum-mentor-fe-staging -- start -p 3000 || true
+            pm2 save || true
+            sleep 5
+            if curl -f http://localhost:3000 > /dev/null 2>&1; then
+              echo "✅ Staging deployment successful"
+            else
+              echo "❌ Staging health check failed"
+              exit 1
+            fi
+          ENDSSH
+
+  deploy-production:
+    name: Deploy to Production (Manual)
+    runs-on: self-hosted
+    needs: test
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'production'
+    environment: "production"
+    steps:
+      - name: Deploy to production server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            set -e
+            echo "Starting PRODUCTION deployment..."
+            cd /home/${{ secrets.SERVER_USER }}/mum-mentor-fe || true
+            # Extract deployment bundle if provided; otherwise force sync from origin
+            git fetch origin || true
+            git reset --hard origin/main || true
+            git clean -fd || true
+            pnpm install --prod --frozen-lockfile --ignore-scripts || true
+            pm2 stop mum-mentor-fe || true
+            pm2 delete mum-mentor-fe || true
+            cd /home/${{ secrets.SERVER_USER }}/mum-mentor-fe || true
+            # Start Next.js with PM2 in production mode
+            pm2 start node_modules/next/dist/bin/next --name mum-mentor-fe -- start -p 3000 || true
+            pm2 save || true
+            sleep 5
+            if curl -f http://localhost:3000 > /dev/null 2>&1; then
+              echo "✅ Production deployment successful"
+            else
+              echo "❌ Production health check failed"
+              exit 1
+            fi
