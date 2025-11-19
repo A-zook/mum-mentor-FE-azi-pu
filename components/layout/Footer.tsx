@@ -7,8 +7,8 @@ import logo from "@/public/assets/icons/nora-icon.svg";
 import { AppStoreButton, GooglePlayButton } from "../UI/AppStoreButtons";
 
 const companyLinks = [
-  { name: "Features", href: "#" },
-  { name: "Privacy Policy", href: "#" },
+  { name: "Features", href: "/features" },
+  { name: "Privacy Policy", href: "/privacy" },
   { name: "Terms of service", href: "/legal/terms" },
 ];
 
