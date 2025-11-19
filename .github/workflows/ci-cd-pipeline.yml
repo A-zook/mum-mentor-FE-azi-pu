@@ -98,6 +98,22 @@ jobs:
           path: .next/
           retention-days: 7
 
+      - name: Create deploy tarball
+        run: |
+          mkdir -p deploy-package
+          cp -r .next deploy-package/ || true
+          cp -r public deploy-package/ || true
+          cp package.json deploy-package/ || true
+          cp pnpm-lock.yaml deploy-package/ || true
+          tar -czf deploy-package.tar.gz -C deploy-package .
+
+      - name: Upload deploy package
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-package
+          path: deploy-package.tar.gz
+          retention-days: 7
+
   deploy-staging:
     name: Deploy to Staging (Auto)
     runs-on: self-hosted
@@ -108,11 +124,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download build artifact
+      - name: Download deploy package
         uses: actions/download-artifact@v4
         with:
-          name: build-output
+          name: deploy-package
           path: .
+
+      - name: Extract deploy package
+        run: |
+          tar -xzf deploy-package.tar.gz -C . || true
 
       - name: Create deployment package
         run: |
@@ -131,7 +151,7 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
           APP_DIR: /home/${{ secrets.SERVER_USER }}/mum-mentor-fe-staging
-          APP_PORT: 3000
+          APP_PORT: 3001
         run: |
           # Install sshpass for password-based authentication (best-effort)
           sudo apt-get update || true
@@ -156,10 +176,10 @@ jobs:
             pm2 delete mum-mentor-fe-staging || true
             cd ~/mum-mentor-fe-staging || true
             # Start Next.js with PM2 in production mode
-            pm2 start node_modules/next/dist/bin/next --name mum-mentor-fe-staging -- start -p 3000 || true
+            pm2 start node_modules/next/dist/bin/next --name mum-mentor-fe-staging -- start -p 3001 || true
             pm2 save || true
             sleep 5
-            if curl -f http://localhost:3000 > /dev/null 2>&1; then
+            if curl -f http://localhost:3001 > /dev/null 2>&1; then
               echo "✅ Staging deployment successful"
             else
               echo "❌ Staging health check failed"
