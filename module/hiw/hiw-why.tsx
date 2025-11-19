@@ -7,7 +7,7 @@ import { SectionHeader } from ".";
 
 export const HiwWhy: NextPage = () => {
   return (
-    <div className="bg-bg-secondary mt-15 pl-6">
+    <div className="bg-bg-secondary mt-60 pl-6">
       <div className="mx-auto flex max-w-550 flex-col gap-6 md:max-w-1240 md:flex-row">
         <ScrollAnimationWrapper style="flex  flex-col justify-center space-y-3.5 py-8 lg:w-[569.26px]">
           <SectionHeader headerText="why this works" />

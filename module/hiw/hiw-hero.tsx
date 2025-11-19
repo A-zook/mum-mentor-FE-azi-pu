@@ -7,7 +7,7 @@ import { SectionHeader } from ".";
 
 export const HiwHero: NextPage = () => {
   return (
-    <header className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-15 md:max-w-1240 md:flex-row md:items-start">
+    <header className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-60 md:max-w-1240 md:flex-row md:items-start">
       <div className="flex flex-col items-center gap-4 md:mt-2 md:w-1/2 md:items-start">
         <SectionHeader headerText="How It Works" />
 
