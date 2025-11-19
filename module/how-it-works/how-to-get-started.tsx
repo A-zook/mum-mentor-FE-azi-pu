@@ -1,5 +1,6 @@
 import { STEPS } from "@/data/how-it-works-data";
 import { GetStartedStep } from "@/module/how-it-works/get-started-step";
+
 import { SectionHeaderText } from "@/module/how-it-works/section-header-text";
 import { NextPage } from "next";
 
