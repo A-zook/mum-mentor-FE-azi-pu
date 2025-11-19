@@ -14,12 +14,12 @@ export const PerkCard: NextPage<PerkCardProps> = ({ title, description }) => {
         />
 
         {/* Title */}
-        <h3 className="text-body-large leading-tight font-semibold text-[#1A1A1A] lg:text-2xl">
+        <h3 className="text-body-large text-soft-black leading-tight font-semibold lg:text-2xl">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-body-regular leading-snug text-[#1A1A1A] lg:text-lg lg:leading-relaxed">
+        <p className="text-body-regular text-soft-black leading-snug lg:text-lg lg:leading-relaxed">
           {description}
         </p>
       </div>
