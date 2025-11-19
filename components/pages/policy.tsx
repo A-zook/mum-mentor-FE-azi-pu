@@ -52,10 +52,10 @@ export default function PrivacyPolicyPage() {
               <p className="mt-3">
                 By using NORA, you agree to the practices described in this
                 policy. We may update this policy from time to time. Any changes
-                will be posted here with a new &quot;Effective&quot; date at the top, and
-                we&apos;ll let you know inside the app or by email if the changes are
-                important. Continuing to use NORA after the update means you
-                accept the new version.
+                will be posted here with a new &quot;Effective&quot; date at the
+                top, and we&apos;ll let you know inside the app or by email if
+                the changes are important. Continuing to use NORA after the
+                update means you accept the new version.
               </p>
             </section>
 
@@ -120,8 +120,9 @@ export default function PrivacyPolicyPage() {
               <ul className="ml-6 list-disc space-y-1">
                 <li>
                   Deliver responses, remember conversation context, and offer
-                  continuity (e.g., &quot;Last week you mentioned your toddler is
-                  allergic to eggs, so here are egg-free breakfast ideas&quot;).
+                  continuity (e.g., &quot;Last week you mentioned your toddler
+                  is allergic to eggs, so here are egg-free breakfast
+                  ideas&quot;).
                 </li>
                 <li>
                   Generate tailored suggestions for routines, activities,
@@ -213,8 +214,8 @@ export default function PrivacyPolicyPage() {
               </h3>
               <ul className="ml-6 list-disc space-y-1">
                 <li>
-                  Request full deletion via Settings → &quot;Delete My Account&quot; or by
-                  emailing support@mommentor.ai.
+                  Request full deletion via Settings → &quot;Delete My
+                  Account&quot; or by emailing support@mommentor.ai.
                 </li>
                 <li>
                   All personal data is permanently erased within 30 days (most
@@ -346,9 +347,9 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p>
                 We may update this policy from time to time. Any changes will be
-                posted here with a new &quot;Effective Date.&quot; Material changes will
-                be communicated inside the app and/or via email (if you&apos;ve
-                provided one).
+                posted here with a new &quot;Effective Date.&quot; Material
+                changes will be communicated inside the app and/or via email (if
+                you&apos;ve provided one).
               </p>
             </section>
 
