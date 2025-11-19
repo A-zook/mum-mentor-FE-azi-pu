@@ -14,7 +14,7 @@ on:
 jobs:
   lint-and-test:
     name: Lint, Type Check & Build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hng-13-runner]
 
     strategy:
       matrix:
