@@ -51,12 +51,12 @@ export const HeroSection: NextPage = () => {
     >
       <div className="flex h-[280px] w-[408px] flex-col items-center gap-4 text-center md:h-[340px] md:w-[713px] md:gap-6">
         <div className="flex flex-col gap-2 md:gap-6">
-          <h1 className="md:text-heading1 text-[32px] leading-snug font-bold md:leading-tight">
+          <h1 className="md:text-heading1 text-3xl leading-snug font-bold md:leading-tight">
             Motherhood is hard. <br />
-            <span className="text-pink-600">Nora</span> makes it softer
+            <span className="text-primary">Nora</span> makes it softer
           </h1>
 
-          <p className="md:text-body-large mx-auto max-w-full text-xl text-[#2E2E2E] md:max-w-[600px]">
+          <p className="md:text-body-large text-secondary-text mx-auto max-w-full text-xl md:max-w-[600px]">
             Get personalized guidance, emotional support, and answers anytime,
             anywhere
           </p>
@@ -78,7 +78,7 @@ export const HeroSection: NextPage = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   onKeyPress={(e) => handleKeyPress(e, handleNext)}
-                  className="h-12 w-full rounded-lg border border-[#D5D5D5] px-4 py-2 md:w-[408px]"
+                  className="border-outline h-12 w-full rounded-lg border px-4 py-2 md:w-[408px]"
                   autoFocus
                 />
                 <Button onClick={handleNext} disabled={!fullName.trim()}>
@@ -99,7 +99,7 @@ export const HeroSection: NextPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyPress={(e) => handleKeyPress(e, handleJoinWaitlist)}
-                  className="h-12 w-full rounded-lg border border-[#D5D5D5] px-4 py-2 md:w-[408px]"
+                  className="border-outline h-12 w-full rounded-lg border px-4 py-2 md:w-[408px]"
                   autoFocus
                 />
                 <Button

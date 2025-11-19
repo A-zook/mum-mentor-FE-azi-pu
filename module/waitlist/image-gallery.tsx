@@ -4,10 +4,10 @@ import { NextPage } from "next";
 import Image from "next/image";
 
 const galleryImages = [
-  "/assets/images/mother-child1.png",
-  "/assets/images/mother-child2.png",
-  "/assets/images/mother-child3.png",
-  "/assets/images/mother-child4.png",
+  "/assets/images/mother-kissing-baby-soft-light.png",
+  "/assets/images/mother-holding-newborn-dark-background.png",
+  "/assets/images/mother-child-outdoors-floral-sunlight.png",
+  "/assets/images/mother-holding-baby-orange-background.png",
 ];
 
 export const ImageGallery: NextPage = () => {
