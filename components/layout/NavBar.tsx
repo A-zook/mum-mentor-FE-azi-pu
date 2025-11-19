@@ -11,11 +11,13 @@ import Button from "../UI/Button";
 
 const menuItems = [
   { name: "Waitlist", href: "/waitlist" },
+  { name: "Features", href: "/features" },
   { name: "How it works", href: "/how-it-works" },
 ];
 
 const desktopNavItems: DesktopNavItem[] = [
   { name: "Waitlist", href: "/waitlist" },
+  { name: "Features", href: "/features" },
   { name: "How it works", href: "/how-it-works" },
   // { name: "What's New", href: "/whats-new", hasNotification: true },
 ];
@@ -63,7 +65,7 @@ const Navbar: NextPage = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative flex items-center gap-1 text-base font-medium text-gray-700 transition-colors hover:text-[#E63946]"
+                  className={`relative flex items-center gap-1 text-base transition-colors hover:text-[#E63946] ${pathname === item.href ? "font-bold text-[#E63946]" : "font-medium text-gray-700"}`}
                 >
                   {item.name}
                   {item.hasDropdown && (
