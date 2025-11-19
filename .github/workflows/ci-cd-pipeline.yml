@@ -12,9 +12,9 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'Which environment to deploy (staging or production)'
+        description: "Which environment to deploy (staging or production)"
         required: true
-        default: 'staging'
+        default: "staging"
         type: choice
         options:
           - staging
@@ -102,7 +102,7 @@ jobs:
     name: Deploy to Staging (Auto)
     runs-on: self-hosted
     needs: test
-    environment: 'staging'
+    environment: "staging"
     if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
     steps:
       - name: Checkout code
@@ -166,7 +166,7 @@ jobs:
     runs-on: self-hosted
     needs: test
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'production'
-    environment: 'production'
+    environment: "production"
     steps:
       - name: Deploy to production server
         uses: appleboy/ssh-action@v1.0.0
