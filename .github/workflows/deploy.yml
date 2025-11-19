@@ -1,9 +1,7 @@
 name: Deploy
 
 on:
-  push:
-    branches-ignore:
-      - "dependabot/**"
+  push: {}
   workflow_dispatch:
     inputs:
       environment:
