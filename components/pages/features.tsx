@@ -7,7 +7,7 @@ const Features: NextPage = () => {
     <div>
       <FeatureHero />
       <OurFeatures />
-      <Yan/>
+      <Yan />
     </div>
   );
 };
