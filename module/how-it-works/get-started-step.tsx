@@ -3,7 +3,7 @@ import StepsDotSvg from "@public/assets/icons/dot.svg";
 import { NextPage } from "next";
 import Image from "next/image";
 
-export const StepBlock: NextPage<StepBlockProps> = ({ step }) => {
+export const GetStartedStep: NextPage<StepBlockProps> = ({ step }) => {
   return (
     <section
       className={`mx-auto flex max-w-550 flex-col gap-8 md:max-w-1240 md:items-center md:justify-between ${step?.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center`}

@@ -1,16 +1,16 @@
 import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import { SectionHeaderText } from "@/module/how-it-works/section-header-text";
 import SleepingBabyImage from "@public/assets/images/sleepingBaby.png";
 import SleepingBabyDesktopImage from "@public/assets/images/sleepingBabyDesktop.png";
 import { NextPage } from "next";
 import Image from "next/image";
-import { SectionHeader } from ".";
 
-export const HiwWhy: NextPage = () => {
+export const WhyThisWorks: NextPage = () => {
   return (
     <div className="bg-bg-secondary mt-60 pl-6">
       <div className="mx-auto flex max-w-550 flex-col gap-6 md:max-w-1240 md:flex-row">
         <ScrollAnimationWrapper style="flex  flex-col justify-center space-y-3.5 py-8 lg:w-[569.26px]">
-          <SectionHeader headerText="why this works" />
+          <SectionHeaderText headerText="why this works" />
 
           <h4 className="text-primary-text md:text-heading2 text-4xl leading-tight font-semibold capitalize">
             Because motherhood changes every day — your tools should too.

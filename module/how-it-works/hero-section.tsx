@@ -3,13 +3,13 @@ import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import { NextPage } from "next";
 import Image from "next/image";
-import { SectionHeader } from ".";
+import { SectionHeaderText } from ".";
 
-export const HiwHero: NextPage = () => {
+export const HowItWorksHero: NextPage = () => {
   return (
     <header className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-60 md:max-w-1240 md:flex-row md:items-start">
       <div className="flex flex-col items-center gap-4 md:mt-2 md:w-1/2 md:items-start">
-        <SectionHeader headerText="How It Works" />
+        <SectionHeaderText headerText="How It Works" />
 
         <h1 className="text-primary-text md:text-heading1 text-center text-4xl leading-snug font-semibold md:text-start md:leading-tight">
           Motherhood Made Simpler, One Smart Step at a Time
