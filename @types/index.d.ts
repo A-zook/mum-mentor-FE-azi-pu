@@ -32,3 +32,25 @@ type PerkCardProps = {
   title: string;
   description: string;
 };
+
+type VerificationStatus = "loading" | "success" | "error";
+
+interface VerifyEmailPayload {
+  token: string;
+}
+
+interface VerifyEmailResponse {
+  message: string;
+}
+
+interface ResendVerificationPayload {
+  email: string;
+}
+
+interface ResendVerificationResponse {
+  message: string;
+}
+
+interface VerificationStatusProps {
+  status: Status;
+}

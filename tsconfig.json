@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "module/how-it-works/ready-to-download.tsx"
   ],
   "exclude": ["node_modules"]
 }
