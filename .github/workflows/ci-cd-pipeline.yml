@@ -1,4 +1,5 @@
 name: CI/CD Pipeline
+# Updated pipeline configuration
 
 on:
   push:
