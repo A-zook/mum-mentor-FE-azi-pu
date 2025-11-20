@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import PrivacyPolicy from "@/components/pages/policy";
+import PrivacyPolicyPage from "@/components/pages/policy";
 
-const policyPage: NextPage = () => <PrivacyPolicy />;
+const policyPage: NextPage = () => <PrivacyPolicyPage />;
 
 export default policyPage;
