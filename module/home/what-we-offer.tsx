@@ -1,4 +1,4 @@
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { NextPage } from "next";
 
 const features = [
@@ -90,8 +90,8 @@ const features = [
 
 export const WhatWeOffer: NextPage = () => {
   return (
-    <div className="mx-auto my-[50px] px-6">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-[60px]">
+    <div className="mx-auto my-50 px-6">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-60">
         <div className="flex max-w-[750px] flex-col items-center gap-4">
           <h3 className="lg:text-heading2 text-secondary-text text-center text-3xl leading-tight font-bold md:text-4xl">
             What We Offer

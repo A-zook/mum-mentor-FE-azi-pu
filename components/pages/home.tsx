@@ -3,6 +3,7 @@ import {
   Hero,
   TestimonialsSection,
   WhatWeOffer,
+  VideoSection,
 } from "@/module/home";
 import { ReadyToDownload } from "@/module/how-it-works";
 import { NextPage } from "next";
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Hero />
+      <VideoSection />
       <AIInsight />
       <WhatWeOffer />
       <TestimonialsSection />

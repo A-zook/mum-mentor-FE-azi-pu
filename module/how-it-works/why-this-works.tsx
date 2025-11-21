@@ -1,4 +1,4 @@
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { SectionHeaderText } from "@/module/how-it-works/section-header-text";
 import SleepingBabyImage from "@public/assets/images/sleepingBaby.png";
 import SleepingBabyDesktopImage from "@public/assets/images/sleepingBabyDesktop.png";

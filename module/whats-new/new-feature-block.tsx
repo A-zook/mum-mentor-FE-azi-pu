@@ -1,4 +1,4 @@
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import StepsDotSvg from "@public/assets/icons/dot.svg";
 import { NextPage } from "next";
 import Image from "next/image";

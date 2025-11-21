@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
