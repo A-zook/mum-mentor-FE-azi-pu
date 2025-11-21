@@ -1,4 +1,4 @@
-import Button from "@/components/UI/button";
+import Button from "@/components/UI/Button";
 import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import HeroImage from "@public/assets/images/whats-new-hero.png";
 import { NextPage } from "next";

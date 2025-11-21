@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { desktopNavItems, menuItems } from "@/data/layout-data";
-import Button from "../UI/button";
+import Button from "../UI/Button";
 import { APK_LINK } from "@/data/constants";
 
 export const Navbar: NextPage = () => {
