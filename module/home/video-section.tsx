@@ -3,23 +3,20 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { VIDEO_URL } from "@/data/constants";
 
 export const VideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
-  const videoUrl =
-    "https://res.cloudinary.com/debgkcg8v/video/upload/v1763653490/Clear_Explainer_Final_Video_rm358l.mp4";
-
   const togglePlay = () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
+      if (videoRef.current.paused) {
         videoRef.current.play();
+      } else {
+        videoRef.current.pause();
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -64,8 +61,11 @@ export const VideoSection = () => {
               className="h-full w-full object-cover"
               poster="/assets/images/video-thumbnail.png"
               onClick={togglePlay}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              muted={isMuted}
             >
-              <source src={videoUrl} type="video/mp4" />
+              <source src={VIDEO_URL} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
