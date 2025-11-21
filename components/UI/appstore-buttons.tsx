@@ -10,7 +10,7 @@ interface AppStoreButtonProps {
 
 // Google Play Button Component
 export const GooglePlayButton = ({
-  href = "#",
+  href = "https://appetize.io/embed/b_3b2wefjpzmqffiemrlhk26zjum",
   className = "",
 }: AppStoreButtonProps) => {
   return (
@@ -43,7 +43,7 @@ export const GooglePlayButton = ({
 
 // App Store Button Component
 export const AppStoreButton = ({
-  href = "#",
+  href = "https://appetize.io/embed/b_3b2wefjpzmqffiemrlhk26zjum",
   className = "",
 }: AppStoreButtonProps) => {
   return (

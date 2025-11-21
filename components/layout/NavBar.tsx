@@ -7,13 +7,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import Button from "../UI/Button";
 import { desktopNavItems, menuItems } from "@/data/layout-data";
+import Button from "../UI/button";
 
 export const Navbar: NextPage = () => {
   const pathname = usePathname();
   const waitlist = pathname === "/waitlist";
   const { isOpen, isFixed, toggleMenu } = useNav();
+  const APK_LINK = "https://appetize.io/embed/b_3b2wefjpzmqffiemrlhk26zjum";
 
   useEffect(() => {
     if (isOpen) {
@@ -81,7 +82,7 @@ export const Navbar: NextPage = () => {
 
             {/* CTA Button - Desktop */}
             <Link
-              href={waitlist ? "/waitlist#join-waitlist" : "#footer"}
+              href={waitlist ? "/waitlist#join-waitlist" : APK_LINK}
               className="hidden lg:block"
             >
               <Button>{waitlist ? "Join Waitlist" : "Download App"}</Button>
@@ -172,7 +173,7 @@ export const Navbar: NextPage = () => {
                     </motion.div>
                   ))}
 
-                <Link href={waitlist ? "/waitlist#join-waitlist" : "#footer"}>
+                <Link href={waitlist ? "/waitlist#join-waitlist" : APK_LINK}>
                   <Button>{waitlist ? "Join Waitlist" : "Download App"}</Button>
                 </Link>
               </div>

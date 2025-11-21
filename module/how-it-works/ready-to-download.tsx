@@ -1,5 +1,5 @@
-import AppStoreButtons from "@/components/UI/AppStoreButtons";
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import AppStoreButtons from "@/components/UI/appstore-buttons";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import chubbyBaby from "@public/assets/images/chubby-baby.png";
 import { NextPage } from "next";
 import Image from "next/image";

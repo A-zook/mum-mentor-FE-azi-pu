@@ -1,4 +1,4 @@
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { NextPage } from "next";
 
 const features = [

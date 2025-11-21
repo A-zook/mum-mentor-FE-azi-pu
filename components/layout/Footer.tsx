@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/assets/icons/nora-icon.svg";
-import { AppStoreButton, GooglePlayButton } from "../UI/AppStoreButtons";
+import { AppStoreButton, GooglePlayButton } from "../UI/appstore-buttons";
 import { companyLinks, socialLinks } from "@/data/layout-data";
 
 export const Footer: NextPage = () => {

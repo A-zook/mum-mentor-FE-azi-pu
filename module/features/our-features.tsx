@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import ScrollAnimationWrapper from "@/components/UI/ScrollAnimation";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { features } from "@/data/features-data";
 
 export const OurFeatures: NextPage = () => {

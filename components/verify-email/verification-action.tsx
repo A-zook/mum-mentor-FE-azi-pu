@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Button from "@/components/UI/Button";
+import Button from "@/components/UI/button";
 import { useResendVerification } from "@/hooks";
 import { NextPage } from "next";
 

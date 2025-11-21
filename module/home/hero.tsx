@@ -1,8 +1,8 @@
 import {
   AppStoreButton,
   GooglePlayButton,
-} from "@/components/UI/AppStoreButtons";
-import heroImg from "@/public/assets/images/home_hero_img.jpg";
+} from "@/components/UI/appstore-buttons";
+import momWithBabyClothes from "@/public/assets/images/mum-have-baby-clothes-for-newborn.jpg";
 import { NextPage } from "next";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export const Hero: NextPage = () => {
   return (
     <section className="relative h-[651px] max-h-[738px] lg:h-screen">
       <Image
-        src={heroImg}
+        src={momWithBabyClothes}
         alt="Hero Image"
         className="absolute top-0 left-0 -z-10 h-full w-full object-cover"
       />
