@@ -19,6 +19,16 @@ interface StepBlockProps {
   };
 }
 
+interface FeatureBlockProps {
+  feature: {
+    id: number;
+    perks: string;
+    title: string;
+    description: string;
+    image: StaticImageData;
+  };
+}
+
 interface WaitlistPayload {
   full_name: string;
   email: string;
