@@ -2,12 +2,14 @@ export const menuItems = [
   { name: "Waitlist", href: "/waitlist" },
   { name: "Features", href: "/features" },
   { name: "How it works", href: "/how-it-works" },
+  { name: "About us", href: "/about-us" },
 ];
 
 export const desktopNavItems: DesktopNavItem[] = [
   { name: "Waitlist", href: "/waitlist" },
   { name: "Features", href: "/features" },
   { name: "How it works", href: "/how-it-works" },
+  { name: "About Us", href: "/about-us" },
   // { name: "What's New", href: "/whats-new", hasNotification: true },
 ];
 
