@@ -1,24 +1,26 @@
 import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { APP_STORES } from "@/data/buttons-data";
-import HeroImage from "@/public/assets/images/hiw-hero-image.png";
+import { SectionHeaderText } from "@/module/how-it-works";
+
+import AboutUsHeroImage from "@public/assets/images/AboutUsHeroImage.png";
 import { NextPage } from "next";
 import Image from "next/image";
-import { SectionHeaderText } from ".";
 
-export const HowItWorksHero: NextPage = () => {
+export const AboutUsHero: NextPage = () => {
   return (
     <header className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-60 md:max-w-1240 md:flex-row md:items-start">
       <div className="flex flex-col items-center gap-10 md:mt-2 md:w-1/2 md:items-start lg:max-w-[581px]">
         <div className="flex flex-col items-center gap-4 md:items-start">
-          <SectionHeaderText headerText="How It Works" />
+          <SectionHeaderText headerText="About us" />
 
           <h1 className="text-primary-text lg:text-heading1 md:text-heading2 text-center text-4xl leading-snug font-semibold md:text-start md:leading-tight">
-            Motherhood Made Simpler, One Smart Step at a Time
+            Support that feels like a friend.
           </h1>
 
           <p className="text-gray-text3 text-center text-xl md:text-start md:text-xl lg:text-2xl">
-            See how Mom Mentor AI understands your world, supports your routine,
-            and helps you thrive every day.
+            Nora was created to be a gentle companion in the moments when life
+            feels heavy. She listens, supports, and helps you find clarity
+            without pressure or judgment.
           </p>
         </div>
 
@@ -33,9 +35,9 @@ export const HowItWorksHero: NextPage = () => {
 
       {/* hero image */}
 
-      <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-full md:w-1/2 overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px]">
+      <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-full md:w-1/2 overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px] ">
         <Image
-          src={HeroImage}
+          src={AboutUsHeroImage}
           alt="An image of a mother carrying baby"
           quality={100}
           placeholder="blur"
