@@ -5,11 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/assets/icons/nora-icon.svg";
 import { AppStoreButton, GooglePlayButton } from "../UI/appstore-buttons";
-import { companyLinks, socialLinks } from "@/data/layout-data";
+import {
+  companyLinks,
+  socialLinks,
+  waitListCompanyLinks,
+} from "@/data/layout-data";
 
 export const Footer: NextPage = () => {
   const pathname = usePathname();
   const waitlist = pathname === "/waitlist";
+  const nav = waitlist ? waitListCompanyLinks : companyLinks;
 
   return (
     <footer className="bg-[#0F1419] text-white" id="footer">
@@ -17,7 +22,10 @@ export const Footer: NextPage = () => {
         <div className="hidden lg:flex lg:justify-between lg:gap-12">
           {/* Left Section - Logo & Description */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
+            <Link
+              href={waitlist ? "/waitlist" : "/"}
+              className="flex items-center gap-2"
+            >
               <div className="relative">
                 <Image
                   src={logo}
@@ -28,7 +36,7 @@ export const Footer: NextPage = () => {
                 />
               </div>
             </Link>
-            <p className="max-w-[400px] text-base leading-relaxed text-gray-300">
+            <p className="max-w-[400px] text-base leading-relaxed text-gray-300 md:text-2xl">
               Delivering trusted AI support to help pregnant women and moms
               navigate motherhood with confidence.
             </p>
@@ -45,24 +53,24 @@ export const Footer: NextPage = () => {
           </div>
 
           {/* Middle Section - Company Links */}
-          {!waitlist && (
+          {
             <div>
               <h3 className="mb-6 border-b border-gray-700 pb-3 text-xl font-bold">
                 Company
               </h3>
               <nav className="space-y-4">
-                {companyLinks.map((link) => (
+                {nav.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="block text-base text-gray-300 transition-colors hover:text-white"
+                    className="block text-base text-gray-300 transition-colors hover:text-white md:text-2xl"
                   >
                     {link.name}
                   </Link>
                 ))}
               </nav>
             </div>
-          )}
+          }
 
           {/* Right Section - Social Links */}
           <div>

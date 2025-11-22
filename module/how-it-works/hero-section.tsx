@@ -1,4 +1,3 @@
-import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import { APP_STORES } from "@/data/buttons-data";
 import HeroImage from "@/public/assets/images/hiw-hero-image.png";
 import { NextPage } from "next";
@@ -33,7 +32,7 @@ export const HowItWorksHero: NextPage = () => {
 
       {/* hero image */}
 
-      <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-full md:w-1/2 overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px]">
+      <div className="border-primary image-drop-shadow relative h-[372.37px] w-full overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px] md:w-1/2">
         <Image
           src={HeroImage}
           alt="An image of a mother carrying baby"
@@ -43,7 +42,7 @@ export const HowItWorksHero: NextPage = () => {
           fill
           className="object-cover"
         />
-      </ScrollAnimationWrapper>
+      </div>
     </header>
   );
 };

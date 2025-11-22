@@ -1,314 +1,176 @@
+"use client";
 import { NextPage } from "next";
+import { useEffect, useState } from "react";
 
-const TermsPage: NextPage = () => {
+export const Terms: NextPage = () => {
+  const [activeSection, setActiveSection] = useState("");
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "welcome",
+        "your-journey",
+        "role-of-nora",
+        "responsible-use",
+        "subscriptions",
+        "changes",
+      ];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+  const tocItems = [
+    { id: "welcome", label: "Welcome to Nora", number: 1 },
+    { id: "your-journey", label: "Your Journey, Your Content", number: 2 },
+    { id: "role-of-nora", label: "Roles of Nora", number: 3 },
+    {
+      id: "responsible-use",
+      label: "Responsible use and Community Spirit",
+      number: 4,
+    },
+    { id: "subscriptions", label: "Subscriptions and Billings", number: 5 },
+    { id: "changes", label: "Changes to terms", number: 6 },
+  ];
   return (
-    <div className="mb-8 min-h-screen bg-white px-4 py-8 text-gray-800 sm:px-6 md:px-8 lg:px-12">
-      <div className="mx-auto w-full max-w-[835px] text-justify">
-        <h1 className="mb-6 text-center text-4xl font-bold md:text-5xl">
+    <div className="min-h-screen bg-white">
+      <div className="px-4 py-12 text-center">
+        <h1 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
           Terms & Conditions
         </h1>
-
-        {/* ===================== TERMS OF SERVICE ===================== */}
-        <section className="space-y-6">
-          <h2 className="text-center text-3xl font-semibold md:text-2xl">
-            Mum Mentor AI: Terms of Service
-          </h2>
-
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                1. Welcome to Mum Mentor AI! :{" "}
-              </span>
-              <span className="md:text-xl">
-                We&apos;re so glad you&apos;re here! Mum Mentor AI is designed
-                to be your supportive digital companion throughout your
-                motherhood journey, offering guidance, connection, and
-                reassurance. These Terms of Service (Terms) outline the rules
-                for using our app and website. By accessing or using Mum Mentor
-                AI, you agree to these Terms. Please read them carefully.
-              </span>
-            </p>
-          </div>
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                2. Your Journey, Your Content :{" "}
-              </span>
-              <span className="md:text-xl">
+        <p className="mx-auto mb-2 max-w-2xl text-lg text-gray-600">
+          These are the terms and conditions we expect our users to adhere to.
+        </p>
+        <p className="text-sm text-gray-500">Effective: July 28, 2025</p>
+      </div>
+      <div className="mx-auto max-w-7xl px-4 py-8 md:py-12">
+        <div className="flex flex-col gap-8 md:flex-row md:gap-12">
+          {/* Sidebar - Table of Contents */}
+          <aside className="shrink-0 md:w-72">
+            <div className="md:sticky md:top-8">
+              <h2 className="mb-6 text-xl font-bold text-gray-900">
+                Nora Terms Of Use
+              </h2>
+              <nav>
+                <ol className="space-y-3">
+                  {tocItems.map((item) => (
+                    <li key={item.id}>
+                      <button
+                        onClick={() => scrollToSection(item.id)}
+                        className={`w-full text-left transition-colors ${
+                          activeSection === item.id
+                            ? "font-medium text-red-500"
+                            : "text-gray-600 hover:text-gray-900"
+                        }`}
+                      >
+                        {item.number}. {item.label}
+                      </button>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            </div>
+          </aside>
+          <main className="max-w-3xl flex-1">
+            <section id="welcome" className="mb-12 scroll-mt-20">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Welcome To Nora!
+              </h2>
+              <p className="leading-relaxed text-gray-700">
+                We&apos;re so glad you&apos;re here! NoraAI is designed to be
+                your supportive digital companion throughout your motherhood
+                journey, offering guidance, connection, and reassurance. These
+                Terms of Service (Terms) outline the rules for using our app and
+                website. By accessing or using NoraAI, you agree to these Terms.
+                Please read them carefully.
+              </p>
+            </section>
+            <section id="your-journey" className="mb-12 scroll-mt-20">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Your Journey, Your Content
+              </h2>
+              <p className="leading-relaxed text-gray-700">
                 You&apos;ll be sharing your experiences, questions, and precious
                 memories (photos!) with us. We understand how personal this
                 journey is. You retain all rights to the content you create and
                 upload. We will only use your content to provide and improve the
-                Mum Mentor AI service to you, as outlined in our Privacy Policy.
-              </span>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                3. The Role of Mum Mentor AI :{" "}
-              </span>
-              <span className="md:text-xl">
-                Mum Mentor AI provides general guidance, emotional support, and
-                informational resources.{" "}
-                <span className="text-xl font-bold md:text-2xl">
-                  It is not a substitute for professional medical,
-                  psychological, or legal advice.
-                </span>{" "}
-                Always consult with qualified healthcare professionals for
-                specific concerns regarding your health, your baby&apos;s
-                health, or any personal situation. Our AI offers companionship
-                and information, but cannot diagnose, treat, or offer
-                professional interventions.
-              </span>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                4. Responsible Use & Community Spirit :{" "}
-              </span>
-              <span className="md:text-xl">
+                NoraAI service to you, as outlined in our Privacy Policy.
+              </p>
+            </section>
+            <section id="role-of-nora" className="mb-12 scroll-mt-20">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                The Role of Nora!
+              </h2>
+              <p className="leading-relaxed text-gray-700">
+                NoraAI provides general guidance, emotional support, and
+                informational resources. It is not a substitute for professional
+                medical, psychological, or legal advice. Always consult with
+                qualified healthcare professionals for specific concerns
+                regarding your health, your baby&apos;s health, or any personal
+                situation. Our AI offers companionship and information, but
+                cannot diagnose, treat, or offer professional interventions.
+              </p>
+            </section>
+            <section id="responsible-use" className="mb-12 scroll-mt-20">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Responsible Use & Community Spirit
+              </h2>
+              <p className="leading-relaxed text-gray-700">
                 We foster a supportive and respectful environment. Please use
-                Mum Mentor AI responsibly. Do not share offensive, harmful, or
+                NoraAI responsibly. Do not share offensive, harmful, or
                 inappropriate content. We reserve the right to remove content or
                 suspend accounts that violate this spirit of support and
                 respect.
-              </span>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                5. Subscriptions & Billing :{" "}
-              </span>
-              <span className="md:text-xl">
-                Access to certain features of Mum Mentor AI is provided through
-                paid subscriptions (e.g., &apos;My Nurturing Hub,&apos;
-                &apos;Always By Your Side&apos;). Your subscription will
-                automatically renew unless cancelled. You can manage or cancel
-                your subscription at any time through your account settings.
-                Refunds are subject to our refund policy, available on our
-                website.
-              </span>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                6. Changes to Terms :{" "}
-              </span>
-              <span className="md:text-xl">
+              </p>
+            </section>
+            <section id="subscriptions" className="mb-12 scroll-mt-20">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Subscriptions & Billing
+              </h2>
+              <p className="leading-relaxed text-gray-700">
+                Access to certain features of NoraAI is provided through paid
+                subscriptions (e.g., &apos;My Nurturing Hub,&apos; &apos;Always
+                By Your Side&apos;). Your subscription will automatically renew
+                unless cancelled. You can manage or cancel your subscription at
+                any time through your account settings. Refunds are subject to
+                our refund policy, available on our website.
+              </p>
+            </section>
+            <section id="changes" className="mb-12 scroll-mt-20">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Change to Terms
+              </h2>
+              <p className="leading-relaxed text-gray-700">
                 Motherhood evolves, and so might our app! We may update these
                 Terms from time to time. We&apos;ll notify you of any
-                significant changes, and your continued use of Mum Mentor AI
-                means you accept the updated Terms.
-              </span>
-            </p>
-          </div>
-        </section>
-
-        {/* ===================== PRIVACY POLICY ===================== */}
-        <section className="mt-10 space-y-8">
-          <div className="text-center">
-            <h1 className="mb-4 text-left text-3xl font-bold md:text-4xl">
-              Mum Mentor AI: Privacy Policy
-            </h1>
-          </div>
-
-          <div>
-            <p>
-              <span className="text-2xl font-bold md:text-3xl">
-                1. Your Privacy, Our Priority :{" "}
-              </span>
-              <span className="md:text-xl">
-                At Mum Mentor AI, we deeply respect your privacy. We understand
-                that the information you share with us about your motherhood
-                journey, your child, and your feelings is incredibly personal.
-                This Privacy Policy explains how we collect, use, and protect
-                your data.
-              </span>
-            </p>
-          </div>
-
-          {/* Section 2 - What Information We Collect */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <h2 className="text-2xl font-bold md:text-3xl">
-                2. What Information We Collect (and why)
-              </h2>
-            </div>
-
-            <ul className="ml-6 list-disc space-y-3 leading-relaxed md:text-lg">
-              <li>
-                <span className="text-2xl font-bold md:text-3xl">
-                  Information You Provide:
-                </span>{" "}
-                <span className="md:text-xl">
-                  When you create an account, subscribe, or interact with our
-                  AI, you provide us with details like your name, email,
-                  baby&apos;s age, and your conversational inputs. We use this
-                  to personalize your experience, provide relevant guidance, and
-                  offer tailored support.
-                </span>
-              </li>
-              <li>
-                <span className="text-2xl font-bold md:text-3xl">
-                  Photos & Memories:
-                </span>{" "}
-                <span className="md:text-xl">
-                  If you choose to upload photos for the &apos;Memory Lane&apos;
-                  feature, they are securely stored and used only to create your
-                  personal memory timelines within the app.
-                </span>
-              </li>
-              <li>
-                <span className="text-2xl font-bold md:text-3xl">
-                  Usage Data:
-                </span>{" "}
-                <span className="md:text-xl">
-                  We collect anonymous data about how you use the app (e.g.,
-                  features used, duration of sessions). This helps us understand
-                  what works well and how to improve Mum Mentor AI, making it
-                  more helpful for you and other mums.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Section 3 - What Information We Collect */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <h2 className="text-2xl font-bold md:text-3xl">
-                3. How We Use Your Information (for Your Benefit) : We use your
-                information to:
-              </h2>
-            </div>
-
-            <ul className="ml-6 list-disc space-y-3 text-base leading-relaxed md:text-lg">
-              <li>
-                <span className="text-2xl font-bold md:text-3xl">
-                  Information You Provide:
-                </span>{" "}
-                Deliver personalized emotional support and guidance.
-              </li>
-              <li className="md:text-xl">
-                Proactively send stage-specific advice and reminders.
-              </li>
-              <li className="md:text-xl">
-                Curate your &apos;Memory Lane&apos; and provide
-                &apos;flashback&apos; reminders.
-              </li>
-              <li className="md:text-xl">
-                Improve our AI&apos;s understanding and responsiveness.
-              </li>
-              <li className="md:text-xl">
-                Communicate with you about updates, features, and offers (you
-                can opt-out).
-              </li>
-              <li className="md:text-xl">
-                Ensure the security and stability of our service.
-              </li>
-            </ul>
-          </div>
-
-          {/* Section 4 - Sharing Your Information */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <p>
-                <span className="text-xl font-semibold md:text-2xl">
-                  4. Sharing Your Information (Never Without Your Trust)
-                  &quot;we will never sell your personal data to third parties:
-                </span>{" "}
-                <span className="md:text-xl">
-                  We may share anonymized, aggregated data for research or
-                  service improvement. We may use trusted third-party service
-                  providers (e.g., cloud hosting, payment processors) who are
-                  contractually bound to protect your data and only use it for
-                  the services we specify.
-                </span>
+                significant changes, and your continued use of NoraAI means you
+                accept the updated Terms.
               </p>
-            </div>
-          </div>
-
-          {/* Section 5 - Data Security */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <p>
-                <span className="text-xl font-semibold md:text-2xl">
-                  5. Data Security :{" "}
-                </span>{" "}
-                <span className="text-base leading-relaxed md:text-lg">
-                  We employ robust security measures (encryption, access
-                  controls) to protect your personal information from
-                  unauthorized access, alteration, disclosure, or destruction.
-                  While no system is 100% secure, we are committed to
-                  safeguarding your data.
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* Section 6 - Your Choices & Rights */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <h2 className="text-xl font-semibold md:text-2xl">
-                6. Your Choices & Rights{" "}
-                <span className="text-2xl font-bold md:text-3xl">
-                  You have control over your data! You can:
-                </span>
-              </h2>
-            </div>
-
-            <ul className="ml-6 list-disc space-y-2 text-base leading-relaxed md:text-lg">
-              <li>
-                Access, review, or update your personal information through your
-                account settings.
-              </li>
-              <li>Request deletion of your account and personal data.</li>
-              <li>Opt-out of marketing communications</li>
-              <li>Disable the &apos;Memory Lane&apos; feature at any time</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <p>
-                <span className="text-xl font-semibold md:text-2xl">
-                  7. Contact Us :{" "}
-                </span>{" "}
-                <span className="text-base leading-relaxed md:text-lg">
-                  If you have any questions or concerns about your privacy,
-                  please don&apos;t hesitate to contact us at{" "}
-                  <a href="mailto:info@nora.ai">info@nora.ai</a>.
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* ACCEPT BOX */}
-          {/* <div className="text-2lx mt-8 p-4 sm:flex-row sm:items-center">
-            <label className="text-lx flex items-center justify-center gap-2 justify-self-center sm:items-center">
-              <input type="checkbox" className="mt-1 h-4 w-4 sm:mt-0" />
-              <span>
-                By continuing, you agree to our{" "}
-                <span className="font-semibold">Terms & Conditions</span>
-              </span>
-            </label>
-          </div>
-          <div className="flex w-full justify-center justify-self-center sm:w-auto">
-            <Button variant="primary" size="md" className="w-full sm:w-auto">
-              Accept
-            </Button>
-          </div> */}
-        </section>
+            </section>
+          </main>
+        </div>
       </div>
     </div>
   );
 };
-
-export default TermsPage;

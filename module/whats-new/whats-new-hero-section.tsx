@@ -1,8 +1,9 @@
-import Button from "@/components/UI/Button";
+import Button from "@/components/UI/button";
 import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import HeroImage from "@public/assets/images/whats-new-hero.png";
 import { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const WhatsNewHero: NextPage = () => {
   return (
@@ -18,7 +19,13 @@ export const WhatsNewHero: NextPage = () => {
           </p>
         </div>
 
-        <Button className="w-full md:w-fit">Watch DEMO</Button>
+        <Link
+          href="https://youtu.be/L8hHmv8MSJY?si=W8mH3FlOLdI62cf6"
+          aria-label="Watch demo button link"
+          target="_blank"
+        >
+          <Button className="w-full md:w-fit">Watch DEMO</Button>
+        </Link>
       </div>
 
       <ScrollAnimationWrapper>

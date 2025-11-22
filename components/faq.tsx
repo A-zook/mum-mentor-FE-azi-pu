@@ -1,31 +1,9 @@
 "use client";
 
 import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
+import { faqData } from "@/data/faq";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-
-const faqData: FAQItem[] = [
-  {
-    question: "What is NORA?",
-    answer:
-      "NORA is an AI-powered companion built to support mums with quick answers, daily guidance, emotional support, and practical tools for every stage of motherhood.",
-  },
-  {
-    question: "Can I delete my data anytime?",
-    answer:
-      "Yes, you have full control over your data. You can delete your account and all associated data at any time through the app settings.",
-  },
-  {
-    question: "Do I need to subscribe?",
-    answer:
-      "NORA offers both free and premium subscription options. The free version provides basic features, while the premium subscription unlocks advanced AI insights and personalized support.",
-  },
-  {
-    question: "What makes Mum Mentor different from other AI platforms?",
-    answer:
-      "Mum Mentor is specifically designed for mothers, with AI trained on maternal health, child development, and parenting expertise. It provides personalized, empathetic support tailored to your unique journey.",
-  },
-];
 
 const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -35,8 +13,8 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section className="bg-bg-main py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-[1100px] px-6 lg:px-20">
+    <section className="bg-bg-main py-16 md:py-20 lg:py-24" id="faq">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-20">
         {/* Header */}
         <div className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">

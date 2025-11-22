@@ -9,7 +9,7 @@ export const SectionHeaderText: NextPage<{
     <div className="flex items-center gap-2.5">
       <Image src={StarIcon} alt="A star icon" quality={100} priority />
 
-      <p className="text-primary font-semibold uppercase md:text-2xl">
+      <p className="text-primary font-semibold uppercase md:text-xl">
         {headerText}
       </p>
     </div>

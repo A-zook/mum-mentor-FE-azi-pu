@@ -4,8 +4,8 @@ import { perkData } from "../../data/perk-data";
 
 export const PerksSection: NextPage = () => {
   return (
-    <section className="flex w-full justify-center py-16">
-      <div className="flex flex-col items-center gap-8 lg:w-[1240px]">
+    <section className="flex w-full justify-center py-16" id="perks">
+      <div className="flex flex-col items-center gap-8 lg:w-1240">
         <div className="flex w-full flex-col items-center gap-2 lg:w-[804px] lg:gap-4">
           <h2 className="lg:text-heading2 text-center text-4xl font-bold">
             Perks For Joining Early, Mama!

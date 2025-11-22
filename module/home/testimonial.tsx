@@ -1,35 +1,9 @@
 "use client";
 
+import { testimonials } from "@/data/testimonial";
 import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Image from "next/image";
-
-const testimonials = [
-  {
-    id: 1,
-    quote:
-      "NORA feels like having a supportive friend who truly understands. The gentle check-ins and personalized advice have made such a difference in my confidence as a new mum.",
-    author: "Sarah Mitchell",
-    role: "Mother of 4-month-old",
-    image: "/assets/images/testimonial_user_icon.jpg",
-  },
-  {
-    id: 2,
-    quote:
-      "As a first-time mum-to-be, I had so many questions and anxieties. NORA provides just the right amount of guidance without being overwhelming. I feel so much more prepared. Thank you!",
-    author: "Sarah Mitchell",
-    role: "Mother of 4-month-old",
-    image: "/assets/images/testimonial_user_icon.jpg",
-  },
-  {
-    id: 3,
-    quote:
-      "NORA feels like having a supportive friend who truly understands. The gentle check-ins and personalized advice have made such a difference in my confidence as a new mum.",
-    author: "Sarah Mitchell",
-    role: "Mother of 4-month-old",
-    image: "/assets/images/testimonial_user_icon.jpg",
-  },
-];
 
 const TestimonialCard = ({
   quote,
@@ -59,11 +33,14 @@ const TestimonialCard = ({
         viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 md:h-16 md:w-16"
       >
         <path
-          d="M14.2222 42.6667V28.4444C14.2222 23.7037 15.6667 19.8519 18.5556 16.8889C21.4444 13.9259 25.037 12.4444 29.3333 12.4444V18.6667C26.8148 18.6667 24.7407 19.5185 23.1111 21.2222C21.4815 22.9259 20.6667 25 20.6667 27.5556V28.4444H29.3333V42.6667H14.2222ZM40.8889 42.6667V28.4444C40.8889 23.7037 42.3333 19.8519 45.2222 16.8889C48.1111 13.9259 51.7037 12.4444 56 12.4444V18.6667C53.4815 18.6667 51.4074 19.5185 49.7778 21.2222C48.1481 22.9259 47.3333 25 47.3333 27.5556V28.4444H56V42.6667H40.8889Z"
-          fill="#E11D48"
+          d="M42.4264 32.9859H54.933C54.7197 45.4392 52.2664 47.4925 44.613 52.0259C43.733 52.5592 43.4397 53.6792 43.973 54.5859C44.5064 55.4659 45.6264 55.7592 46.533 55.2259C55.5464 49.8925 58.693 46.6392 58.693 31.1192V16.7459C58.693 12.1859 54.9864 8.50586 50.453 8.50586H42.453C37.7597 8.50586 34.213 12.0525 34.213 16.7459V24.7459C34.1864 29.4392 37.733 32.9859 42.4264 32.9859Z"
+          fill="#DD2D4A"
+        />
+        <path
+          d="M13.574 32.9859H26.0806C25.8673 45.4392 23.414 47.4925 15.7606 52.0259C14.8806 52.5592 14.5873 53.6792 15.1207 54.5859C15.654 55.4659 16.774 55.7592 17.6807 55.2259C26.694 49.8925 29.8406 46.6392 29.8406 31.1192V16.7459C29.8406 12.1859 26.134 8.50586 21.6007 8.50586H13.6006C8.88065 8.50586 5.33398 12.0525 5.33398 16.7459V24.7459C5.33398 29.4392 8.88065 32.9859 13.574 32.9859Z"
+          fill="#DD2D4A"
         />
       </svg>
 
@@ -101,7 +78,7 @@ export const TestimonialsSection: NextPage = () => {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-12 text-center md:mb-16">
-          <h2 className="mb-4 text-3xl font-bold text-[#1A1A1A] md:text-4xl lg:text-5xl">
+          <h2 className="text-primary-text mb-4 text-3xl font-semibold md:text-4xl lg:text-5xl">
             Loved by mothers everywhere
           </h2>
           <p className="mx-auto max-w-3xl text-base text-[#404040] md:text-lg lg:text-xl">

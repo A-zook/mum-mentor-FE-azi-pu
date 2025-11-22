@@ -1,22 +1,88 @@
 export const menuItems = [
-  { name: "Waitlist", href: "/waitlist" },
-  { name: "Features", href: "/features" },
-  { name: "How it works", href: "/how-it-works" },
-  { name: "About us", href: "/about-us" },
+  {
+    name: "Features",
+    href: "/features",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "About Us",
+    href: "/about-us",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "How it works",
+    href: "/how-it-works",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  { name: "What's New", href: "/whats-new", hasNotification: true },
+];
+
+export const waitlistMenuItems = [
+  {
+    name: "Perks",
+    href: "/waitlist#perks",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "FAQ",
+    href: "/waitlist#faq",
+    hasNotification: false,
+    hasDropdown: false,
+  },
 ];
 
 export const desktopNavItems: DesktopNavItem[] = [
-  { name: "Waitlist", href: "/waitlist" },
-  { name: "Features", href: "/features" },
-  { name: "How it works", href: "/how-it-works" },
-  { name: "About Us", href: "/about-us" },
-  // { name: "What's New", href: "/whats-new", hasNotification: true },
+  {
+    name: "Features",
+    href: "/features",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "About Us",
+    href: "/about-us",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "How it works",
+    href: "/how-it-works",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  { name: "What's New", href: "/whats-new", hasNotification: true },
+];
+
+export const waitlistDesktopNavItems = [
+  {
+    name: "Perks",
+    href: "/waitlist#perks",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "FAQ",
+    href: "/waitlist#faq",
+    hasNotification: false,
+    hasDropdown: false,
+  },
 ];
 
 export const companyLinks = [
   { name: "Features", href: "/features" },
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Terms of service", href: "/legal/terms" },
+  { name: "Privacy Policy", href: "/legal/privacy" },
+  { name: "Terms and Conditions", href: "/legal/terms" },
+  { name: "Contact Us", href: "/contact" },
+];
+
+export const waitListCompanyLinks = [
+  { name: "Privacy Policy", href: "/legal/privacy" },
+  { name: "Terms and Conditions", href: "/legal/terms" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export const socialLinks = [
