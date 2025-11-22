@@ -25,7 +25,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <body className={`${hankenGrotesk.variable} antialiased`}>
         <Providers>
-          <main className="">{children}</main>
+          {children}
           <Toaster richColors />
         </Providers>
       </body>

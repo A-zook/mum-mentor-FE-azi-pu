@@ -1,22 +1,22 @@
 export const menuItems = [
-  { name: "Waitlist", href: "/waitlist" },
   { name: "Features", href: "/features" },
+  { name: "About Us", href: "/about-us" },
   { name: "How it works", href: "/how-it-works" },
-  { name: "About us", href: "/about-us" },
+  { name: "What's New", href: "/whats-new", hasNotification: true },
 ];
 
 export const desktopNavItems: DesktopNavItem[] = [
-  { name: "Waitlist", href: "/waitlist" },
   { name: "Features", href: "/features" },
-  { name: "How it works", href: "/how-it-works" },
   { name: "About Us", href: "/about-us" },
-  // { name: "What's New", href: "/whats-new", hasNotification: true },
+  { name: "How it works", href: "/how-it-works" },
+  { name: "What's New", href: "/whats-new", hasNotification: true },
 ];
 
 export const companyLinks = [
   { name: "Features", href: "/features" },
-  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Privacy Policy", href: "/legal/privacy" },
   { name: "Terms of service", href: "/legal/terms" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export const socialLinks = [

@@ -6,18 +6,7 @@ export const AIInsight: NextPage = () => {
   return (
     <div className="bg-bg-secondary overflow-hidden">
       <section className="mx-auto min-h-96 max-w-[1440px] px-6 py-12 md:py-16 lg:px-20 lg:py-20">
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-11">
-          {/* Text Content */}
-          <div className="flex max-w-full flex-col justify-center gap-4 lg:max-w-[699px]">
-            <p className="lg:text-heading2 text-center text-3xl leading-tight font-bold md:text-4xl lg:text-left">
-              AI support that transforms motherhood
-            </p>
-            <p className="max-w-[586px] text-center text-base leading-relaxed md:text-lg lg:text-left lg:text-2xl">
-              AI powered insights, routines, and reminders designed to simplify
-              motherhood and support your journey
-            </p>
-          </div>
-
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:justify-between lg:gap-11">
           {/* Image */}
           <ScrollAnimationWrapper style="w-auto shrink-0">
             <div className="relative w-full overflow-hidden rounded-lg">
@@ -31,6 +20,17 @@ export const AIInsight: NextPage = () => {
               />
             </div>
           </ScrollAnimationWrapper>
+
+          {/* Text Content */}
+          <div className="flex max-w-full flex-col justify-center gap-4 lg:max-w-[699px]">
+            <p className="lg:text-heading2 text-center text-3xl leading-tight font-bold md:text-4xl lg:text-left">
+              AI support that transforms motherhood
+            </p>
+            <p className="max-w-[570px] text-center text-base leading-relaxed md:text-lg lg:text-left lg:text-2xl">
+              AI powered insights, routines, and reminders designed to simplify
+              motherhood and support your journey
+            </p>
+          </div>
         </div>
       </section>
     </div>

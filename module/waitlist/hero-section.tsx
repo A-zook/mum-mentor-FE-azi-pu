@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/UI/Button";
+import Button from "@/components/UI/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { NextPage } from "next";
 import { useState } from "react";

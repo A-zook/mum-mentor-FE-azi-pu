@@ -28,7 +28,7 @@ export const Footer: NextPage = () => {
                 />
               </div>
             </Link>
-            <p className="max-w-[400px] text-base leading-relaxed text-gray-300">
+            <p className="max-w-[400px] text-base leading-relaxed text-gray-300 md:text-2xl">
               Delivering trusted AI support to help pregnant women and moms
               navigate motherhood with confidence.
             </p>
@@ -55,7 +55,7 @@ export const Footer: NextPage = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="block text-base text-gray-300 transition-colors hover:text-white"
+                    className="block text-base text-gray-300 transition-colors hover:text-white md:text-2xl"
                   >
                     {link.name}
                   </Link>

@@ -1,9 +1,9 @@
 "use client";
-
+import { NextPage } from "next";
 import React from "react";
 import Image from "next/image";
 
-export default function PrivacyPolicyPage() {
+export const Policy: NextPage = () => {
   return (
     <div className="px-4 py-10">
       <Image
@@ -403,4 +403,4 @@ export default function PrivacyPolicyPage() {
       </div>
     </div>
   );
-}
+};
