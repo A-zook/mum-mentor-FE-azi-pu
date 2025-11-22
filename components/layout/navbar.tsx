@@ -14,7 +14,7 @@ import {
   waitlistMenuItems,
 } from "@/data/layout-data";
 import { APK_LINK } from "@/data/constants";
-import Button from "../UI/button";
+import Button from "../UI/Button";
 
 export const Navbar: NextPage = () => {
   const pathname = usePathname();
