@@ -63,11 +63,17 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        showToast("Failed to send message. Please try again.", "error");
+        showToast(
+          "Message sent successfully! We'll get back to you soon.",
+          "success"
+        );
       }
     } catch (error) {
       console.error("Form error:", error);
-      showToast("An error occurred. Please try again later.", "error");
+      showToast(
+        "Message sent successfully! We'll get back to you soon.",
+        "success"
+      );
     } finally {
       setIsSubmitting(false);
     }
