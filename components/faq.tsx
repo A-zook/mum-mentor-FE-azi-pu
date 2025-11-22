@@ -13,7 +13,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section className="bg-bg-main py-16 md:py-20 lg:py-24">
+    <section className="bg-bg-main py-16 md:py-20 lg:py-24" id="faq">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-20">
         {/* Header */}
         <div className="mb-12 text-center md:mb-16">

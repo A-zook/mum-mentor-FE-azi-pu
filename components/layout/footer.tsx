@@ -5,11 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/assets/icons/nora-icon.svg";
 import { AppStoreButton, GooglePlayButton } from "../UI/appstore-buttons";
-import { companyLinks, socialLinks } from "@/data/layout-data";
+import {
+  companyLinks,
+  socialLinks,
+  waitListCompanyLinks,
+} from "@/data/layout-data";
 
 export const Footer: NextPage = () => {
   const pathname = usePathname();
   const waitlist = pathname === "/waitlist";
+  const nav = waitlist ? waitListCompanyLinks : companyLinks;
 
   return (
     <footer className="bg-[#0F1419] text-white" id="footer">
@@ -17,7 +22,10 @@ export const Footer: NextPage = () => {
         <div className="hidden lg:flex lg:justify-between lg:gap-12">
           {/* Left Section - Logo & Description */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
+            <Link
+              href={waitlist ? "/waitlist" : "/"}
+              className="flex items-center gap-2"
+            >
               <div className="relative">
                 <Image
                   src={logo}
@@ -45,13 +53,13 @@ export const Footer: NextPage = () => {
           </div>
 
           {/* Middle Section - Company Links */}
-          {!waitlist && (
+          {
             <div>
               <h3 className="mb-6 border-b border-gray-700 pb-3 text-xl font-bold">
                 Company
               </h3>
               <nav className="space-y-4">
-                {companyLinks.map((link) => (
+                {nav.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
@@ -62,7 +70,7 @@ export const Footer: NextPage = () => {
                 ))}
               </nav>
             </div>
-          )}
+          }
 
           {/* Right Section - Social Links */}
           <div>
