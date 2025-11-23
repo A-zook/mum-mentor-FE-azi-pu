@@ -44,8 +44,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & MotionProps>(
 
     const sizes = {
       sm: "px-4 py-2 text-sm",
-      md: "px-6 py-3 text-base",
-      lg: "px-8 py-4 text-lg",
+      md: "px-8 py-3 text-base",
+      lg: "px-12 py-3 text-lg",
     };
 
     const widthStyles = fullWidth ? "w-full" : "";

@@ -1,29 +1,32 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { ContactFormData } from "@/lib/validations/contact";
 import { toast } from "sonner";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+interface ContactResponse {
+  success: boolean;
+  message: string;
+}
 
-const joinWaitlist = async (payload: WaitlistPayload) => {
-  const { data } = await axios.post<WaitlistResponse>(
-    `${API_BASE_URL}/api/v1/waitlist`,
-    payload
-  );
-  return data;
+const sendContactForm = async (
+  data: ContactFormData
+): Promise<ContactResponse> => {
+  const response = await axios.post("/api/contact", data);
+  return response.data;
 };
 
-export const useJoinWaitlist = () => {
+export function useContact() {
   return useMutation({
-    mutationFn: joinWaitlist,
+    mutationFn: sendContactForm,
     onSuccess: (data) => {
-      toast.success(data.message || "Welcome to the waitlist!");
+      toast.success(data.message || "Verification email sent successfully!");
     },
     onError: (error) => {
       if (axios.isAxiosError(error)) {
         const message =
           error.response?.data?.error ||
           error.response?.data?.message ||
-          "Failed to join waitlist";
+          "Failed to resend verification email";
         toast.error("Something went wrong", {
           description: message,
         });
@@ -34,4 +37,4 @@ export const useJoinWaitlist = () => {
       }
     },
   });
-};
+}
