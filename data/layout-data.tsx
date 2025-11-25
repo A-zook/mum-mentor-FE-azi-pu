@@ -17,6 +17,12 @@ export const menuItems = [
     hasNotification: false,
     hasDropdown: false,
   },
+  {
+    name: "Pricing",
+    href: "/pricing",
+    hasNotification: false,
+    hasDropdown: false,
+  },
   { name: "What's New", href: "/whats-new", hasNotification: true },
 ];
 
@@ -51,6 +57,12 @@ export const desktopNavItems: DesktopNavItem[] = [
   {
     name: "How it works",
     href: "/how-it-works",
+    hasNotification: false,
+    hasDropdown: false,
+  },
+  {
+    name: "Pricing",
+    href: "/pricing",
     hasNotification: false,
     hasDropdown: false,
   },
