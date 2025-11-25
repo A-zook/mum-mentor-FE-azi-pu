@@ -16,9 +16,10 @@ export const features = [
         />
       </svg>
     ),
-    title: "Emotional Support",
+    title: "Community",
     description:
-      "Get daily check-ins, gentle encouragement, and empathetic responses when you need someone to listen. You're never alone.",
+      "The community is a gentle support space where mothers connect with each other through shared experiences. It is not loud, competitive or judgmental..",
+    imageUrl: "/assets/images/Mockup.png",
   },
   {
     id: 2,
@@ -37,10 +38,12 @@ export const features = [
         />
       </svg>
     ),
-    title: "Personalized Guidance",
+    title: "Gallery",
     description:
-      "Receive short, actionable advice tailored to your unique situation. No overwhelming information, just what you need.",
+      "The gallery is a soft memory space where mother can keep photos videos and Mike stone highlights of their baby’s journey..",
+    imageUrl: "/assets/images/features2.png",
   },
+
   {
     id: 3,
     icon: (
@@ -58,9 +61,10 @@ export const features = [
         />
       </svg>
     ),
-    title: "Stage-Based Support",
+    title: "AI Chat (Live Chat)",
     description:
-      "From pregnancy to toddler years, get proactive reminders and timely tips for every milestone your baby reaches.",
+      "Enables real time voice conversation with the AI, allows user to speak and receive instant spoken response..",
+    imageUrl: "/assets/images/features3.png",
   },
   {
     id: 4,
@@ -79,9 +83,10 @@ export const features = [
         />
       </svg>
     ),
-    title: "Memory Timeline",
+    title: "Milestone Feature",
     description:
-      "Capture and organize precious moments. Create a beautiful visual journey of your motherhood experience to cherish forever.",
+      "Tracks milestones in different categories. And a progress bar to track progress.",
+    imageUrl: "/assets/images/features4.png",
   },
   {
     id: 5,
@@ -103,12 +108,34 @@ export const features = [
         />
       </svg>
     ),
-    title: "Your Personal Companion",
+    title: "Task Feature",
     description:
-      "A gentle AI companion who listens without judgement, offers reassurance, and reminds you that you're doing an amazing job, every single day.",
+      "Allows users to create, manage, and track personal or parenting-related tasks.",
+    imageUrl: "/assets/images/features5.png",
   },
   {
     id: 6,
+    icon: (
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M28.334 4.05078H11.6673C6.66732 4.05078 3.33398 7.38411 3.33398 12.3841V22.3841C3.33398 27.3841 6.66732 30.7174 11.6673 30.7174V34.2674C11.6673 35.6008 13.1507 36.4008 14.2507 35.6508L21.6673 30.7174H28.334C33.334 30.7174 36.6673 27.3841 36.6673 22.3841V12.3841C36.6673 7.38411 33.334 4.05078 28.334 4.05078ZM20.0007 24.3341C19.3007 24.3341 18.7507 23.7674 18.7507 23.0841C18.7507 22.4008 19.3007 21.8341 20.0007 21.8341C20.7007 21.8341 21.2507 22.4008 21.2507 23.0841C21.2507 23.7674 20.7007 24.3341 20.0007 24.3341ZM22.1007 17.4174C21.4507 17.8508 21.2507 18.1341 21.2507 18.6008V18.9508C21.2507 19.6341 20.684 20.2008 20.0007 20.2008C19.3173 20.2008 18.7507 19.6341 18.7507 18.9508V18.6008C18.7507 16.6674 20.1673 15.7174 20.7007 15.3508C21.3173 14.9341 21.5173 14.6508 21.5173 14.2174C21.5173 13.3841 20.834 12.7008 20.0007 12.7008C19.1673 12.7008 18.484 13.3841 18.484 14.2174C18.484 14.9008 17.9173 15.4674 17.234 15.4674C16.5507 15.4674 15.984 14.9008 15.984 14.2174C15.984 12.0008 17.784 10.2008 20.0007 10.2008C22.2173 10.2008 24.0173 12.0008 24.0173 14.2174C24.0173 16.1174 22.6173 17.0674 22.1007 17.4174Z"
+          fill="white"
+        />
+      </svg>
+    ),
+    title: "Resources",
+    description:
+      "Provides a centralized hub of informative content for mothers, including articles, guides, videos, and tools.",
+    imageUrl: "/assets/images/features6.png",
+  },
+  {
+    id: 7,
     icon: (
       <svg
         width="33"
@@ -124,9 +151,10 @@ export const features = [
         />
       </svg>
     ),
-    title: "Empathetic Conversations",
+    title: "Journal",
     description:
-      "Share your thoughts, worries, or wins. Get personalized, actionable advice that feels like talking to a caring friend who truly understands.",
+      "The journal lets users create, manage personal entries with ease. They can also add new entries edit, delete and organize them into different categories.",
+    imageUrl: "/assets/images/features7.png",
   },
 ];
 
