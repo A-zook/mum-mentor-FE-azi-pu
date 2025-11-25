@@ -16,9 +16,9 @@ export const menuItems = [
     href: "/how-it-works",
     hasNotification: false,
     hasDropdown: false,
-  },  
+  },
   {
-    name: "Pricing", 
+    name: "Pricing",
     href: "/pricing",
     hasNotification: false,
     hasDropdown: false,
