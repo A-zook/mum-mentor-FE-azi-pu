@@ -115,6 +115,58 @@ jobs:
           path: deploy-package.tar.gz
           retention-days: 7
 
+          #setup-sentry-monitoring job
+  setup-sentry-monitoring:
+    name: Setup Sentry Monitoring
+    runs-on: self-hosted
+    needs: test
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate Sentry DSN
+        env:
+          SENTRY_DSN: ${{ secrets.NEXT_PUBLIC_SENTRY_DSN }}
+        run: |
+          if [ -z "$SENTRY_DSN" ]; then
+            echo "⚠️ NEXT_PUBLIC_SENTRY_DSN secret not configured. Sentry monitoring will be disabled."
+            echo "See docs/SENTRY-INTEGRATION.md for setup instructions."
+            exit 0
+          else
+            echo "✅ Sentry DSN configured successfully"
+          fi
+
+      - name: Set Sentry Environment
+        env:
+          SENTRY_DSN: ${{ secrets.NEXT_PUBLIC_SENTRY_DSN }}
+        run: |
+          if [ -n "$SENTRY_DSN" ]; then
+            if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+              echo "SENTRY_ENVIRONMENT=production" >> $GITHUB_ENV
+            elif [ "${{ github.ref }}" = "refs/heads/staging" ]; then
+              echo "SENTRY_ENVIRONMENT=staging" >> $GITHUB_ENV
+            fi
+            echo "SENTRY_RELEASE=${{ github.sha }}" >> $GITHUB_ENV
+            echo "✅ Sentry environment variables prepared"
+          fi
+
+      - name: Create Sentry Release Info
+        env:
+          SENTRY_DSN: ${{ secrets.NEXT_PUBLIC_SENTRY_DSN }}
+        run: |
+          if [ -n "$SENTRY_DSN" ]; then
+            mkdir -p .sentry
+            echo "{
+              \"release\": \"${{ github.sha }}\",
+              \"environment\": \"$SENTRY_ENVIRONMENT\",
+              \"repository\": \"${{ github.repository }}\",
+              \"commit\": \"${{ github.sha }}\",
+              \"branch\": \"${{ github.ref_name }}\"
+            }" > .sentry/release-info.json
+            echo "✅ Sentry release information created"
+          fi
+
   deploy-staging:
     name: Deploy to Staging (Auto)
     runs-on: self-hosted
