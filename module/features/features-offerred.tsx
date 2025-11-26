@@ -18,7 +18,7 @@ const FeaturesOfferred: NextPage<FeaturesOfferredProps> = ({ feature }) => {
     <section
       className={`mx-auto flex max-w-550 flex-col gap-12 md:max-w-1240 md:items-center md:justify-between ${feature?.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center`}
     >
-      <div className="flex flex-col items-center gap-4 md:w-1/2 md:max-w-[430.47px]">
+      <div className="flex flex-col items-center gap-4 md:w-1/2 md:max-w-[430.47px] md:items-start">
         <div className="flex items-center gap-4">
           <div className="bg-primary flex h-11 w-12 items-center justify-center rounded-xl lg:h-16 lg:w-[68px]">
             {feature.icon}

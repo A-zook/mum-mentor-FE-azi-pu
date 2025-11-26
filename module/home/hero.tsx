@@ -7,7 +7,7 @@ import StarIcon from "@public/assets/icons/star.svg";
 
 export const Hero: NextPage = () => {
   return (
-    <section className="relative flex h-[651px] max-h-[738px] items-center justify-center lg:h-screen">
+    <section className="relative flex items-center justify-center lg:h-screen lg:max-h-[738px]">
       <div className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-60 md:max-w-1240 md:flex-row md:items-start">
         <div className="flex flex-col items-center gap-4 md:mt-2 md:w-1/2 md:items-start">
           <div className="flex items-center gap-2.5">

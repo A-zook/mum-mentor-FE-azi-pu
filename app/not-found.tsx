@@ -27,15 +27,17 @@ const NotFound = () => {
           width={94.6}
           className="absolute top-0 right-3 mb-5 md:right-96"
         />
-        <p className="font-hanken md:text-5l text-4xl font-semibold tracking-tight">
-          Opps! page not found
-        </p>
-        <p className="md:text-body-large text-button text-grey-text4 text-center">
-          This page you are looking for cannot be found. Try again later.
-        </p>
-        <Button onClick={() => router.push("/")} variant="primary" size="md">
-          Go to homepage
-        </Button>
+        <div className="mx-auto flex max-w-[517px] flex-col items-center gap-2">
+          <p className="md:text-heading1 text-4xl font-semibold tracking-tight">
+            Opps! page not found
+          </p>
+          <p className="md:text-body-large text-button text-grey-text4 text-center">
+            This page you are looking for cannot be found. Try again later.
+          </p>
+          <Button onClick={() => router.push("/")} variant="primary" size="md">
+            Go to homepage
+          </Button>
+        </div>
       </div>
       <Footer />
     </>

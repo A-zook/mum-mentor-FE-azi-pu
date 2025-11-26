@@ -1,13 +1,12 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import AppStoreButtons from "@/components/UI/appstore-buttons";
-import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import mumHuggingBaby from "@/public/assets/images/featured-mom-baby.png";
 import StarIcon from "@public/assets/icons/star.svg";
 
 export const FeatureHero: NextPage = () => {
   return (
-    <section className="relative flex h-[651px] max-h-[738px] items-center justify-center lg:h-screen">
+    <section className="relative flex items-center justify-center lg:h-screen lg:max-h-[738px]">
       <div className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-60 md:max-w-1240 md:flex-row md:items-start">
         <div className="flex flex-col items-center gap-4 md:mt-2 md:w-1/2 md:items-start">
           <div className="flex items-center gap-2.5">
@@ -32,7 +31,7 @@ export const FeatureHero: NextPage = () => {
 
         {/* hero image */}
 
-        <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-full overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px] md:w-[527px]">
+        <div className="border-primary image-drop-shadow relative h-[372.37px] w-full overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px] md:w-[527px]">
           <Image
             src={mumHuggingBaby}
             alt="An image of a mother hugging her baby"
@@ -42,7 +41,7 @@ export const FeatureHero: NextPage = () => {
             fill
             className="object-cover"
           />
-        </ScrollAnimationWrapper>
+        </div>
       </div>
     </section>
   );
