@@ -1,4 +1,4 @@
-# Nora - Mum Mentor AI.
+# Nora - Mum Mentor AI
 
 > An AI-powered companion that supports mothers through pregnancy, postpartum, and early motherhood.
 
