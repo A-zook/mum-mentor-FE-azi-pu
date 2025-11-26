@@ -5,6 +5,7 @@ This guide explains how to configure Sentry monitoring on the self-hosted server
 ## Overview
 
 The self-hosted server runs the Next.js application using PM2 process manager. This guide covers:
+
 - Adding Sentry DSN as environment variable
 - Configuring PM2 ecosystem file
 - Reloading the application
@@ -27,11 +28,13 @@ ssh username@your-server-host
 ### Step 2: Navigate to Application Directory
 
 **For Production:**
+
 ```bash
 cd /home/username/mum-mentor-fe
 ```
 
 **For Staging:**
+
 ```bash
 cd /home/username/mum-mentor-fe-staging
 ```
@@ -39,11 +42,13 @@ cd /home/username/mum-mentor-fe-staging
 ### Step 3: Locate PM2 Ecosystem File
 
 The PM2 configuration should be in one of these locations:
+
 - `ecosystem.config.js` (in app directory)
 - `deployment/ecosystem.config.js`
 - PM2 started with inline configuration
 
 Check current PM2 processes:
+
 ```bash
 pm2 list
 ```
@@ -62,20 +67,22 @@ Add Sentry DSN to the environment variables:
 
 ```javascript
 module.exports = {
-  apps: [{
-    name: 'mum-mentor-fe',
-    script: 'node_modules/next/dist/bin/next',
-    args: 'start -p 3000',
-    cwd: '/home/username/mum-mentor-fe',
-    env: {
-      NODE_ENV: 'production',
-      NEXT_PUBLIC_SENTRY_DSN: 'https://your-dsn@sentry.io/project-id'
+  apps: [
+    {
+      name: "mum-mentor-fe",
+      script: "node_modules/next/dist/bin/next",
+      args: "start -p 3000",
+      cwd: "/home/username/mum-mentor-fe",
+      env: {
+        NODE_ENV: "production",
+        NEXT_PUBLIC_SENTRY_DSN: "https://your-dsn@sentry.io/project-id",
+      },
+      env_staging: {
+        NODE_ENV: "production",
+        NEXT_PUBLIC_SENTRY_DSN: "https://your-dsn@sentry.io/project-id",
+      },
     },
-    env_staging: {
-      NODE_ENV: 'production',
-      NEXT_PUBLIC_SENTRY_DSN: 'https://your-dsn@sentry.io/project-id'
-    }
-  }]
+  ],
 };
 ```
 
@@ -112,11 +119,13 @@ pm2 reload ecosystem.config.js
 #### If using process name:
 
 **For Production:**
+
 ```bash
 pm2 reload mum-mentor-fe
 ```
 
 **For Staging:**
+
 ```bash
 pm2 reload mum-mentor-fe-staging
 ```
@@ -161,18 +170,21 @@ curl -I http://localhost:3000
 ### 1. Check Sentry Integration
 
 Visit your application and check browser console:
+
 - Should see Sentry initialization (if debug enabled)
 - No Sentry-related errors
 
 ### 2. Trigger Test Error
 
 Create a test error to verify Sentry is capturing:
+
 - Navigate to a page that might have errors
 - Check Sentry dashboard for new events
 
 ### 3. Monitor Performance
 
 Check Sentry dashboard for:
+
 - Page load performance data
 - Transaction traces
 - Error rates
@@ -216,12 +228,14 @@ pm2 resurrect
 ### Environment-Specific Commands:
 
 **Production:**
+
 ```bash
 pm2 reload mum-mentor-fe
 pm2 logs mum-mentor-fe
 ```
 
 **Staging:**
+
 ```bash
 pm2 reload mum-mentor-fe-staging
 pm2 logs mum-mentor-fe-staging
@@ -232,11 +246,14 @@ pm2 logs mum-mentor-fe-staging
 ### Issue: Environment Variable Not Set
 
 **Symptoms:**
+
 - Sentry not initializing
 - No error tracking in dashboard
 
 **Solutions:**
+
 1. Verify environment variable is set:
+
    ```bash
    pm2 env mum-mentor-fe | grep SENTRY
    ```
@@ -252,16 +269,20 @@ pm2 logs mum-mentor-fe-staging
 ### Issue: PM2 Process Not Starting
 
 **Symptoms:**
+
 - Application not accessible
 - PM2 shows process as stopped/errored
 
 **Solutions:**
+
 1. Check PM2 logs:
+
    ```bash
    pm2 logs mum-mentor-fe --err
    ```
 
 2. Verify Next.js build exists:
+
    ```bash
    ls -la .next/
    ```
@@ -274,9 +295,11 @@ pm2 logs mum-mentor-fe-staging
 ### Issue: Sentry Events Not Appearing
 
 **Symptoms:**
+
 - Application runs but no Sentry data
 
 **Solutions:**
+
 1. Verify DSN format is correct
 2. Check Sentry project settings
 3. Test with a manual error trigger
@@ -285,11 +308,14 @@ pm2 logs mum-mentor-fe-staging
 ### Issue: Performance Impact
 
 **Symptoms:**
+
 - Application slower after Sentry integration
 
 **Solutions:**
+
 1. Reduce sample rate in Sentry configuration
 2. Monitor server resources:
+
    ```bash
    htop
    pm2 monit
@@ -302,11 +328,13 @@ pm2 logs mum-mentor-fe-staging
 ### Environment Variable Security:
 
 1. **File Permissions:**
+
    ```bash
    chmod 600 .env.local
    ```
 
 2. **Backup Configuration:**
+
    ```bash
    cp ecosystem.config.js ecosystem.config.js.backup
    ```

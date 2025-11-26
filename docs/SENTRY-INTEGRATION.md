@@ -5,6 +5,7 @@ This guide explains how to integrate Sentry error monitoring into the Mum Mentor
 ## Overview
 
 Sentry provides real-time error tracking and performance monitoring for the Next.js application. The integration is designed to be:
+
 - **Non-intrusive**: No changes to existing application logic
 - **Optional**: Application works with or without Sentry configuration
 - **Environment-aware**: Different tracking for staging vs production
@@ -103,7 +104,7 @@ const sentryOptions = {
   disableLogger: true,
 };
 
-export default process.env.NEXT_PUBLIC_SENTRY_DSN 
+export default process.env.NEXT_PUBLIC_SENTRY_DSN
   ? withSentryConfig(nextConfig, sentryOptions)
   : nextConfig;
 ```
@@ -186,11 +187,13 @@ Modify `package.json`:
 ### 5.1 Local Testing
 
 1. Set environment variable:
+
    ```bash
    export NEXT_PUBLIC_SENTRY_DSN="your-dsn-here"
    ```
 
 2. Run development server:
+
    ```bash
    pnpm dev
    ```
