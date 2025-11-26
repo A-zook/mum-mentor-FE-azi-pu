@@ -1,25 +1,48 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import HeroImage from "@/public/assets/images/loving-mother.jpg";
+import AppStoreButtons from "@/components/UI/appstore-buttons";
+import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
+import mumHuggingBaby from "@/public/assets/images/featured-mom-baby.png";
+import StarIcon from "@public/assets/icons/star.svg";
 
 export const FeatureHero: NextPage = () => {
   return (
-    <section className="relative h-[520px] max-h-[738px] w-full lg:h-screen">
-      <Image
-        src={HeroImage}
-        alt="Loving Mom with Her Baby Image"
-        className="absolute top-0 left-0 -z-10 h-full w-full object-cover"
-      />
-      <div className="absolute top-0 h-full w-full bg-[#00000085]" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 px-6 md:ml-[100px] md:w-[670px] md:items-start">
-        <p className="md:text-heading1 text-background mb-4 text-center text-[28px] font-bold md:text-left">
-          Features Built With Love
-        </p>
-        <p className="md:text-body-large text-background text-body-regular text-center md:text-left">
-          NORA offers nurturing tools that guide you through the highs, lows,
-          and everything in between, so you always have a companion you can
-          trust.
-        </p>
+    <section className="relative flex h-[651px] max-h-[738px] items-center justify-center lg:h-screen">
+      <div className="mx-auto flex max-w-550 flex-col items-center justify-between gap-8 px-6 py-60 md:max-w-1240 md:flex-row md:items-start">
+        <div className="flex flex-col items-center gap-4 md:mt-2 md:w-1/2 md:items-start">
+          <div className="flex items-center gap-2.5">
+            <Image src={StarIcon} alt="A star icon" quality={100} priority />
+
+            <p className="text-primary font-semibold uppercase md:text-lg">
+              FEARURES
+            </p>
+          </div>
+
+          <h1 className="text-primary-text md:text-heading1 max-w-[581px] text-center text-4xl leading-snug font-semibold md:text-start md:leading-tight">
+            Everything You Need, All In One Place
+          </h1>
+
+          <p className="text-gray-text3 max-w-[581px] text-center text-xl md:text-start md:text-2xl">
+            See how Nora understands your world, supports your routine, and
+            helps you thrive every day.
+          </p>
+
+          <AppStoreButtons />
+        </div>
+
+        {/* hero image */}
+
+        <ScrollAnimationWrapper style="border-primary image-drop-shadow relative h-[372.37px] w-full overflow-hidden rounded-sm border-[2.99px] md:h-[497.83px] md:w-[527px]">
+          <Image
+            src={mumHuggingBaby}
+            alt="An image of a mother hugging her baby"
+            quality={100}
+            placeholder="blur"
+            priority
+            fill
+            className="object-cover"
+          />
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );
