@@ -85,8 +85,8 @@ const features = [
 
 export const HowItWorks: NextPage = () => {
   return (
-    <div className="mx-auto my-[50px] px-6">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-[60px]">
+    <div className="mx-auto my-50 px-6">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-60">
         <div className="flex max-w-[750px] flex-col items-center gap-4">
           <h3 className="lg:text-heading2 text-secondary-text text-center text-3xl leading-tight font-bold md:text-4xl">
             What We Offer
@@ -101,7 +101,7 @@ export const HowItWorks: NextPage = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-[60px] py-[60px]"
+              className="border-outline flex max-w-[600px] flex-col gap-2.5 rounded-lg border px-60 py-60"
             >
               <div className="flex flex-col gap-6">
                 <div className="flex h-16 w-[68px] items-center justify-center rounded-xl bg-[#DD2D4A]">

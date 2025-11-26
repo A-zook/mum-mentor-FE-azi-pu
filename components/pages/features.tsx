@@ -1,13 +1,13 @@
-import { OurFeatures, NotAlone, WhyThisWorks} from "@/module/features";
+import { OurFeatures, WhyThisWorks } from "@/module/features";
+import { ReadyToDownload } from "@/module/how-it-works";
 import { NextPage } from "next";
-
 
 const Features: NextPage = () => {
   return (
     <div>
       <OurFeatures />
       <WhyThisWorks />
-      <NotAlone />
+      <ReadyToDownload />
     </div>
   );
 };

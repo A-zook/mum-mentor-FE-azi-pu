@@ -1,5 +1,4 @@
 import Button from "@/components/UI/Button";
-import ScrollAnimationWrapper from "@/components/UI/scroll-animation";
 import HeroImage from "@public/assets/images/whats-new-hero.png";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -28,7 +27,7 @@ export const WhatsNewHero: NextPage = () => {
         </Link>
       </div>
 
-      <ScrollAnimationWrapper>
+      <div>
         <Image
           src={HeroImage}
           alt="What's new page hero image"
@@ -36,7 +35,7 @@ export const WhatsNewHero: NextPage = () => {
           placeholder="blur"
           priority
         />
-      </ScrollAnimationWrapper>
+      </div>
     </div>
   );
 };

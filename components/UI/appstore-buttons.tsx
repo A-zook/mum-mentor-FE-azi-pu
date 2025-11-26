@@ -77,7 +77,7 @@ export const AppStoreButton = ({
 // Combined Component (for convenience)
 export const AppStoreButtons = ({ className = "" }: { className?: string }) => {
   return (
-    <div className={`flex flex-col gap-4 sm:flex-row ${className}`}>
+    <div className={`flex flex-col gap-4 md:flex-row ${className}`}>
       <GooglePlayButton />
       <AppStoreButton />
     </div>
